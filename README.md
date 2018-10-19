@@ -1,10 +1,6 @@
-![g3 Logo](imgs/g3-200x134.png)
+![g3 Logo](https://centurianii.github.io/g3/imgs/g3-200x134.png)
 # Overview
-- A tutorial on my `g3.Class` factory: {@tutorial class},
-
-- A tutorial on my `g3.HybridTemplate` class: {@tutorial hybrid},
-
-- A tutorial on my `g3.evaluator` testing tool: {@tutorial evaluator}.
+See [documentation](https://centurianii.github.io/g3) for this library.
 
 ### License
 part of g3 library under MIT license
