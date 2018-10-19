@@ -1,0 +1,1 @@
+diff -dswy --suppress-common-lines /home/suexec-test/client/lib/js/<file1>.js ./client/lib/js/<file2>.js

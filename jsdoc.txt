@@ -1,0 +1,5 @@
+#an example of command:
+
+jsdoc -c conf-docdash.json -R README.md -u tutorials -d docs -r ./client/*
+
+

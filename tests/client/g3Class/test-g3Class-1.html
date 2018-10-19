@@ -1,0 +1,817 @@
+<!doctype html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Test g3.Class</title>
+   
+<link rel="stylesheet" type="text/css" href="/lib/plugins/g3evaluator/g3evaluator.css">
+</head>
+<body>
+<div class="TbeFgQ7NMLTOVYjdRDjVMaoN">
+<div id="header">
+   <div>
+   <h1 contenteditable="false">Test g3.Class<br></h1><span class="">[edit]</span>
+   </div>
+</div>
+</div>
+<div id="stub" class=""></div>
+<div class="TbeFgQ7NMLTOVYjdRDjVMaoN">
+<form id="loadFrame">
+   <fieldset>
+      <legend class="hover"><b>Manage stub/frame</b></legend>
+      <div style="display: none;">
+         <label class="label" for="frameSrc">Frame source:</label><input id="frameSrc" type="text"><br>
+         <input value="Load file in frame" type="button"><input value="Remove frame" type="button"><br>
+         <input value="Clone frame to stub-HEAD" type="button"><input value="Remove cloned" type="button">
+      </div>
+   </fieldset>
+</form>
+<form id="html">
+   <fieldset>
+      <legend class="hover"><b>Load html</b></legend>
+      <div style="display: none;">
+         <textarea rows="5" wrap="virtual"></textarea><br>
+         <input value="Load" type="button"><input value="Clear" type="button"><br>
+         <select id="whichHtml"><option value="Include" selected="">Include classes/ids (any depth):</option><option value="Exclude">Exclude classes/ids (1st level childs):</option></select><input id="idHtml" type="text"> seperate by space or comma or semicolon or vertical bar: [ ,;|]
+      </div>
+   </fieldset>
+</form>
+<div id="libraryWrapper">
+<form id="header-addRemoveLib">
+   <fieldset>
+      <legend class="hover">Add/Remove .css library</legend>
+      <div style="display: none;">
+         <label class="label" for="libName">Name on list:</label><input id="libName" type="text"><br>
+         <label class="label" for="libPath">Path:</label><input id="libPath" type="text"><br>
+         <input value="Add" type="button"><input value="Remove" type="button">
+         <p>
+            <span><label class="label" for="header-loadAll">Load all (top-bottom):</label><input id="header-loadAll" type="checkbox"></span>
+         </p>
+         <p>Click order -&gt; list order and file source order, on loading errors check url prefix and repeat.</p>
+      </div>
+   </fieldset>
+</form>
+<form id="footer-addRemoveLib">
+   <fieldset>
+      <legend class="hover">Add/Remove .js library</legend>
+      <div style="display: none;">
+         <label class="label" for="footer-libName">Name on list:</label><input id="footer-libName" type="text"><br><label class="label" for="footer-libPath">Path:</label><input id="footer-libPath" type="text"><br><input value="Add" type="button"><input value="Remove" type="button">
+         <p>
+            <span><label class="label" for="footer-loadAll">Load all (top-bottom):</label><input id="footer-loadAll" type="checkbox"></span>
+         </p>
+         <p>Click order -&gt; list order and file source order, on loading errors check url prefix and repeat.</p>
+      </div>
+   </fieldset>
+</form>
+<div class="clearWrapper"></div>
+<form id="header-libraries">
+   <fieldset>
+      <legend class="hover">Load .css library</legend>
+      <div style="display: none;">
+         <label class="label" for="memorize-header">Keep list frozen:</label><input id="memorize-header" type="checkbox"><br>
+         <ol>
+            <li><label class="label" for="UiWo0">Bootstrap.3.3.7</label><input id="UiWo0" data-id="hZ8g2" value="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type="checkbox"></li><li><label class="label" for="rj9fs">Bootstrap.3.3.7 default theme</label><input id="rj9fs" data-id="EEfMH" value="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css" type="checkbox"></li>
+            <li><label class="label" for="h6HnG">Bootstrap.3.3.7 cerulean</label><input id="h6HnG" data-id="zf6EV" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="5EK1T">Bootstrap.3.3.7 cosmo</label><input id="5EK1T" data-id="hbNxK" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="PDENa">Bootstrap.3.3.7 cyborg</label><input id="PDENa" data-id="vXCX6" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="LBjZ3">Bootstrap.3.3.7 darkly</label><input id="LBjZ3" data-id="oCiBw" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/darkly/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="NFZY8">Bootstrap.3.3.7 flatly</label><input id="NFZY8" data-id="xwFq6" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="ZKq79">Bootstrap.3.3.7 journal</label><input id="ZKq79" data-id="tO2OF" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="HZxwD">Bootstrap.3.3.7 lumen</label><input id="HZxwD" data-id="wKPGf" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/lumen/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="khW8v">Bootstrap.3.3.7 paper</label><input id="khW8v" data-id="q81Kq" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="nXeG8">Bootstrap.3.3.7 readable</label><input id="nXeG8" data-id="VW5FG" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="E3trm">Bootstrap.3.3.7 sandstone</label><input id="E3trm" data-id="lpTNH" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/sandstone/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="bO1At">Bootstrap.3.3.7 simplex</label><input id="bO1At" data-id="8bZkZ" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="dXNbx">Bootstrap.3.3.7 slate</label><input id="dXNbx" data-id="1inMh" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="5PcBq">Bootstrap.3.3.7 spacelab</label><input id="5PcBq" data-id="rWdnx" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="ypc42">Bootstrap.3.3.7 superhero</label><input id="ypc42" data-id="uDyJ2" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/superhero/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="zndIZ">Bootstrap.3.3.7 united</label><input id="zndIZ" data-id="pyUIh" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="L5uRE">Bootstrap.3.3.7 yeti</label><input id="L5uRE" data-id="flfY3" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css" type="checkbox"></li><li><label class="label" for="nE3lU">Fontawesome</label><input id="nE3lU" data-id="RrXcg" value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="checkbox"></li><li><label class="label" for="oZbkU">Glyphicons eot</label><input id="oZbkU" data-id="kJScC" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.eot" type="checkbox"></li><li><label class="label" for="x8cbe">Glyphicons svg</label><input id="x8cbe" data-id="eqRpL" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.svg" type="checkbox"></li><li><label class="label" for="pbvm0">Glyphicons ttf</label><input id="pbvm0" data-id="1lRtB" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.ttf" type="checkbox"></li><li><label class="label" for="h0VIc">Glyphicons woff</label><input id="h0VIc" data-id="u8DwY" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.woff" type="checkbox"></li><li><label class="label" for="S8b7C">Glyphicons woff2</label><input id="S8b7C" data-id="uDlVM" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.woff2" type="checkbox"></li></ol>
+      </div>
+   </fieldset>
+</form>
+<form id="footer-libraries">
+   <fieldset>
+      <legend class="hover">Load .js library</legend>
+      <div style="display: none;">
+         <label class="label" for="memorize-footer">Keep list frozen:</label><input id="memorize-footer" type="checkbox"><br>
+         <ol>
+            <li><label class="label" for="HzGqk">Bootstrap 3.3.7</label><input id="HzGqk" data-id="5uVLE" value="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" type="checkbox"></li>
+            <li><label class="label" for="iyO1n">g3.Class</label><input id="iyO1n" data-id="KRujN" value="/lib/js/g3Class.js" type="checkbox"></li>
+            <li><label class="label" for="cZ4FU">g3.Error</label><input id="cZ4FU" data-id="5rcNV" value="/lib/js/g3Error.js" type="checkbox"></li>
+            <li><label class="label" for="UKbf6">g3.hybrid</label><input id="UKbf6" data-id="aI6Ry" value="/lib/js/g3hybrid.js" type="checkbox"></li>
+            <li><label class="label" for="tpR7M">g3.hybridStatic</label><input id="tpR7M" data-id="QBPlM" value="/lib/js/g3hybridStatic.js" type="checkbox"></li>
+            <li><label class="label" for="NeFOz">g3.headless</label><input id="NeFOz" data-id="hLSl9" value="/lib/js/g3headless.js" type="checkbox"></li>
+            <li><label class="label" for="qpQIQ">g3.headlessStatic</label><input id="qpQIQ" data-id="FkOWF" value="/lib/js/g3headlessStatic.js" type="checkbox"></li>
+         </ol>
+      </div>
+   </fieldset>
+</form>
+</div>
+<div class="clearWrapper"></div>
+<p>
+   <span><label class="label" for="boardHeights">Equal board heights:</label><input id="boardHeights" type="checkbox"></span><span><label class="label" for="boardWidthSingle">Single column boards:</label><input id="boardWidthSingle" type="checkbox"></span>
+</p>
+<div id="boardWrapper">
+   <form class="" id="blackboard">
+      <fieldset>
+         <legend><b>Blackboard</b></legend>
+         <label class="label" for="title">Tab title:</label><input id="title" type="text"><br>
+         <textarea style="width: 100%;" rows="15" wrap="virtual"></textarea><br>
+         <input value="Execute!" type="button"><input value="Save" type="button"><input value="Save to a new tab" type="button"><input value="Clear" type="button">Format language: <select id="lang"><option value="javascript" selected="">Javascript</option><option value="unformatted">Unformatted</option></select><br>
+      </fieldset>
+   </form>
+   <form class="" id="console">
+      <fieldset>
+         <legend><b>Console</b></legend>
+         <div class="data"><pre></pre></div>
+         <input value="Clear" type="button">
+      </fieldset>
+   </form>
+</div>
+<div class="clearWrapper"></div>
+<form id="addRemovePanel">
+   <fieldset>
+      <legend class="hover">Add/Remove panel</legend>
+      <div style="display: none;">
+         <label class="label" for="panelTitle">Panel title:</label><input id="panelTitle" type="text"><br>
+         <input value="Add" type="button"><input value="Remove" type="button">
+      </div>
+   </fieldset>
+</form>
+<hr>
+<p>
+   <span style="padding: 0.4em 0.8em; color: #003380; background-color: #66a3ff;">Load any tab to blackboard</span><span><label class="label" for="panelHeights">Equal panel heights:</label><input id="panelHeights" type="checkbox"></span><span><label class="label" for="panelWidthSingle">Single column panels:</label><input id="panelWidthSingle" type="checkbox"></span>
+</p>
+
+<div id="tabbedDataWrapper">
+<div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title enabled">Inheritance following the "switchboard" pattern - a state machine</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title enabled">Inheritance test(a): base class</div><div class="close">X</div></div><div class="tabBar"><div class="title">Inheritance test(b-1): child class</div><div class="close">X</div></div><div class="tabBar"><div class="title">Inheritance test(c-1): object of child class with merge defaults 'last'</div><div class="close">X</div></div><div class="tabBar"><div class="title">Inheritance test(d-1): object of child class with merge defaults 'defaults'</div><div class="close">X</div></div><div class="tabBar"><div class="title">Inheritance test(b-2): child class that overlaps a defaults member of parent</div><div class="close">X</div></div><div class="tabBar"><div class="title">Inheritance test(c-2): object of child class with merge defaults 'last'</div><div class="close">X</div></div><div class="tabBar"><div class="title">Inheritance test(d-2): object of child class with merge defaults 'defaults'</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted">/* tests 1st level class constructor A
+   1. test object storage at g3.A.instances:
+      g3.A.instances[0].id === 'test'
+      g3.A.instances[0].hybrid instanceof g3.A
+   2. teststatic members at g3.A:
+      g3.A.name === 'A'
+      g3.A.id === 'xyz'
+      g3.A.static_A === 2
+      g3.A.store === true
+      g3.A.options === 'last'
+      g3.A.override === false
+   3. test static 'defaults' at g3.A:
+      g3.A.defaults.default_A_1 === 1
+   4. test property 'defaults' at the child object:
+      g3.A.get('test').defaults.default_A_1 === 1
+      g3.A.get('test').defaults.default_A_2 === 100
+      g3.A.get('test').defaults.name === 'test'
+   5. test property 'instance' at the child object:
+      g3.A.get('test').instance.lastDefaults.default_A_1 === 1
+      g3.A.get('test').instance.lastDefaults.default_A_2 === 100
+      g3.A.get('test').instance.lastDefaults.name === 'test'
+      g3.A.get('test').instance.name === 'test'
+      g3.A.get('test').instance.newBuild.A === false
+*/
+g3.A = g3.Class(g3.hybrid('A'), g3.hybridStatic('A'), {
+   STATIC: {
+      defaults: {
+         default_A_1: 1
+      },
+      name: 'A',
+      id: 'xyz',
+      static_A: 2,
+      toString: function(){
+         return '[Function g3.A]';
+      }
+   },
+   constructor: function(options){
+      var myClass = 'A';
+      // if inheritance level &gt; 1 and you want object storage:
+      //g3[myClass].add(this.defaults.name, this);
+      this.instance.prop_A = null,
+      this.init(options);
+      this.instance.newBuild[myClass] = false;
+   },
+   
+   prototype: {
+      init: function(options){
+         var debug = {};
+         
+         // 1. call functions
+         debug['switch'] = this.switch(options, 'A');
+         debug['getNodes'] = this.getNodes(options);
+         debug['build'] = this.build();
+         
+         // 2. update 'options.debug'
+         (options &amp;&amp; (g3.utils.type(options.debug) === 'object')) &amp;&amp; $.extend(true, options.debug, debug);
+         
+         // 3. store last working set of 'this.defaults'
+         this.instance.lastDefaults = this.defaults;
+         
+         return this;
+      },
+      build: function(){
+         this.instance.prop_A = 3;
+      },
+      toString: function(){
+         return '[Object g3.A]';
+      }
+   }
+});
+// connect g3.A to jquery:
+g3.A.library('jquery');
+var debug = {};
+$().g3('A', {debug: debug, name: 'test', default_A_2: 100});
+console.log(debug);
+console.log('Function "A":');
+console.log(g3.A);
+console.log('Object "test":');
+console.log(g3.A.get('test'), 1);
+console.log('-----------------1.-----------------\nobject storage at g3.A.instances\n------------------------------------');
+console.log(g3.A.instances[0].id === 'test');
+console.log(g3.A.instances[0].hybrid instanceof g3.A);
+console.log('-----------------2.-----------------\nstatic members at g3.A\n------------------------------------');
+console.log(g3.A.name == 'A');
+console.log(g3.A.id == 'xyz');
+console.log(g3.A.static_A == 2);
+console.log(g3.A.store === true);
+console.log(g3.A.options === 'last');
+console.log(g3.A.override === false);
+console.log('-----------------3.-----------------\nstatic "defaults" at g3.A\n------------------------------------');
+console.log(g3.A.defaults.default_A_1 === 1);
+console.log('-----------------4.-----------------\nproperty "defaults" at the child object\n------------------------------------');
+console.log(g3.A.get('test').defaults.default_A_1 === 1);
+console.log(g3.A.get('test').defaults.default_A_2 === 100);
+console.log(g3.A.get('test').defaults.name === 'test');
+console.log('-----------------5.-----------------\nproperty "instance" at the child object\n------------------------------------');
+console.log(g3.A.get('test').instance.lastDefaults.default_A_1 === 1);
+console.log(g3.A.get('test').instance.lastDefaults.default_A_2 === 100);
+console.log(g3.A.get('test').instance.lastDefaults.name === 'test');
+console.log(g3.A.get('test').instance.name === 'test');
+console.log(g3.A.get('test').instance.newBuild.A === false);</pre></div><div class="data hide"><pre data-lang="unformatted">/* tests 2nd level class constructor */
+g3.B = g3.Class(g3.A, g3.hybridStatic('B'), {
+   STATIC: {
+      defaults: {
+         default_B_1: 4
+      },
+      name: 'B',
+      id: '456',
+      static_B: 5
+   },
+   constructor: function(options){
+      var myClass = 'B';
+      // if inheritance level &gt; 1 and you want object storage:
+      g3[myClass].add(this.defaults.name, this);
+      this.instance.prop_B = null,
+      this.init2(options);
+      this.instance.newBuild[myClass] = false;
+   },
+   
+   prototype: {
+      init2: function(options){
+         var debug = {};
+         
+         // 1. If NOT called from constructor
+         if(this.instance.newBuild['B'] === false)
+            g3.B.Super.prototype.init.call(this, options);
+
+         // 2. call functions
+         debug['switch'] = this.switch(options, 'B');
+         debug['getNodes'] = this.getNodes(options);
+         debug['build2'] = this.build2();
+         
+         // 3. update 'options.debug'
+         (options &amp;&amp; (g3.utils.type(options.debug) === 'object')) &amp;&amp; $.extend(true, options.debug, debug);
+         
+         // 4. store last working set of 'this.defaults'
+         this.instance.lastDefaults = this.defaults;
+         
+         return this;
+      },
+      build2: function(){
+         //this.instance.prop_A = 100;   // tests overlapping sequence
+         this.instance.prop_B = 6;
+      },
+      toString: function(){
+         return '[Object g3.B]';
+      }
+   }
+});</pre></div><div class="data hide"><pre data-lang="unformatted">/* tests constructor of child class B
+   1. test same name for object storage, g3.A.instances, g3.B.instances:
+      g3.A.instances[0].id === g3.B.instances[0].id
+   2. test static members at g3.B:
+      g3.B.name === 'B'
+      g3.B.id === '456'
+      g3.B.static_B === 5
+      g3.B.store === true
+      g3.B.options === 'last'
+      g3.B.override === false
+   3. test property 'defaults' at the child object with g3.B.options = 'last':
+      g3.B.get('test').defaults.default_A_1 === 1
+      g3.B.get('test').defaults.default_B_1 === 5
+      g3.B.get('test').defaults.default_B_2 === 100
+   4. test property 'instances' at the child object:
+      g3.B.get('test').instance.lastDefaults.default_A_1 === 1
+      g3.B.get('test').instance.lastDefaults.default_B_1 === 5
+      g3.B.get('test').instance.lastDefaults.default_B_2 === 100
+      g3.B.get('test').instance.lastDefaults.name === 'test'
+      g3.B.get('test').instance.name === 'test'
+      g3.B.get('test').instance.newBuild.B === false
+*/
+var debug = {};
+g3.B.inherits(true);
+// checks default merging of options: 'last'
+$().g3('B', {name: 'test', default_B_1: 5, default_B_2: 10}).init({debug: debug, default_B_2: 100});
+g3.B.inherits(false);
+console.log(debug);
+console.log('Function "B":');
+console.log(g3.B);
+console.log('Object "test":');
+console.log(g3.B.get('test'), 1);
+console.log('-----------------1.-----------------\nsame name for object storage, g3.A.instances, g3.B.instances\n------------------------------------');
+console.log(g3.A.instances[0].id === g3.B.instances[0].id);
+console.log('-----------------2.-----------------\nstatic members at g3.B\n------------------------------------');
+console.log(g3.B.name == 'B');
+console.log(g3.B.id == '456');
+console.log(g3.B.static_B == 5);
+console.log(g3.B.store === true);
+console.log(g3.B.options === 'last');
+console.log(g3.B.override === false);
+console.log('-----------------3.-----------------\nproperty "defaults" at the child object with g3.B.options = "last"\n------------------------------------');
+console.log(g3.B.get('test').defaults.default_A_1 === 1);
+console.log(g3.B.get('test').defaults.default_B_1 === 5);
+console.log(g3.B.get('test').defaults.default_B_2 === 100);
+console.log('-----------------4.-----------------\nproperty "instances" at the child object\n------------------------------------');
+console.log(g3.B.get('test').instance.lastDefaults.default_A_1 === 1);
+console.log(g3.B.get('test').instance.lastDefaults.default_B_1 === 5);
+console.log(g3.B.get('test').instance.lastDefaults.default_B_2 === 100);
+console.log(g3.B.get('test').instance.lastDefaults.name === 'test');
+console.log(g3.B.get('test').instance.name === 'test');
+console.log(g3.B.get('test').instance.newBuild.B === false);</pre></div><div class="data hide"><pre data-lang="unformatted">/* tests constructor of child class B
+   1. test 'destroy()' for object storage in g3.B.instances:
+      g3.B.instances[0].id === 'test'
+   2. test static members at g3.B:
+      g3.B.name === 'B'
+      g3.B.id === '456'
+      g3.B.static_B === 5
+      g3.B.store === true
+      g3.B.options === 'last'
+      g3.B.override === false
+   3. test property 'defaults' at the child object with g3.B.options = 'defaults':
+      g3.B.get('test').defaults.default_A_1 === 1
+      g3.B.get('test').defaults.default_B_1 === 4
+      g3.B.get('test').defaults.default_B_2 === 200
+   4. test property 'instance' at the child object:
+      g3.B.get('test').instance.lastDefaults.default_A_1 === 1
+      g3.B.get('test').instance.lastDefaults.default_B_1 === 4
+      g3.B.get('test').instance.lastDefaults.default_B_2 === 200
+      g3.B.get('test').instance.lastDefaults.name === 'test'
+      g3.B.get('test').instance.name === 'test'
+      g3.B.get('test').instance.newBuild.A === false
+      g3.B.get('test').instance.newBuild.B === false
+
+*/
+debug = {};
+g3.B.destroy('test');
+g3.B.inherits(true);
+// checks default merging of options: 'defaults'
+$().g3('B', {name: 'test', default_B_1: 5, default_B_2: 100}).init2({debug: debug, options: 'defaults', default_B_2: 200});
+g3.B.inherits(false);
+console.log(debug);
+console.log('Function "B":');
+console.log(g3.B);
+console.log('Object "test":');
+console.log(g3.B.get('test'), 1);
+console.log('-----------------1.-----------------\n"destroy()" for object storage in g3.B.instances\n------------------------------------');
+console.log(g3.B.instances[0].id === 'test');
+console.log('-----------------2.-----------------\nstatic members at g3.B\n------------------------------------');
+console.log(g3.B.name == 'B');
+console.log(g3.B.id == '456');
+console.log(g3.B.static_B == 5);
+console.log(g3.B.store === true);
+console.log(g3.B.options === 'last');
+console.log(g3.B.override === false);
+console.log('-----------------3.-----------------\nproperty "defaults" at the child object with g3.B.options = "last"\n------------------------------------');
+console.log(g3.B.get('test').defaults.default_A_1 === 1);
+console.log(g3.B.get('test').defaults.default_B_1 === 4);
+console.log(g3.B.get('test').defaults.default_B_2 === 200);
+console.log('-----------------4.-----------------\nproperty "instance" at the child object\n------------------------------------');
+console.log(g3.B.get('test').instance.lastDefaults.default_A_1 === 1);
+console.log(g3.B.get('test').instance.lastDefaults.default_B_1 === 4);
+console.log(g3.B.get('test').instance.lastDefaults.default_B_2 === 200);
+console.log(g3.B.get('test').instance.lastDefaults.name === 'test');
+console.log(g3.B.get('test').instance.name === 'test');
+console.log(g3.B.get('test').instance.newBuild.A === false);
+console.log(g3.B.get('test').instance.newBuild.B === false);</pre></div><div class="data hide"><pre data-lang="unformatted">/* tests 2nd level class constructor that overlaps a defaults member of parent */
+g3.B = g3.Class(g3.A, g3.hybridStatic('B'), {
+   STATIC: {
+      defaults: {
+         default_A_1: 100,   // tests overlapping sequence
+         default_B_1: 4
+      },
+      name: 'B',
+      id: '678',
+      static_B: 5
+   },
+   constructor: function(options){
+      var myClass = 'B';
+      // if inheritance level &gt; 1 and you want object storage:
+      g3[myClass].add(this.defaults.name, this);
+      this.instance.prop_B = null,
+      this.init2(options);
+      this.instance.newBuild[myClass] = false;
+   },
+   
+   prototype: {
+      init2: function(options){
+         var debug = {};
+         
+         // 1. If NOT called from constructor
+         if(this.instance.newBuild['B'] === false)
+            g3.B.Super.prototype.init.call(this, options);
+
+         // 2. call functions
+         debug['switch'] = this.switch(options, 'B');
+         debug['getNodes'] = this.getNodes(options);
+         debug['build2'] = this.build2();
+         
+         // 3. update 'options.debug'
+         (options &amp;&amp; (g3.utils.type(options.debug) === 'object')) &amp;&amp; $.extend(true, options.debug, debug);
+         
+         // 4. store last working set of 'this.defaults'
+         this.instance.lastDefaults = this.defaults;
+         
+         return this;
+      },
+      build2: function(){
+         //this.instance.prop_A = 100;   // tests overlapping sequence
+         this.instance.prop_B = 6;
+      },
+      toString: function(){
+         return '[Object g3.B]';
+      }
+   }
+});</pre></div><div class="data hide"><pre data-lang="unformatted">/* tests constructor of child class B
+   1. test same name for object storage, g3.A.instances, g3.B.instances:
+      g3.A.instances[0].id === g3.B.instances[0].id
+   2. test static members at g3.B:
+      g3.B.name === 'B'
+      g3.B.id === '678'
+      g3.B.static_B === 5
+      g3.B.store === true
+      g3.B.options === 'last'
+      g3.B.override === false
+   3. test property 'defaults' at the child object with g3.B.options = 'last':
+      g3.B.get('test').defaults.default_A_1 === 100
+      g3.B.get('test').defaults.default_B_1 === 5
+      g3.B.get('test').defaults.default_B_2 === 100
+   4. test property 'instances' at the child object:
+      g3.B.get('test').instance.lastDefaults.default_A_1 === 100
+      g3.B.get('test').instance.lastDefaults.default_B_1 === 5
+      g3.B.get('test').instance.lastDefaults.default_B_2 === 100
+      g3.B.get('test').instance.lastDefaults.name === 'test'
+      g3.B.get('test').instance.name === 'test'
+      g3.B.get('test').instance.newBuild.B === false
+*/
+var debug = {};
+g3.B.destroy('test');
+g3.B.inherits(true);
+// checks default merging of options: 'last'
+$().g3('B', {name: 'test', default_B_1: 5, default_B_2: 10}).init2({debug: debug, default_B_2: 100});
+g3.B.inherits(false);
+console.log(debug);
+console.log('Function "B":');
+console.log(g3.B);
+console.log('Object "test":');
+console.log(g3.B.get('test'), 1);
+console.log('-----------------1.-----------------\nsame name for object storage, g3.A.instances, g3.B.instances\n------------------------------------');
+console.log(g3.A.instances[0].id === g3.B.instances[0].id);
+console.log('-----------------2.-----------------\nstatic members at g3.B\n------------------------------------');
+console.log(g3.B.name == 'B');
+console.log(g3.B.id == '678');
+console.log(g3.B.static_B == 5);
+console.log(g3.B.store === true);
+console.log(g3.B.options === 'last');
+console.log(g3.B.override === false);
+console.log('-----------------3.-----------------\nproperty "defaults" at the child object with g3.B.options = "last"\n------------------------------------');
+console.log(g3.B.get('test').defaults.default_A_1 === 100);
+console.log(g3.B.get('test').defaults.default_B_1 === 5);
+console.log(g3.B.get('test').defaults.default_B_2 === 100);
+console.log('-----------------4.-----------------\nproperty "instances" at the child object\n------------------------------------');
+console.log(g3.B.get('test').instance.lastDefaults.default_A_1 === 100);
+console.log(g3.B.get('test').instance.lastDefaults.default_B_1 === 5);
+console.log(g3.B.get('test').instance.lastDefaults.default_B_2 === 100);
+console.log(g3.B.get('test').instance.lastDefaults.name === 'test');
+console.log(g3.B.get('test').instance.name === 'test');
+console.log(g3.B.get('test').instance.newBuild.B === false);</pre></div><div class="data hide"><pre data-lang="unformatted">/* tests constructor of child class B
+   1. test 'destroy()' for object storage in g3.B.instances:
+      g3.B.instances[0].id === 'test'
+   2. test static members at g3.B:
+      g3.B.name === 'B'
+      g3.B.id === '678'
+      g3.B.static_B === 5
+      g3.B.store === true
+      g3.B.options === 'last'
+      g3.B.override === false
+   3. test property 'defaults' at the child object with g3.B.options = 'defaults':
+      g3.B.get('test').defaults.default_A_1 === 100
+      g3.B.get('test').defaults.default_B_1 === 4
+      g3.B.get('test').defaults.default_B_2 === 200
+   4. test property 'instance' at the child object:
+      g3.B.get('test').instance.lastDefaults.default_A_1 === 100
+      g3.B.get('test').instance.lastDefaults.default_B_1 === 4
+      g3.B.get('test').instance.lastDefaults.default_B_2 === 200
+      g3.B.get('test').instance.lastDefaults.name === 'test'
+      g3.B.get('test').instance.name === 'test'
+      g3.B.get('test').instance.newBuild.A === false
+      g3.B.get('test').instance.newBuild.B === false
+
+*/
+debug = {};
+g3.B.destroy('test');
+g3.B.inherits(true);
+// checks default merging of options: 'defaults'
+//$().g3('B', {debug: debug, options: 'defaults', name: 'test', default_B_2: 200});
+$().g3('B', {name: 'test', default_B_1: 5, default_B_2: 100}).init2({debug: debug, options: 'defaults', default_B_2: 200});
+g3.B.inherits(false);
+console.log(debug);
+console.log('Function "B":');
+console.log(g3.B);
+console.log('Object "test":');
+console.log(g3.B.get('test'), 1);
+console.log('-----------------1.-----------------\n"destroy()" for object storage in g3.B.instances\n------------------------------------');
+console.log('-----------------2.-----------------\nstatic members at g3.B\n------------------------------------');
+console.log(g3.B.name == 'B');
+console.log(g3.B.id == '678');
+console.log(g3.B.static_B == 5);
+console.log(g3.B.store === true);
+console.log(g3.B.options === 'last');
+console.log(g3.B.override === false);
+console.log(g3.B.instances[0].id === 'test');
+console.log('-----------------3.-----------------\nproperty "defaults" at the child object with g3.B.options = "last"\n------------------------------------');
+console.log(g3.B.get('test').defaults.default_A_1 === 100);
+console.log(g3.B.get('test').defaults.default_B_1 === 4);
+console.log(g3.B.get('test').defaults.default_B_2 === 200);
+console.log('-----------------4.-----------------\nproperty "instance" at the child object\n------------------------------------');
+console.log(g3.B.get('test').instance.lastDefaults.default_A_1 === 100);
+console.log(g3.B.get('test').instance.lastDefaults.default_B_1 === 4);
+console.log(g3.B.get('test').instance.lastDefaults.default_B_2 === 200);
+console.log(g3.B.get('test').instance.lastDefaults.name === 'test');
+console.log(g3.B.get('test').instance.name === 'test');
+console.log(g3.B.get('test').instance.newBuild.A === false);
+console.log(g3.B.get('test').instance.newBuild.B === false);</pre></div></div></div></div><div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">Inheritance from object</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">Base object - derived class!</div><div class="close">X</div></div><div class="tabBar"><div class="title">Call parent object's members: static, prototype, instance</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted">var a = {
+   STATIC: {
+      A: 'A',
+      B: function(){console.log('a.STATIC.B');}
+   },
+   constructor: function(a) {
+      this.a = a;
+   },
+   prototype: {
+      C: 'C',
+      D: function(){console.log('a.prototype.D');}
+   },
+   // instance members
+   E: 'E',
+   F: function(){console.log('a.F');}
+};
+
+var b = g3.Class(a, {
+   STATIC: {
+      G: 'G',
+      H: function(){console.log('b.STATIC.H');}
+   },
+   constructor: function(b) {
+      this.b = b;
+   },
+   prototype: {
+      I: 'I',
+      J: function(){console.log('b.prototype.J');}
+   },
+   // instance members
+   K: 'K',
+   L: function(){console.log('b.L');}
+});
+
+var x = b(100);
+
+console.log('Instance x inherits both prototype, instance and static members of object!');
+
+console.log('---instance x = b(100) where b = g3.Class(a, {...})---');
+console.log(x);
+
+console.log('---literal a---');
+console.log(a, 1);
+
+console.log('---class b---');
+console.log(b);</pre></div><div class="data hide"><pre data-lang="unformatted">var a = {
+   STATIC: {
+      A: 'A',
+      B: function(){console.log('a.STATIC.B');}
+   },
+   constructor: function(a) {
+      this.a = a;
+   },
+   prototype: {
+      C: 'C',
+      D: function(){console.log('a.prototype.D');}
+   },
+   // instance members
+   E: 'E',
+   F: function(){console.log('a.F');}
+};
+
+var b = new g3.Class(a, {
+   STATIC: {
+      G: 'G',
+      H: function(){console.log('b.STATIC.H');}
+   },
+   constructor: function(b) {
+      this.b = b;
+   },
+   prototype: {
+      I: 'I',
+      J: function(){console.log('b.prototype.J');}
+   },
+   // instance members
+   K: 'K',
+   L: function(){console.log('b.L');}
+});
+
+var x = b(100);
+
+console.log('---class b does not have access to static members of a---');
+console.log('b.A: '+b.A);
+console.log('b.B(): ');
+try{b.B();}catch(e){console.log('Error: can\'t access static a.B()');}
+console.log('---*---');
+
+console.log('---object x does have access to prototype &amp; instance members of literal a---');
+console.log('x.C: '+x.C);
+console.log('x.D(): ');
+x.D();
+console.log('x.E: '+x.E);
+console.log('x.F(): ');
+x.F();
+console.log('---*---');
+
+console.log('---we change all literal\'s data stored/given by members by adding a \'new...\'---');
+a.STATIC.A = 'new...A';
+a.STATIC.B = function(){console.log('new...a.STATIC.B');}
+a.prototype.C = 'new...C';
+a.prototype.D = function(){console.log('new...a.prototype.D');}
+a.E = 'new...E';
+a.F = function(){console.log('new...a.F');}
+console.log('---*---');
+
+
+console.log('---class b still does not have access to static members of a---');
+console.log('b.A: '+b.A);
+console.log('b.B(): ');
+try{b.B();}catch(e){console.log('Error: can\'t access static a.B()');}
+console.log('---*---');
+
+console.log('---object x has access to the original prototype &amp; instance members of literal a---');
+console.log('x.C: '+x.C);
+console.log('x.D(): ');
+x.D();
+console.log('x.E: '+x.E);
+console.log('x.F(): ');
+x.F();
+console.log('---*---');
+
+console.log('---it doesn\'t give new values because js copies instance &amp; prototype members with the help of g3.Class---');
+console.log('x.C &amp;lt;&gt; '+a.prototype.C);
+console.log('x.D() &amp;lt;&gt; ');
+a.prototype.D();
+console.log('x.E &amp;lt;&gt; '+a.E);
+console.log('x.F() &amp;lt;&gt; ');
+a.F();</pre></div></div></div></div><div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">Inheritance from function</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">Base function - derived class!</div><div class="close">X</div></div><div class="tabBar"><div class="title">Call parent function's members: static, prototype, instance</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted">var a = function(a) {
+   // instance members
+   this.a = a;
+   this.E = 'E',
+   this.F = function(){console.log('a.F');}
+}
+// static
+a.A = 'A';
+a.B = function(){console.log('a.STATIC.B');}
+// prototypal
+a.prototype = {
+   C: 'C',
+   D: function(){console.log('a.prototype.D');}
+};
+
+var b = g3.Class(a, {
+   STATIC: {
+      G: 'G',
+      H: function(){console.log('b.STATIC.H');}
+   },
+   constructor: function(b) {
+      this.b = b;
+   },
+   prototype: {
+      I: 'I',
+      J: function(){console.log('b.prototype.J');}
+   },
+   // instance members
+   K: 'K',
+   L: function(){console.log('b.L');}
+});
+
+var x = b(100);
+
+console.log('---class b does not have access to static members of a---');
+console.log('b.A: '+b.A);
+console.log('b.B(): ');
+try{b.B();}catch(e){console.log('Error: can\'t access static a.B()');}
+console.log('---*---');
+
+console.log('---object x does have access to prototype &amp; instance members of function a---');
+console.log(x);
+console.log('---*---');
+
+console.log('---function a---');
+console.log(a, 1);
+console.log('---*---');
+
+console.log('---class b---');
+console.log(b);</pre></div><div class="data hide"><pre data-lang="unformatted">var a = function(a) {
+   // instance members
+   this.a = a;
+   this.E = 'E',
+   this.F = function(){console.log('a.F');}
+}
+// static
+a.A = 'A';
+a.B = function(){console.log('a.STATIC.B');}
+// prototypal
+a.prototype = {
+   C: 'C',
+   D: function(){console.log('a.prototype.D');}
+};
+
+var b = g3.Class(a, {
+   STATIC: {
+      G: 'G',
+      H: function(){console.log('b.STATIC.H');}
+   },
+   constructor: function(b) {
+      this.b = b;
+   },
+   prototype: {
+      I: 'I',
+      J: function(){console.log('b.prototype.J');}
+   },
+   // instance members
+   K: 'K',
+   L: function(){console.log('b.L');}
+});
+
+var x = b(100);
+
+console.log('---class b does not have access to static members of a---');
+console.log('b.A: '+b.A);
+console.log('b.B(): ');
+try{b.B();}catch(e){console.log('Error: can\'t access static a.B()');}
+console.log('---*---');
+
+console.log('---object x does have access to prototype &amp; instance members of function a---');
+console.log('x.C: '+x.C);
+console.log('x.D(): ');
+x.D();
+console.log('x.E: '+x.E);
+console.log('x.F(): ');
+x.F();
+console.log('---*---');
+
+console.log('---we change all function\'s data stored/given by members by adding a \'new...\'---');
+a.A = 'new...A';
+a.B = function(){console.log('new...a.STATIC.B');}
+a.prototype.C = 'new...C';
+a.prototype.D = function(){console.log('new...a.prototype.D');}
+console.log('---*---');
+
+console.log('---constructor b still does not have access to static members of a---');
+console.log('b.A: '+b.A);
+console.log('b.B(): ');
+try{b.B();}catch(e){console.log('Error: can\'t access static a.B()');}
+console.log('---*---');
+
+console.log('---object x has access to the new(!) prototype members of function a because js keeps references for prototypes in case of functions---');
+console.log('x.C: '+x.C);
+console.log('x.D(): ');
+x.D();
+console.log('x.E: '+x.E);
+console.log('x.F(): ');
+x.F();</pre></div></div></div></div></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/lib/js/iuGXtklwZorkyG6kJ2zYlKHf.js"></script>
+<script src="/lib/js/g3debug.js"></script>
+<script src="/lib/plugins/g3evaluator/g3evaluator.js"></script>
+<script>
+$(function(){
+   g3.evaluator.getInstance();
+});
+</script>
+
+</body>
+</html>
