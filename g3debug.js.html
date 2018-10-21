@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>g3debug.js - g3 MIT</title>
+    
+    <meta name="description" content="A server-client library" />
+    
+        <meta name="keywords" content="g3, theme builder, eshop, site generator, php, javascript, js, DIL" />
+        <meta name="keyword" content="g3, theme builder, eshop, site generator, php, javascript, js, DIL" />
+    
+    
+    
+    <meta property="og:title" content=""/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content=""/>
+    
+    <meta property="og:url" content=""/>
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="g3.Class.html">Class</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.Class.html#.author">author</a></li><li data-type='member' style='display: none;'><a href="g3.Class.html#.copyright">copyright</a></li><li data-type='member' style='display: none;'><a href="g3.Class.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.Class.html#.version">version</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.Class.html#.extend">extend</a></li><li data-type='method' style='display: none;'><a href="g3.Class.html#.toString">toString</a></li><li data-type='method' style='display: none;'><a href="g3.Class.html#~extendClassByObject">extendClassByObject</a></li></ul></li><li><a href="g3.debug.html">debug</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.debug.html#.author">author</a></li><li data-type='member' style='display: none;'><a href="g3.debug.html#.color">color</a></li><li data-type='member' style='display: none;'><a href="g3.debug.html#.copyright">copyright</a></li><li data-type='member' style='display: none;'><a href="g3.debug.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.debug.html#.name">name</a></li><li data-type='member' style='display: none;'><a href="g3.debug.html#.noFollow">noFollow</a></li><li data-type='member' style='display: none;'><a href="g3.debug.html#.version">version</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.debug.html#.debug()">debug()</a></li><li data-type='method' style='display: none;'><a href="g3.debug.html#.setColor">setColor</a></li><li data-type='method' style='display: none;'><a href="g3.debug.html#.setNoFollow">setNoFollow</a></li><li data-type='method' style='display: none;'><a href="g3.debug.html#popup">popup</a></li><li data-type='method' style='display: none;'><a href="g3.debug.html#toHtml">toHtml</a></li><li data-type='method' style='display: none;'><a href="g3.debug.html#toString">toString</a></li></ul></li><li><a href="g3.Error.html">Error</a></li><li><a href="g3.headless.html">headless</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.headless.html#.author">author</a></li><li data-type='member' style='display: none;'><a href="g3.headless.html#.copyright">copyright</a></li><li data-type='member' style='display: none;'><a href="g3.headless.html#.defaults">defaults</a></li><li data-type='member' style='display: none;'><a href="g3.headless.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.headless.html#.name">name</a></li><li data-type='member' style='display: none;'><a href="g3.headless.html#.version">version</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.headless.html#.constructor">constructor</a></li><li data-type='method' style='display: none;'><a href="g3.headless.html#.inherits">inherits</a></li><li data-type='method' style='display: none;'><a href="g3.headless.html#switch">switch</a></li><li data-type='method' style='display: none;'><a href="g3.headless.html#toString">toString</a></li></ul></li><li><a href="g3.hybrid.html">hybrid</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.hybrid.html#.author">author</a></li><li data-type='member' style='display: none;'><a href="g3.hybrid.html#.copyright">copyright</a></li><li data-type='member' style='display: none;'><a href="g3.hybrid.html#.defaults">defaults</a></li><li data-type='member' style='display: none;'><a href="g3.hybrid.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.hybrid.html#.name">name</a></li><li data-type='member' style='display: none;'><a href="g3.hybrid.html#.version">version</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.hybrid.html#.constructor">constructor</a></li><li data-type='method' style='display: none;'><a href="g3.hybrid.html#.inherits">inherits</a></li><li data-type='method' style='display: none;'><a href="g3.hybrid.html#addLibrary">addLibrary</a></li><li data-type='method' style='display: none;'><a href="g3.hybrid.html#end">end</a></li><li data-type='method' style='display: none;'><a href="g3.hybrid.html#getNodes">getNodes</a></li><li data-type='method' style='display: none;'><a href="g3.hybrid.html#switch">switch</a></li><li data-type='method' style='display: none;'><a href="g3.hybrid.html#to">to</a></li><li data-type='method' style='display: none;'><a href="g3.hybrid.html#toString">toString</a></li></ul></li><li><a href="g3.HybridTemplate.html">HybridTemplate</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.HybridTemplate.html#.author">author</a></li><li data-type='member' style='display: none;'><a href="g3.HybridTemplate.html#.copyright">copyright</a></li><li data-type='member' style='display: none;'><a href="g3.HybridTemplate.html#.defaults">defaults</a></li><li data-type='member' style='display: none;'><a href="g3.HybridTemplate.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.HybridTemplate.html#.name">name</a></li><li data-type='member' style='display: none;'><a href="g3.HybridTemplate.html#.version">version</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.HybridTemplate.html#.constructor">constructor</a></li><li data-type='method' style='display: none;'><a href="g3.HybridTemplate.html#addBack">addBack</a></li><li data-type='method' style='display: none;'><a href="g3.HybridTemplate.html#applyEvents">applyEvents</a></li><li data-type='method' style='display: none;'><a href="g3.HybridTemplate.html#buildn">buildn</a></li><li data-type='method' style='display: none;'><a href="g3.HybridTemplate.html#destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="g3.HybridTemplate.html#initn">initn</a></li><li data-type='method' style='display: none;'><a href="g3.HybridTemplate.html#toString">toString</a></li></ul></li></ul><h3>Namespaces</h3><ul><li><a href="g3.utils.html">utils</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.utils.html#.id">id</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.utils.html#.addDate">addDate</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.clearString">clearString</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.contains">contains</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.createScriptNode">createScriptNode</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.createStyleNode">createStyleNode</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.deleteEventLock">deleteEventLock</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.getEventLock">getEventLock</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.getWindow">getWindow</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.isEmptyObject">isEmptyObject</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.isMobile">isMobile</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.isVisible">isVisible</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.printHTML">printHTML</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.randomString">randomString</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.revertPrintHTML">revertPrintHTML</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.setEventLock">setEventLock</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.type">type</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.warning">warning</a></li></ul></li></ul><h3>Mixins</h3><ul><li><a href="g3.headlessStatic.html">headlessStatic</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.author">author</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.copyright">copyright</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.instances">instances</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.name">name</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.options">options</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.override">override</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.plugins">plugins</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.store">store</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.version">version</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.headlessStatic.html#.add">add</a></li><li data-type='method' style='display: none;'><a href="g3.headlessStatic.html#.destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="g3.headlessStatic.html#.get">get</a></li><li data-type='method' style='display: none;'><a href="g3.headlessStatic.html#.inherits">inherits</a></li><li data-type='method' style='display: none;'><a href="g3.headlessStatic.html#.plugin">plugin</a></li><li data-type='method' style='display: none;'><a href="g3.headlessStatic.html#.Singleton">Singleton</a></li><li data-type='method' style='display: none;'><a href="g3.headlessStatic.html#.toString">toString</a></li></ul></li><li><a href="g3.hybridStatic.html">hybridStatic</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.author">author</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.autoFill">autoFill</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.copyright">copyright</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.instances">instances</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.name">name</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.options">options</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.override">override</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.plugins">plugins</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.store">store</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.version">version</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.hybridStatic.html#.add">add</a></li><li data-type='method' style='display: none;'><a href="g3.hybridStatic.html#.destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="g3.hybridStatic.html#.get">get</a></li><li data-type='method' style='display: none;'><a href="g3.hybridStatic.html#.inherits">inherits</a></li><li data-type='method' style='display: none;'><a href="g3.hybridStatic.html#.library">library</a></li><li data-type='method' style='display: none;'><a href="g3.hybridStatic.html#.plugin">plugin</a></li><li data-type='method' style='display: none;'><a href="g3.hybridStatic.html#.Singleton">Singleton</a></li><li data-type='method' style='display: none;'><a href="g3.hybridStatic.html#.toString">toString</a></li></ul></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-class.html">Class usage</a></li><li><a href="tutorial-hybrid.html">Hybrid class system</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">g3debug.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>(function(g3, $, window, document, undefined){
+/**
+ * @summmary
+ * g3.debug
+ * --------
+ * @summary
+ * The return of `g3.debug` when called as function is an object for debugging 
+ * purposes.
+ * @desc
+ * Internally, `g3.debug` stores:
+ * - a flattened representation of the object that we pass as 1st argument and 
+ * 
+ * - functions that can stringify that argument.
+ * 
+ * These functions can print native types (number, boolean, string, date, array, etc.), 
+ * functions and objects of any type native, host or custom in the form of:
+ * - `value` for simple types or, 
+ * 
+ * - `[depth] key -> value` for complex ones.
+ * 
+ * Circular references are never followed. 
+ * 
+ * Flattened representation of objects
+ * -----------------------------------
+ * A flattened representation of the tree-structure of an object is a 2-dimensional 
+ * `array(i, j)` whose index `i` stores a 3 to 5-cell linear sub-array where: 
+ * 1. sub-index `0`, `(i, 0)`, keeps the depth of the current member, 
+ * 
+ * 2. sub-index `1`, `(i, 1)`, keeps the name of the member, 
+ * 
+ * 3. sub-index `2`, `(i, 2)`, keeps the member's value, 
+ * 
+ * 4. sub-index `3`, `(i, 3)`, keeps a formatted string of this value and 
+ * 
+ * 5. sub-index `4`, `(i, 4)`, keeps possible references of that value in other 
+ *    places in the tree. 
+ * 
+ * This representation exhibits some interesting behaviours:
+ *
+ * 1) Between two successive&amp;#42; depths with the same value, `n` at `(i, 0)` and `(i + j, 0)`
+ *    exist all members of the object at `(i, 1)` as in the following example:
+ * 
+ * (&amp;#42;)successive = there is not a number less than n bettwen them.
+ * 
+ * ```
+ * members        |(i+j,0)->depth|(i+j,1)->member|(i+j, 2)->value
+ * .............  | .........    | .........     | .........
+ * |--[a]         |(i,   0)->n   |(i,   1)->'a'  |(i,   1)->'custom object' &lt;---|
+ * |   |--[b]     |(i+1, 0)->n+1 |(i+1, 1)->'b'  |(i+1, 1)->'custom object' \   | members of
+ * |   |   |--[c] |(i+2, 0)->n+2 |(i+2, 1)->'c'  |(i+2, 1)->'value of c'    |----
+ * |   |--[d]     |(i+3, 0)->n+1 |(i+3, 1)->'d'  |(i+3, 1)->'value of d'    /
+ * |--[e]         |(i+4, 0)->n   |(i+4, 1)->'e'  |(i+4, 1)->'value of e'  |----> not a member
+ * ............   | .........    | .........     | .........
+ *```
+ * 
+ * 2) Similarly, successive&amp;#42; entries with the same depth n+1 are all members of the 
+ * object at depth n at the entry immediate before the first of them. Example: 
+ * at n+1 we can see 2 members of an object at depth n.
+ * 
+ * (&amp;#42;)successive = there is not a number less than n between them.
+ * @class g3.debug
+ * @version 0.2
+ * @author {@link https:/github.com/centurianii}
+ * @copyright MIT licence
+ */
+
+/**
+ * @summmary
+ * g3.debug
+ * --------
+ * @summary
+ * Returns a debugging object.
+ * @desc
+ * The 3rd argument, `noFollow`, controls the boolean result of an internal 
+ * private function `_isIterable(object)` that applies rules in this order where
+ * the higher overwrites the lower ones:
+ * 1. is the object empty? negate the result,
+ * 
+ * 2. is the type unknown? result = true,
+ * 
+ * 3. does object's type is contained at the 3rd argument `noFollow`? result = false,
+ * 
+ * 4. is this a circular reference? result = false.
+ * 
+ * See also static {@link g3.debug.noFollow} and {@link g3.debug.setNoFollow}.
+ * @function debug()
+ * @memberof g3.debug
+ * @param {*} obj An identifier of any type that is to be analysed
+ * @param {Integer} maxDepth The maximum depth to look for; zero-based
+ * @param {Boolean|null|String} noFollow if it is true, null or anything other than a 
+ *    string, analysis excludes: `string`, `array` types, object references and 
+ *    the prototype chain (i.e. `g3.debug.noFollow = "string array references prototype"`,
+ *    see {@link g3.debug.noFollow});
+ *    if it is the value `string` (`g3.debug.noFollow = "string"`), analysis 
+ *    excludes `string` types etc.; if it is `false` or empty string `""`, 
+ *    analysis happens to everything, i.e. `"string", "array", "object", "function", "unknown"` 
+ *    type etc., as long it is not empty
+ * @return {Object} A debugging object
+ */
+g3.debug = function(obj, maxDepth, noFollow){ //construct with argument
+   var tree = [], refs = [], max = 0, proto,
+   natives = ['boolean', 'string', 'undefined', 'null', 'nan', 'number', 'date', 'object', 'function', 'array', 'regexp'];
+   
+   //some initialization
+   function _init(){
+      refs.push(-1);
+      if((g3.utils.type(maxDepth) === 'number') &amp;&amp; (maxDepth > 0))
+         max = maxDepth;
+      //false for 3rd argument means the user wants everything to be followed (traversed) down the tree
+      if(noFollow === false)
+         noFollow = '';
+      //absence of 3rd argument means user leaves the function to decide
+      if(g3.utils.type(noFollow) !== 'string')
+         noFollow = g3.debug.noFollow;
+      noFollow = noFollow.toLowerCase();
+      //search prototype chain if it's not excluded from argument 'noFollow'
+      if(noFollow.indexOf('prototype') === -1)
+         proto = 'prototype';
+   }
+   
+   //define iterability on passed argument: this is not the same as object's 
+   //emptiness in cases where it isn't empty! 
+   //e.g. we want strings to be printed as strings and not as arrays!
+   function _isIterable(obj, ndx){
+      //1. basic check of iterability
+      var result = !g3.utils.isEmptyObject(obj, proto), tmp;
+      //2. make all unknown types iterable
+      tmp = _describeValue(obj).toLowerCase();
+      if(tmp.indexOf('unknown') > -1)
+         result = true;
+      //3. apply rules of 3rd argument at g3.debug() that make object non-iterable
+      if(noFollow.indexOf(g3.utils.type(obj)) > -1)
+         result = false;
+      else if((noFollow.indexOf('reference') > -1) &amp;&amp; ndx &amp;&amp; tree[ndx] &amp;&amp; 
+         (tree[ndx].length === 5) &amp;&amp; 
+         (tree[ndx][4].indexOf('reference') > -1))
+         result = false;
+      else if((noFollow.indexOf('unknown') > -1) &amp;&amp; (tmp.indexOf('unknown') > -1))
+         result = false;
+      return result;
+   }
+   
+   function _traverse(o, i){
+      var value, tmp, circular, ref, level;
+      
+      if(_isIterable(o)){
+         for (var property in o){
+            /* 1. Find values
+             * --------------
+             * can't give numbers as properties, 
+             * e.g.: Mozila's number-properties of 'style' object!!!
+             */
+            property += '';
+            try{
+               value = o[property];
+            }catch(e){
+               //Attention: 4th cell should be a string!
+               tree.push([i, property, '[Error]', e.toString(), '[Error]']);
+               continue;
+            }
+            
+            /* 2. Print type &amp; value
+             * ---------------------
+             * add a new record of depth-property-value-descriptor
+             */
+            tree.push([i, property, value, _describeValue(value)]);
+            
+            /* 3. Start recursion
+             * ------------------
+             * Operator typeof reports everything that can be iterated -except 
+             * functions!- as objects. Attention: don't analyze or store nulls
+             * because we'll have too many annoying reference messages!
+             */
+            if((value !== null) &amp;&amp; ((typeof value === 'function') || (typeof value === 'object'))){
+               ref = false;
+               circular = false;
+               //1. search for references
+               for(var j = 1; j &lt; refs.length; j++){
+                  if(tree[refs[j]][2] === value){
+                     ref = true;
+                     tmp = 'references object at index ' + (refs[j] + 1);
+                     break;
+                  }
+               }
+               //2. search for circular references
+               if(obj === value){
+                  circular = true;
+                  tmp = 'circular reference of the root object';
+               }else if(tree.length > 1){
+                  level = tree[tree.length - 1][0];
+                  for(var k = 1; k &lt; tree.length; k++){
+                     if(tree[tree.length - 1 - k][0] &lt; level){
+                        level = tree[tree.length - 1 - k][0];
+                        if(tree[tree.length - 1 - k][2] === value){
+                           circular = true;
+                           tmp = 'circular reference of object at index ' + (tree.length - k);
+                           break;
+                        }
+                     }
+                  }
+               }
+               
+               //add a 5th cell in record!
+               if(ref || circular)
+                  tree[tree.length - 1].push(tmp);
+               
+               //update object store
+               if(!ref &amp;&amp; !circular)
+                  refs.push(tree.length - 1);
+               //start recursion with new 2nd arg but keep original!
+               if((!circular) &amp;&amp; (i &lt; max) &amp;&amp; _isIterable(value, tree.length - 1))
+                  _traverse(value, i+1);
+            }
+         }
+      //_traverse(o, i) was called with a non-iterable argument!
+      //shouldn't come here from a recursion!
+      }else if(o === obj)
+         tree.push([null, null, _describeValue(o)]);
+   };
+   
+   //instead of the value of a property, we'll store a string description as a 
+   //4th cell so that we can apply text formations before returning a value from '.toHtml()'
+   //Attention: we don't handle images as natives because Firefox reports them 
+   //as empty objects and the only way to iterate over is to declare them unknown types!
+   function _describeValue(value){
+      var tmp = '', type = g3.utils.type(value);
+      
+      if(natives.indexOf(type) > -1){
+         if(type === 'boolean')
+            tmp = (typeof value === 'object')?'Boolean['+value.toString()+']':'['+value.toString()+']';
+         else if(type === 'string')
+            tmp = (typeof value === 'object')?'String['+value.toString()+']':(value)? value.toString(): '\'\'';
+         else if(type === 'undefined')
+            tmp = 'undefined';
+         else if(type === 'null')
+            tmp = '[null]';
+         else if(type === 'nan')
+            tmp = '[NaN]';
+         else if(type === 'number')
+            tmp = (typeof value === 'object')?'Number['+value.toString()+']':value.toString();
+         else if(type === 'date')
+            tmp = 'Date['+value.toString()+']';
+         else if(type === 'object')
+            if(g3.utils.isEmptyObject(value, proto))
+               tmp = 'Object[{}]';
+            else
+               tmp = 'Object['+value+']'; //avoid use of .toString()
+         else if(type === 'function'){
+            tmp = 'Function[';
+            if(value.toString)
+               tmp += value.toString().slice(0, value.toString().indexOf('{')+1).replace(/\n|\r|[\b]/g, '') + '...}';
+            tmp += ']';
+         }else if(type === 'array')
+            /*typeof operator can't differentiate object from literal construction!*/
+            tmp = 'Array['+value.toString()+']';
+         else if(type === 'regexp')
+            /*typeof operator can't differentiate object from literal construction!*/
+            tmp = 'RegExp['+ value.toString() + ']';
+      }else
+         tmp = 'Unknown[' + value + ']'; //avoid use of .toString()
+      
+      return tmp;
+   }
+   
+   //should be called only for records with 4 members, i.e. when '_traverse()' 
+   //has been iterated the passed argument at least 1 time!
+   function _formatRow(record){
+      var c_i = g3.debug.color.level, c_prop = g3.debug.color.property, c_val = g3.debug.color.value, c_ref = g3.debug.color.reference, tmp = '';
+      if((record.length === 5) &amp;&amp; ((record[4].indexOf('Error') > -1) || (record[4].indexOf('circular') > -1))){
+         c_val = 'red';
+         c_ref = 'red';
+      }
+      if(record[0] !== null)
+         tmp += '&lt;span style="color: '+c_i+'">[' + record[0] + '] &lt;/span>';
+      if(record[1] !== null)
+         tmp += '&lt;span style="color: '+c_prop+'">' + record[1] + '&lt;/span> &lt;span style="font-size: 1.4em">&amp;#8594;&lt;/span> ';
+      tmp += '&lt;span style="color: '+c_val+'">' + g3.utils.printHTML(record[3]).replace(/\n/g, '&lt;br />') + '&lt;/span>&lt;br />';
+      if(record.length >= 5)
+         tmp += '&lt;span style="color: '+c_ref+'; font-style: italic">' + g3.utils.printHTML(record[4]).replace(/\n/g, '&lt;br />') + '&lt;/span>';
+      return tmp;
+   }
+   
+   function _toString(){
+      var tmp = _describeValue(obj) + '\n';
+      for(var i = 0; i &lt; tree.length; i++){
+         if(tree[i][0] !== null)
+            tmp += '[' + tree[i][0] + '] ';
+         if(tree[i][1] !== null)
+            tmp += tree[i][1] + ' -> ';
+         if(tree[i].length >= 4)
+            tmp += tree[i][3] + '\n';
+         if(tree[i].length >= 5)
+            tmp += tree[i][4] + '\n';
+      }
+      return tmp;
+   }
+   
+   function _toHtml(tag){
+      var tmp, start, end;
+      if(g3.utils.type(tag) !== 'string')
+         tag = 'ol';
+      else{
+         tag = tag.toLowerCase();
+         if(tag.indexOf('o') >= 0)
+            tag = 'ol';
+         else if(tag.indexOf('u') >= 0)
+            tag = 'ul';
+         else
+            tag = 'ol';
+      }
+      if(tree.length > 1){
+         tmp = '&lt;p style="font-weight: bold;">' + _describeValue(obj) + '&lt;p/>&lt;'+tag+' style="padding: 0 40px;">';
+         start = '&lt;li>';
+         end = '&lt;/li>';
+      }else if(tree.length === 1)
+         return tree[0][2] + '&lt;br />';
+      else if(tree.length &lt; 1)
+         return '';
+      
+      for(var i = 0; i &lt; tree.length; i++)
+         tmp += start + '&lt;p style="margin: 0 0 0 '+tree[i][0]*2+'em">'+_formatRow(tree[i])+'&lt;/p>' + end;
+      if(tree.length > 1)
+         tmp += '&lt;/'+tag+'>';
+      return tmp;
+   }
+   
+   function _popup(tag){
+      if(g3.utils.type(tag) !== 'string')
+         tag = 'pre';
+      else{
+         tag = tag.toLowerCase();
+         if(tag.indexOf('o') >= 0)
+            tag = 'ol';
+         else if(tag.indexOf('u') >= 0)
+            tag = 'ul';
+         else if(tag.indexOf('pre') >= 0)
+            tag = 'pre';
+         else
+            tag = 'pre';
+      }
+      var w = window.open("about:blank");
+      w.document.open();
+      w.document.writeln("&lt;HTML>&lt;BODY>");
+      if(tag === 'pre'){
+         w.document.writeln("&lt;PRE>");
+         w.document.writeln(this.toString());
+         w.document.writeln("&lt;/PRE>");
+      }else
+         w.document.writeln(this.toHtml(tag));
+      
+      w.document.writeln("&lt;/BODY>&lt;/HTML>");
+      w.document.close();
+      return this;
+   }
+   
+   _init();
+   _traverse(obj, 0);
+   
+   return {
+      /**
+       * @summary g3.debug.toString
+       * --------------------------
+       * @desc
+       * Returns a string representation of the structure based on a 0-based index
+       * of the form: `index [depth] key -> value`.
+       * 
+       * Each pair ends with a newline character, i.e. '\n'.
+       * @function g3.debug#toString
+       * @return {String} A string representation of the structure
+       */
+      toString: _toString,
+      
+      /**
+       * @summary g3.debug.toHtml
+       * ------------------------
+       * @desc
+       * Returns an html representation of the structure based on a 0-based index
+       * of the form: `index [depth] key -> value`.
+       * @function g3.debug#toHtml
+       * 
+       * @return {Object} This object
+       */
+      toHtml: _toHtml,
+      
+      /**
+       * @summary g3.debug.popup
+       * -----------------------
+       * @desc
+       * Opens a new window and writes an html string with formation that follows 
+       * the passed argument.
+       * @function g3.debug#popup
+       * @param {String} tag One of the strings: `[pre, o, u]` with default 
+       * value `pre` that represent formation html tags
+       * @return {Object} This object
+       */
+      popup: _popup
+   };
+};
+
+// **************************************************
+//  STATIC METHODS
+// **************************************************
+/**
+ * @summary g3.debug.setColor
+ * --------------------------
+ * @desc
+ * Sets color values of static property {@link g3.debug.color}.
+ * @function g3.debug.setColor
+ * @param {Object} arg An object with the form `{level: ..., property: ..., value: ..., reference: ...}`
+ * @return {Function} The construction function {@link g3.debug}
+ */
+g3.debug.setColor = function(arg){
+   for(var prop in arg)
+      if(g3.utils.type(arg[prop]) === 'string')
+         g3.debug.color[prop] = arg[prop];
+   return g3.debug;
+};
+/**
+ * @summary g3.debug.setNoFollow
+ * -----------------------------
+ * @desc
+ * It changes static property {@link g3.debug.noFollow} by adding or removing 
+ * sub-strings.
+ * 
+ * To add one or more sub-strings pass an argument with the strings space separated
+ * starting with a `+`, like `+prototype +reference`. Similarly to exclude start 
+ * with a `-`, like `-reference` or any combination, like `+prototype -reference`.
+ * 
+ * Acceptable sub-strings:
+ * - `prototype`, 
+ * 
+ * - `reference(s)`, 
+ * 
+ * - `unknown`, 
+ * 
+ * - `boolean`, 
+ * 
+ * - `string`, 
+ * 
+ * - `undefined`,
+ * 
+ * - `null`, 
+ * 
+ * - `nan`,
+ * 
+ * - `number`, 
+ * 
+ * - `date`, 
+ * 
+ * - `object`, 
+ * 
+ * - `function`, 
+ * 
+ * - `array`, 
+ * 
+ * - `regexp`.
+ * @function g3.debug.setNoFollow
+ * @param {Object} arg An object with the form `{level: ..., property: ..., value: ..., reference: ...}`
+ * @return {Function} The construction function {@link g3.debug}
+ */
+g3.debug.setNoFollow = function(arg){
+   if(g3.utils.type(arg) !== 'string')
+      return g3.debug;
+   var arr = arg.split(/\s/g), i, tmp;
+   for(i = 0; i &lt; arr.length; i++)
+      if(!arr[i]){
+         arr.splice(i, 1);
+         i--;
+      }
+   for(i = 0; i &lt; arr.length; i++){
+      tmp = arr[i].slice(1);
+      if(arr[i].indexOf('+') > -1){
+         if(tmp &amp;&amp; (g3.debug.noFollow.indexOf(tmp) === -1))
+            g3.debug.noFollow += ' ' + tmp;
+      }else if(arr[i].indexOf('-') > -1){
+         if(tmp &amp;&amp; (g3.debug.noFollow.indexOf(tmp) > -1))
+            g3.debug.noFollow = g3.utils.clearString(g3.debug.noFollow, ' ', tmp);
+      }else{
+         if(i === 0)
+            g3.debug.noFollow = arr[i] + ' ';
+         else
+            g3.debug.noFollow += arr[i] + ' ';
+      }
+   }
+   g3.debug.noFollow = g3.debug.noFollow.replace(/^\s+|\s+$/g, '');
+   return g3.debug;
+};
+
+// **************************************************
+//  STATIC PROPERTIES
+// **************************************************
+/**
+ * @summary g3.debug.color
+ * -----------------------
+ * @desc
+ * An object with members that contain color values for the output of {@link g3.debug#toHtml}.
+ * 
+ * The values follow the syntax of the css `color` property.
+ * The format of this object is: 
+ * ```
+ * {
+ *    level: ..., 
+ *    property: ..., 
+ *    value: ..., 
+ *    reference: ...
+ * }
+ * ```
+ * @var {Object} color
+ * @prop {String} level Colorizes the depth of a property
+ * @prop {String} property Colorizes the property
+ * @prop {String} value Colorizes the value of a property
+ * @prop {String} reference Colorizes found cyclic references
+ * @memberof g3.debug
+ */
+g3.debug.color = {
+   level: 'brown',
+   property: 'blue',
+   value: 'blue',
+   reference: 'brown'
+};
+/**
+ * @summary g3.debug.noFollow
+ * --------------------------
+ * @desc
+ * A space delimited string of types that we don't want to iterate on.
+ * 
+ * Defaults to **`string array references prototype`**.
+ * @var {String} noFollow
+ * @memberof g3.debug
+ */
+g3.debug.noFollow = 'string array references prototype';
+/**
+ * @summary g3.debug.id
+ * --------------------
+ * @desc
+ * `Q1uXNSTUV2JX5pge4dzSay8b`
+ * @var {String} id
+ * @memberof g3.debug
+ */
+g3.debug.id = 'Q1uXNSTUV2JX5pge4dzSay8b';
+/**
+ * @summary g3.debug.name
+ * ----------------------
+ * @desc
+ * `g3.debug`
+ * @var {String} name
+ * @memberof g3.debug
+ */
+g3.debug.name = 'g3.debug';
+/**
+ * @summary g3.debug.version
+ * -------------------------
+ * @desc
+ * `0.2`
+ * @var {String} version
+ * @memberof g3.debug
+ */
+g3.debug.version = '0.2';
+/**
+ * @summary g3.debug.author
+ * ------------------------
+ * @desc
+ * {@link https:/github.com/centurianii}
+ * @var {String} author
+ * @memberof g3.debug
+ */
+g3.debug.author = 'https:/github.com/centurianii';
+/**
+ * @summary g3.debug.copyright
+ * ---------------------------
+ * @desc
+ * MIT licence, copyright {@link https:/github.com/centurianii}.
+ * @var {String} copyright
+ * @memberof g3.debug
+ */
+g3.debug.copyright = 'MIT licence, copyright https:/github.com/centurianii';
+}(window.g3 = window.g3 || {}, jQuery, window, document));
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Oct 21 2018 15:26:43 GMT+0300 (EEST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/jquery-3.1.1.min.js"></script>
+
+<script src="scripts/search.js"></script>
+
+
+<script src="scripts/collapse.js"></script>
+
+
+
+</body>
+</html>
