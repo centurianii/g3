@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Class - g3 MIT</title>
+    <title>measure - g3 MIT</title>
     
     <meta name="description" content="A server-client library" />
     
@@ -45,7 +45,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Class</h1>
+    <h1 class="page-title">measure</h1>
     
 
     
@@ -60,7 +60,7 @@
         <h2>
             <span class="ancestors"><a href="g3.html">g3</a>.</span>
         
-        Class
+        measure
         </h2>
         
     
@@ -74,10 +74,12 @@
 
     
 
-    <h4 class="name" id="Class"><span class="type-signature"></span>new Class<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="measure"><span class="type-signature"></span>new measure<span class="signature">(el, win)</span><span class="type-signature"> &rarr; {Boolean|null|Object}</span></h4>
 
     
-    <p class="summary"><p>A factory of class constructors that use js prototypal inheritance.</p></p>
+    <p class="summary"><p>Returns an object that contains utility methods and properties that calculate 
+the dimensions and position of an element, window, document or viewport or the 
+value and unit in a string.</p></p>
     
 
 
@@ -88,13 +90,13 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="g3Class.js.html">g3Class.js</a>, <a href="g3Class.js.html#line2">line 2</a>
+        <a href="g3measure.js.html">g3measure.js</a>, <a href="g3measure.js.html#line68">line 68</a>
     </li></ul></dd>
     
 
     
     <dt class="tag-version">Version:</dt>
-    <dd class="tag-version"><ul class="dummy"><li>0.6</li></ul></dd>
+    <dd class="tag-version"><ul class="dummy"><li>0.1</li></ul></dd>
     
 
     
@@ -141,504 +143,52 @@
 
 
 <div class="description">
-    <p>The constructor that this factory returns is an anonymous function that 
-encapsulates the one that might have been given in the factory's 
-arguments (last one) and succeeds even when the user did not provide a 
-constructor even in a scenario of a long inheritance chain!</p>
-<p>Objects are built with or without new operator.</p>
-<p>When inheritance exists, the constructor calls implicitly the parent passing
-all it's arguments there (if they exists).</p>
-<p>We can even build inheritance on an object as a base &quot;class&quot;!</p>
-<p>All IE versions that don't support <code>__proto__</code> property fail to populate 
-object's prototype members to a function that will act as a class constructor.</p>
-<p>Object properties <code>STATIC</code>, <code>constructor</code> and <code>prototype</code> in factory's 
-arguments are handled in special manner (see rule 5) also, <code>Super</code> is 
-(re-)defined in construction function when inheritance exists.</p>
-<h2>Characteristics:</h2><p>1) unlimited depth inheritance, </p>
-<p>2) static members, </p>
-<p>3) function or object mixins,</p>
-<p>4) parent/class definition/mixins are passed as first/last/intermediate 
-   factory's arguments and they are defined as objects/functions inline or 
-   external,</p>
-<p>5) when parent or class definition are defined as objects, respective 
-   anonymous functions are constructed in place of constructors that follow 
-   a rule that all members under property <strong><code>prototype</code></strong> become prototypal 
-   members, all members under property <strong><code>STATIC</code></strong> become static members 
-   whereas all the rest members become instance ones; the members are moved 
-   by copy except the prototypal ones which are truly references of the 
-   originals,</p>
-<p>6) when a mixin is defined as object, it follows rule (5) and only unique 
-   static and prototype members are assigned to class's construction function 
-   (unique means it doesn't overwrite),</p>
-<p>7) when a mixin is defined as function, similar to (5) it is handled as a 
-   class construction function where only unique static and prototype members 
-   are assigned to class's construction function (unique means it doesn't 
-   overwrite),</p>
-<p>8) a class inherits from a parent only prototypal functions and parent's 
-   instance properties as expected (they might be overwritten by the 
-   constructor) which are defined by rule (5) in case of object-parent 
-   (static members are not transfered),</p>
-<p>9) any construction function can use the special property <strong><code>Super</code></strong> to access 
-   it's parent constructor or prototype methods with the help of 
-   <code>.call(this, arg1, arg2, ...)</code> or <code>.apply(this, arguments)</code>,</p>
-<p>10) objects are created with or without the <strong><code>new</code></strong> operator,</p>
-<p>11) when a class constructor is called and a parent exists, that parent is 
-    called first implicitly with the arguments of the constructor,</p>
-<p>12) when a class constructor is called the initial construction function 
-    at class definition in factory's arguments is called last implicitly 
-    with the arguments of the constructor.</p>
-<h2>If the first/last argument is a function</h2><p>it complies with the following:</p>
+    <p>In case of a number object, it behaves as in the case of a string. </p>
+<p>When the passed argument is:</p>
 <ul>
-<li><p>instance properties are declared with <strong><code>this</code></strong>,</p>
+<li><p><code>window.screen</code> or <code>&quot;screen&quot;</code>: it returns <code>{width: &lt;value&gt;, height: &lt;value&gt;}</code>,</p>
 </li>
-<li><p>static properties are assigned as function members and</p>
+<li><p><code>&quot;viewport&quot;</code>: returns <code>{left: &lt;value&gt;, top: &lt;value&gt;, width: &lt;value&gt;, height: &lt;value&gt;}</code>,
+   <code>left</code> and <code>top</code> values are measured from document respective edges and 
+   give the amount of scroll,</p>
 </li>
-<li><p>prototype functions are assigned to <strong><code>prototype</code></strong> property.</p>
+<li><p><code>document</code> or <code>&quot;document&quot;</code>: returns <code>{width: &lt;value&gt;, height: &lt;value&gt;}</code>,</p>
+</li>
+<li><p>a node reference: returns immediate on built the following object</p>
 </li>
 </ul>
-<h2>If the first/last argument is an object</h2><p>it complies with the following:</p>
-<ul>
-<li><p>member <code>constructor</code> will become the new parent/class construction 
-function, everything defined inside the constructor with <strong><code>this</code></strong> will 
-become a public member, everything defined with <strong><code>var</code></strong> or 
-<strong><code>function</code></strong> will become a private member, these internal functions 
-are privileged methods,</p>
+<pre class="prettyprint source"><code>{
+   outerWidth: ..., 
+   innerWidth: ..., 
+   outerHeight: ..., 
+   innerHeight: ..., 
+   width: ..., 
+   height: ..., 
+   left: ...,              // from document left
+   top: ...,               // from document top
+   viewLeft:...,           // from viewport left
+   viewTop: ...,           // from viewport top
+   viewRight: ...,         // from viewport left
+   viewBottom: ...,        // from viewport top 
+   visible: ...
+   intersect: &lt;function>,
+   adjucent: &lt;function>
+}</code></pre><ul>
+<li><p>number: returns object <code>{value: &lt;value&gt;, unit: undefined}</code>,</p>
 </li>
-<li><p>all members under property <strong><code>prototype</code></strong> of this object will become 
-prototypal methods,</p>
+<li><p><code>&lt;string&gt;</code>: returns object <code>{value: &lt;value&gt;, unit: &lt;value&gt;}</code> as it parses 
+   numeric values from the start extracting the number from the unit part. 
+   If there is not a unit, it uses <code>undefined</code> by default. If number can't 
+   be found, returns null,</p>
 </li>
-<li><p>all members under property <strong><code>STATIC</code></strong> will become static members and,</p>
-</li>
-<li><p>all the rest members of this object will become instance properties.</p>
+<li><p>anything else: returns <code>null</code>.</p>
 </li>
 </ul>
-<p>Should note that duplicates in parent (static, prototype, instance members) 
-will not overwrite those of the class construction function.</p>
-<h2>Use of special static property <strong><code>Super</code></strong>:</h2><p>one can access the parent constructor with <code>NewClass.Super.call(this, arg1, arg2, ...)</code> 
-and every parent's method with <code>NewClass.Super.prototype.method.call(this, arg1, arg2, ...)</code>,
-or the equivallent <code>NewClass.Super.apply(this, arguments)</code> and 
-<code>NewClass.Super.prototype.method.apply(this, arguments)</code>.</p>
-<p>Instead of <code>NewClass</code> an externally defined construction function can use 
-it's own name with <code>Super</code>.</p>
-<p>All in-between arguments, 2nd to n-1, borrow their members to the new object 
-resulting in class or object mixins. In case of objects, the rule 6 for the 
-mixins applies except method <strong><code>constructor</code></strong> which is not tranferred even 
-if it does not exist at the class definition (last) argument of the factory.</p>
-<p>Note that duplicate members, static or prototypal, between arguments are 
-not overwritten so that the first one takes precedence over all the next.
-In case of instance members, inherited duplicates are overwritten in a way
-that last one replaces all previous.</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-        </div>
-    
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-        <h3 class="subsection-title">Members</h3>
-
-        
-            
-<h4 class="name" id=".author"><span class="type-signature">(static) </span>author<span class="type-signature"> :string</span></h4>
-
-
-<p class="summary"><h2>g3.Class.author</h2></p>
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="g3Class.js.html">g3Class.js</a>, <a href="g3Class.js.html#line390">line 390</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>https:/github.com/centurianii</p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id=".copyright"><span class="type-signature">(static) </span>copyright<span class="type-signature"> :string</span></h4>
-
-
-<p class="summary"><h2>g3.Class.copyright</h2></p>
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="g3Class.js.html">g3Class.js</a>, <a href="g3Class.js.html#line400">line 400</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>MIT licence, copyright https:/github.com/centurianii.</p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id=".id"><span class="type-signature">(static) </span>id<span class="type-signature"> :string</span></h4>
-
-
-<p class="summary"><h2>g3.Class.id</h2></p>
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="g3Class.js.html">g3Class.js</a>, <a href="g3Class.js.html#line370">line 370</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p><code>I8VqVVXVJsXjxir3ERfld81H</code></p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id=".version"><span class="type-signature">(static) </span>version<span class="type-signature"> :string</span></h4>
-
-
-<p class="summary"><h2>g3.Class.version</h2></p>
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="g3Class.js.html">g3Class.js</a>, <a href="g3Class.js.html#line380">line 380</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p><code>0.6</code></p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-        
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-
-    
-
-    <h4 class="name" id=".extend"><span class="type-signature">(static) </span>extend<span class="signature">(obj, extension, override, type)</span><span class="type-signature"> &rarr; {undefined}</span></h4>
-
-    
-    <p class="summary"><h2>g3.Class.extend</h2></p>
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="g3Class.js.html">g3Class.js</a>, <a href="g3Class.js.html#line315">line 315</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>This property is a static method of <code>g3.Class</code>, <strong><code>g3.Class.extend()</code></strong>.</p>
-<p>It makes a shallow copy of enumerable members from argument <code>extension</code> to 
-<code>obj</code></p>
+<p><code>outer*</code> values include <code>border + padding + content</code>. <code>inner*</code> values don't 
+include border. </p>
+<p>Property <code>visible</code> is a boolean <code>true</code> if the element is visible on viewport, 
+<code>false</code> if not or, a string that is built up from the words: <code>top</code>, <code>right</code>, 
+<code>bottom</code> and <code>left</code> if the relevant sides of the element are visible.</p>
 </div>
 
 
@@ -676,88 +226,7 @@ that last one replaces all previous.</p>
 
         <tr>
             
-                <td class="name"><code>obj</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-|
-
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The object or function that is going to be 
-extended.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>extension</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-|
-
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The object or function whose members 
-are going to be copied.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>override</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Boolean</span>
-|
-
-<span class="param-type">null</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>If duplicate members from <code>extension</code> are 
-allowed to be copied, defaults to <code>true</code>.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
+                <td class="name"><code>el</code></td>
             
 
             <td class="type">
@@ -766,7 +235,7 @@ allowed to be copied, defaults to <code>true</code>.</p></td>
 <span class="param-type">String</span>
 |
 
-<span class="param-type">null</span>
+<span class="param-type">Object</span>
 
 
             
@@ -776,121 +245,36 @@ allowed to be copied, defaults to <code>true</code>.</p></td>
 
             
 
-            <td class="description last"><p>The type of members from <code>extension</code> that are 
-allowed to be copied. If the string 'function' is given then, only functional 
-members are copied. If we want everything to be copied then, don't supply 
-this argument. Values allowed are those returned by the <code>typeof</code> operator.</p></td>
+            <td class="description last"><p>A string or a node reference that we want to 
+   calculate it's dimensions and position</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>win</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Window</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A window reference or if null, the current one</p></td>
         </tr>
 
     
     </tbody>
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">undefined</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".toString"><span class="type-signature">(static) </span>toString<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
-    
-    <p class="summary"><h2>g3.Class.toString</h2></p>
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="g3Class.js.html">g3Class.js</a>, <a href="g3Class.js.html#line355">line 355</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>This function is a static method of <code>g3.Class</code>, <strong><code>g3.Class.toString()</code></strong>.</p>
-<p>It overwrites native behaviour and instead of the source code it returns
-the classname.</p>
-</div>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -909,7 +293,8 @@ the classname.</p>
 
         
 <div class="param-desc">
-    <p>The classname</p>
+    <p>Depending on passed <code>el</code> argument the return 
+   contains different values</p>
 </div>
 
 
@@ -920,7 +305,13 @@ the classname.</p>
     </dt>
     <dd>
         
-<span class="param-type">String</span>
+<span class="param-type">Boolean</span>
+|
+
+<span class="param-type">null</span>
+|
+
+<span class="param-type">Object</span>
 
 
     </dd>
@@ -930,14 +321,33 @@ the classname.</p>
 
 
         
+        </div>
+    
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
             
 
     
 
-    <h4 class="name" id="~extendClassByObject"><span class="type-signature">(inner) </span>extendClassByObject<span class="signature">(Class, extension, override, type)</span><span class="type-signature"> &rarr; {undefined}</span></h4>
+    <h4 class="name" id="adjucent"><span class="type-signature"></span>adjucent<span class="signature">()</span><span class="type-signature"> &rarr; {false|Object}</span></h4>
 
     
-    <p class="summary"><h2>extendClassByObject</h2></p>
+    <p class="summary"><p>If the element is not visible returns false.</p></p>
     
 
 
@@ -948,7 +358,7 @@ the classname.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="g3Class.js.html">g3Class.js</a>, <a href="g3Class.js.html#line280">line 280</a>
+        <a href="g3measure.js.html">g3measure.js</a>, <a href="g3measure.js.html#line129">line 129</a>
     </li></ul></dd>
     
 
@@ -988,16 +398,10 @@ the classname.</p>
 
 
 <div class="description">
-    <p>It populates 1st argument <code>Class</code>, a construction function, with members 
-from 2nd argument <code>extension</code>, an object:</p>
-<ul>
-<li><p>if object contains a key <code>STATIC</code> with value an object then, it's
-members will become static members of constructor <code>Class</code> and</p>
-</li>
-<li><p>if object contains a key <code>prototype</code> with value an object then, it's
-members will become prototype members of constructor <code>Class</code>.</p>
-</li>
-</ul>
+    <p>For fully/partially visible elements it returns an object: 
+<code>{left: &lt;value&gt;, top: &lt;value&gt;, right: &lt;value&gt;, bottom: &lt;value&gt;}</code> of the
+distances between the element's area and the sides of the viewport so that 
+ <code>left</code> counts from left side, <code>right</code> from right side etc.</p>
 </div>
 
 
@@ -1008,134 +412,6 @@ members will become prototype members of constructor <code>Class</code>.</p>
 
 
 
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>Class</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A construction function</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>extension</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The extension object</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>override</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Boolean</span>
-|
-
-<span class="param-type">null</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>If it is true, it allows members from <code>extension</code> 
-to overwrite members of <code>Class</code></p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-|
-
-<span class="param-type">null</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The type of members from <code>extension</code> that are 
-allowed to be copied. If the string 'function' is given then, only functional 
-members are copied. If we want everything to be copied then, don't supply 
-this argument. Values allowed are those returned by the <code>typeof</code> operator.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
 
 
 
@@ -1161,7 +437,123 @@ this argument. Values allowed are those returned by the <code>typeof</code> oper
     </dt>
     <dd>
         
-<span class="param-type">undefined</span>
+<span class="param-type">false</span>
+|
+
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="intersect"><span class="type-signature"></span>intersect<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean|Object}</span></h4>
+
+    
+    <p class="summary"><p>If the element is fully visible/not visible returns <code>true</code>/<code>false</code>.</p></p>
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="g3measure.js.html">g3measure.js</a>, <a href="g3measure.js.html#line111">line 111</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>For partially visible elements it returns an object: 
+<code>{viewLeft: &lt;value&gt;, viewTop: &lt;value&gt;, width: &lt;value&gt;, height: &lt;value&gt;}</code> of 
+the intersection between viewport and element's area which is considered that 
+one who contains <code>border + padding + content</code>. The <code>width</code> and <code>height</code> refer 
+to the visible area of the element.</p>
+<p>If you want to calculate distances from adjucent sides of viewport see 
+<a href="g3.measure.html#adjucent">g3.measure#adjucent</a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+|
+
+<span class="param-type">Object</span>
 
 
     </dd>
