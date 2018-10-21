@@ -60,6 +60,8 @@
  *            }
  *         }
  *      );
+ * // connect g3.myClass to jquery:
+ * g3.myClass.library('jquery');
  * ```
  * 
  * INSTANCE FUNCTIONS
@@ -68,7 +70,7 @@
  * 
  * PROTOTYPE METHODS
  * -----------------
- * - `g3.HybridTemplate.addLibrary`, see {g3.hybrid#addLibrary},
+ * - `g3.HybridTemplate.addLibrary`, see {@link g3.hybrid#addLibrary},
  * 
  * - `g3.HybridTemplate.to`, see {@link g3.hybrid#to},
  * 

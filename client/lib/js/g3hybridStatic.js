@@ -1,8 +1,9 @@
 (function(g3, $, window, document){
 g3.hybridStatic = function(myClass){
    /**
-    * The return of `g3.hybridStatic` is a supplementary object which converts 
-    * to a mixin for the final defining class with the help of the class factory 
+    * @desc
+    * The return of `g3.hybridStatic` is a supplementary object which becomes 
+    * a mixin of the final defining class with the help of the class factory 
     * {@link g3.Class}.
     * 
     * It provides the static members under the context of the class that 
@@ -196,12 +197,14 @@ g3.hybridStatic = function(myClass){
           *     then, the plugin returns the external library.
           * 
           * In cases 1.2 and 2.2, if many instances have been found, an array is 
-          * returned.
+          * returned (that shouldn' happen see {@link g3.hybridStatic.get}).
           * @function g3.hybridStatic.library
           * @memberof g3.hybridStatic
           * @param {String} lib A name of the library which is to be extended by 
           *    a new method named by the second argument
-          * @return {Function} Returns the class construction function `g3[myClass]`
+          * @return {Function|Object} Returns the class construction function `g3[myClass]` or,
+          *    an object of that class or, the function that builds the external library or,
+          *    an object from that external library
           */
          library: function(lib){
             if(lib === 'jquery'){

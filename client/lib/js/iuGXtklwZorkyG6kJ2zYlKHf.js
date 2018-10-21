@@ -1,6 +1,18 @@
 (function(g3, $, window, document, undefined){
 /**
  * @summmary
+ * g3
+ * --
+ * @desc
+ * A global object that holds all classes, functions, variables.
+ * @namespace {Object} g3
+ * @version 0.1
+ * @author {@link https:/github.com/centurianii}
+ * @copyright MIT licence
+ */
+
+/**
+ * @summmary
  * g3.utils
  * --------
  * @desc
@@ -279,12 +291,6 @@ g3.utils.isEmptyObject = function(obj, proto){
             }
          }
       }
-      //overwrite previous result! (new ECMA 5 properties)
-      //FF Error: returns 5 prototype properties on functions and 1 on arrays
-      //as their own!
-      /*if(typeof Object.getOwnPropertyNames === 'function'){
-         result = (Object.getOwnPropertyNames(obj).length === 0);
-      }*/
    }
    return result;
 };
@@ -336,95 +342,6 @@ g3.utils.isMobile = {
       return (this.Android() || this.BlackBerry() || this.iOS() || this.Opera() || this.Windows());
    }
 };
-
-/**
- * @summary
- * g3.utils.getEventLock
- * ---------------------
- * @desc
- * Set it as a go-no-go switch at the begining of a starting event handler and 
- * forget it. Similar call `g3.utils.deleteEventLock(key, eventLock)` at the 
- * begining of the corresponding ending event handler. It is used for handlers 
- * on multiple events for different devices that we don't want to run multiple 
- * times. Events should come in pairs: a starting and an ending event.
- * 
- * It operates on a private variable visible in an isolated context with name
- * `eventLock` and uses another `eventLockDelay`; both are passed as arguments.
- * 
- *  `eventLock` should be declared as an empty object that will be filled with
- * objects '{primary: <event type>, pid: <integer>}'.
- * 
- * `eventLockDelay` should be assigned an integer denoting a time frame greater 
- * than the execution duration of the starting event handler.
- * 
- * If hardware changes during a session, just press input device more than 
- * `eventLockDelay` to make it primary. See {@link g3.utils.setEventLock} and 
- * {@link g3.utils.deleteEventLock}.
- * @function g3.utils.getEventLock
- * @param {Object} evt The event object
- * @param {String} key The key in the private variable `eventLock` for a pair of
- *    event handlers
- * @param {Object} eventLock A private object of objects 
- *    '{primary: <event type>, pid: <integer>}'
- * @param {Object} eventLockDelay A private variable for primary event detection
- *    on a continuous press
- * @return {Boolean} True for the primary event at the specific hardware operated
- *    in user's machine at that time
- */
-g3.utils.getEventLock = function(evt, key, eventLock, eventLockDelay){
-   if(typeof(eventLock[key]) == 'undefined'){
-      eventLock[key] = {};
-      eventLock[key].primary = evt.type;
-      return true;
-   }
-   if(evt.type == eventLock[key].primary)
-      return true;
-   else
-      return false;
-   
-   eventLock[key].pid = setTimeout(closure, eventLockDelay);
-   
-   function closure(){
-      g3.utils.setEventLock(evt, key, eventLock);
-      //eventLock[key] = setTimeout(closure, eventLockDelay);
-   }
-};
-
-/**
- * @summary
- * g3.utils.setEventLock
- * ---------------------
- * @desc
- * Used by {@link g3.utils.getEventLock}.
- * @function g3.utils.setEventLock
- * @param {Object} evt The event object
- * @param {String} key The key in the private variable `eventLock` for a pair of
- *    event handlers
- * @param {Object} eventLock A private object of objects 
- *    '{primary: <event type>, pid: <integer>}'
- * @return {undefined}
- */
-g3.utils.setEventLock = function(evt, key, eventLock){
-   eventLock[key].primary = evt.type;
-};
-
-/**
- * @summary
- * g3.utils.deleteEventLock
- * ------------------------
- * @desc
- * Set it at the begining of an ending event handler and forget it, see 
- * {@link g3.utils.getEventLock}.
- * @function g3.utils.deleteEventLock
- * @param {String} key The key in the private variable `eventLock` for a pair of
- *    event handlers
- * @param {Object} eventLock A private object of objects 
- *    '{primary: <event type>, pid: <integer>}'
- * @return {undefined}
- */
-g3.utils.deleteEventLock = function(key, eventLock){
-   clearTimeout(eventLock[key].pid);
-}
 
 /**
  * @summary

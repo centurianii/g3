@@ -1,18 +1,16 @@
 (function(g3, window, document, undefined){
 /**
- * @summmary
- * g3.measure
- * ==========
- * Defines utility methods/properties that calculate the dimensions and position 
- * of an element, window, document or viewport. 
+ * @constructs g3.measure
+ * @summary
+ * Returns an object that contains utility methods and properties that calculate 
+ * the dimensions and position of an element, window, document or viewport or the 
+ * value and unit in a string. 
+ * @desc
+ * In case of a number object, it behaves as in the case of a string. 
  * 
- * In case of a number object, it behaves as in the case of a string. When the 
- * passed argument is a string, not one between `"screen"`, `"viewport"` and 
- * `"document"`, it extracts the value and the unit and returns an object of the 
- * form `{value: <value>, unit: <value>}`. If no unit is given it adds `undefined`.
+ * When the passed argument is:
  * 
- * If the passed argument is
- * - `window.screen` or `"screen"`: returns `{width: <value>, height: <value>}`,
+ * - `window.screen` or `"screen"`: it returns `{width: <value>, height: <value>}`,
  * 
  * - `"viewport"`: returns `{left: <value>, top: <value>, width: <value>, height: <value>}`,
  *      `left` and `top` values are measured from document respective edges and 
@@ -20,11 +18,8 @@
  * 
  * - `document` or `"document"`: returns `{width: <value>, height: <value>}`,
  * 
- * - `<string>`: returns `{value: <value>, unit: <value>}` parses css values 
- *      extracting the number from the unit part. If there is not a unit, it uses 
- *      `undefined` by default. If number can't be found, returns null,
- * 
  * - a node reference: returns immediate on built the following object
+ * 
  * ```
  * {
  *    outerWidth: ..., 
@@ -44,18 +39,31 @@
  *    adjucent: <function>
  * }
  * ```
+ * 
+ * - number: returns object `{value: <value>, unit: undefined}`,
+ * 
+ * - `<string>`: returns object `{value: <value>, unit: <value>}` as it parses 
+ *      numeric values from the start extracting the number from the unit part. 
+ *      If there is not a unit, it uses `undefined` by default. If number can't 
+ *      be found, returns null,
+ * 
+ * - anything else: returns `null`.
+ * 
  * `outer*` values include `border + padding + content`. `inner*` values don't 
  * include border. 
  * 
- * Property 'visible' is true if the element is visible on viewport, false if 
- * not or, a string that is built up from the words: `top`, `right`, `bottom` 
- * and `left` if the relevant sides of the element are visible.
- * @var {Object} g3.measure
+ * Property `visible` is a boolean `true` if the element is visible on viewport, 
+ * `false` if not or, a string that is built up from the words: `top`, `right`, 
+ * `bottom` and `left` if the relevant sides of the element are visible.
+ * 
  * @param {String|Object} el A string or a node reference that we want to 
  *    calculate it's dimensions and position
  * @param {Window} win A window reference or if null, the current one
- * @return {Object} Depending on passed 'el' argument the returning object 
- *    contains different properties
+ * @return {Boolean|null|Object} Depending on passed `el` argument the return 
+ *    contains different values
+ * @version 0.1
+ * @author {@link https:/github.com/centurianii}
+ * @copyright MIT licence
  */
 g3.measure = function(el, win){
    if(!win || (win.self !== win) || (win.window !== win))
@@ -99,13 +107,38 @@ g3.measure = function(el, win){
          'innerWidth': innerWidth,
          'outerHeight': outerHeight,
          'innerHeight': innerHeight,
-         //intersection with viewport, returns true|false|object
-         //where object={'viewLeft': left, 'viewTop': top, 'width': width, 'height': height}
-         //includes border + padding + content
+         
+         /**
+          * @summary
+          * If the element is fully visible/not visible returns `true`/`false`.
+          * @desc
+          * For partially visible elements it returns an object: 
+          * `{viewLeft: <value>, viewTop: <value>, width: <value>, height: <value>}` of 
+          * the intersection between viewport and element's area which is considered that 
+          * one who contains `border + padding + content`. The `width` and `height` refer 
+          * to the visible area of the element.
+          * 
+          * If you want to calculate distances from adjucent sides of viewport see 
+          * {@link g3.measure#adjucent}.
+          * @function g3.measure#intersect
+          * @memberof g3.measure
+          * @return {Boolean|Object}
+          */
          intersect: function(){return _intersect.call(this, win);},
-         //distance from adjucent viewport sides, returns false|object
-         //where object={'left': value, 'top': value, 'right': value, 'bottom': value} 
-         //excluded area includes element's border + padding + content
+         
+         /**
+          * @summary
+          * If the element is not visible returns false.
+          * 
+          * @desc
+          * For fully/partially visible elements it returns an object: 
+          * `{left: <value>, top: <value>, right: <value>, bottom: <value>}` of the
+          * distances between the element's area and the sides of the viewport so that 
+          *  `left` counts from left side, `right` from right side etc.
+          * @function g3.measure#adjucent
+          * @memberof g3.measure
+          * @return {false|Object}
+          */
          adjucent: function(){return _adjucent.call(this, win);}
       };
       //sets 'width', 'height'
@@ -116,11 +149,11 @@ g3.measure = function(el, win){
       _visible.call(obj, win);
       return obj;
    }else if(typeof el === 'number')
-      return {'value': el, 'unit': 'undefined'};
+      return {'value': el, 'unit': undefined};
    else if((typeof el === 'string') && (el !== '')){
       tmp = el.match(/[^\+\-\s0-9\.;]+/gi);
       if(!tmp)
-         unit = 'undefined';
+         unit = undefined;
       else
          unit = tmp[0];
       tmp = parseFloat(el);
@@ -231,23 +264,6 @@ g3.measure = function(el, win){
       }
    }
    
-/**
-* @summmary
-* g3.measure.intersect
-* ====================
-* If the element is fully visible/not visible returns true/false.
-* 
-* For partially visible elements it returns an object: 
-* `{viewLeft: <value>, viewTop: <value>, width: <value>, height: <value>}` of 
-* the intersection between viewport and element's area which is considered that 
-* one who contains `border + padding + content`. The `width` and `height` refer 
-* to the visible area of the element.
-* 
-* If you want to calculate distances from adjucent sides of viewport see 
-* {@link g3.measure.adjucent}.
-* @function {g3.measure.intersect}
-* @return {Boolean|Object}
-*/
    function _intersect(win){
       var visible = this.visible,
           viewport = g3.measure('viewport', win),
@@ -288,19 +304,6 @@ g3.measure = function(el, win){
       return {'viewLeft': viewLeft, 'viewTop': viewTop, 'width': width, 'height': height};
    }
    
-/**
-* @summmary
-* g3.measure.adjucent
-* ===================
-* If the element is not visible returns false.
-* 
-* For fully/partially visible elements it returns an object: 
-* `{left: <value>, top: <value>, right: <value>, bottom: <value>}` of the
-* distances between the element's area and the sides of the viewport so that 
-* `left` counts from left side, `right` from right side etc.
-* @function {g3.measure.adjucent}
-* @return {false|Object}
-*/
    function _adjucent(win){
       var visible = this.visible,
           viewport = g3.measure('viewport', win),

@@ -1,8 +1,9 @@
 (function(g3, $, window, document){
 g3.headlessStatic = function(myClass){
    /**
-    * The return of `g3.headlessStatic` is a supplementary object which converts 
-    * to a mixin for the final defining class with the help of the class factory 
+    * @desc
+    * The return of `g3.headlessStatic` is a supplementary object which becomes 
+    * a mixin of the final defining class with the help of the class factory 
     * {@link g3.Class}.
     * 
     * It provides the static members under the context of the class that 
@@ -23,8 +24,7 @@ g3.headlessStatic = function(myClass){
     *      );
     * ```
     * 
-    * For inheritance and an explanation of why we do not use 
-    * `{STATIC: {defaults: {...}}` here, see {@link g3.hybrid}.
+    * For inheritance see {@link g3.hybrid}.
     * @mixin g3.headlessStatic
     * @version 0.1
     * @author {@link https:/github.com/centurianii}
@@ -37,7 +37,6 @@ g3.headlessStatic = function(myClass){
        */
        
       STATIC: {
-         /** How user options are merged with defaults */
          /**
           * @summary g3.headlessStatic.STATIC.options
           * -----------------------------------------
@@ -84,9 +83,9 @@ g3.headlessStatic = function(myClass){
           * 
           * It can be altered by `options.store` in passed argument.
           * 
-          * It can be altered temporarily to parents with method 
-          * {@link g3.headlessStatic.inherits} (the reversed argument 
-          * value is assigned to property `store`).
+          * It can be altered during construction for the anchestors of this class 
+          * with method {@link g3.headlessStatic.inherits} (the reversed argument 
+          * value is assigned to every anchestor's property `store`).
           * @var g3.headlessStatic.store
           * @memberof g3.headlessStatic
           * @return {undefined}

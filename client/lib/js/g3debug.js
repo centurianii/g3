@@ -1,8 +1,6 @@
 (function(g3, $, window, document, undefined){
 /**
- * @summmary
- * g3.debug
- * --------
+ * @constructs g3.debug
  * @summary
  * The return of `g3.debug` when called as function is an object for debugging 
  * purposes.
@@ -58,44 +56,26 @@
  * at n+1 we can see 2 members of an object at depth n.
  * 
  * (&#42;)successive = there is not a number less than n between them.
- * @class g3.debug
+ * 
+ * Parameters
+ * ----------
+ * The 2nd argument controls the depth of the analysis.
+ * 
+ * The 3rd argument, `noFollow`, controls the way searches are executed:
+ * 1. `false` or empty string makes every passed argument searchable,
+ * 
+ * 2. no argument defaults to static `g3.debug.noFollow` values of what not to 
+ *    search for, see {@link g3.debug.noFollow}, 
+ * 
+ * 3. a space delimited string of types makes them not searchable, e.g. if it is 
+ *    the value `string` analysis excludes `string` types etc.
+ * @param {*} obj An identifier of any type that is to be analysed
+ * @param {Integer} maxDepth The maximum depth to look for; zero-based
+ * @param {Boolean|null|String} noFollow Manipulates analysis on types 
+ * @return {Object} A debugging object
  * @version 0.2
  * @author {@link https:/github.com/centurianii}
  * @copyright MIT licence
- */
-
-/**
- * @summmary
- * g3.debug
- * --------
- * @summary
- * Returns a debugging object.
- * @desc
- * The 3rd argument, `noFollow`, controls the boolean result of an internal 
- * private function `_isIterable(object)` that applies rules in this order where
- * the higher overwrites the lower ones:
- * 1. is the object empty? negate the result,
- * 
- * 2. is the type unknown? result = true,
- * 
- * 3. does object's type is contained at the 3rd argument `noFollow`? result = false,
- * 
- * 4. is this a circular reference? result = false.
- * 
- * See also static {@link g3.debug.noFollow} and {@link g3.debug.setNoFollow}.
- * @function debug()
- * @memberof g3.debug
- * @param {*} obj An identifier of any type that is to be analysed
- * @param {Integer} maxDepth The maximum depth to look for; zero-based
- * @param {Boolean|null|String} noFollow if it is true, null or anything other than a 
- *    string, analysis excludes: `string`, `array` types, object references and 
- *    the prototype chain (i.e. `g3.debug.noFollow = "string array references prototype"`,
- *    see {@link g3.debug.noFollow});
- *    if it is the value `string` (`g3.debug.noFollow = "string"`), analysis 
- *    excludes `string` types etc.; if it is `false` or empty string `""`, 
- *    analysis happens to everything, i.e. `"string", "array", "object", "function", "unknown"` 
- *    type etc., as long it is not empty
- * @return {Object} A debugging object
  */
 g3.debug = function(obj, maxDepth, noFollow){ //construct with argument
    var tree = [], refs = [], max = 0, proto,

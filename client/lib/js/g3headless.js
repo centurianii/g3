@@ -1,38 +1,40 @@
 (function(g3, $, window, document){
+/**
+ * @constructs g3.headless
+ * @summary
+ * The return of `g3.headless` is a supplementary object which forms a root 
+ * **parent** defining class with the help of the class factory {@link g3.Class}.
+ * @desc
+ * It provides the constructor and the default and prototype members under the 
+ * context of the class that {@link g3.Class} will try to build, i.e. 
+ * **`g3[myClass]`** or **`g3.myClass`** and for that reason the passed argument 
+ * should be a string of the name of that class: 
+ * ```
+ * g3.myClass = 
+ *      g3.Class(
+ *         g3.headless(myClass), 
+ *         g3.headlessStatic(myClass),
+ *         {
+ *            STATIC: {...}, 
+ *            constructor: function (...){...},
+ *            ...
+ *         }
+ *      );
+ * ```
+ * 
+ * In the above example, `g3.myClass` is the first child of `g3.headless(myClass)`.
+ * 
+ * This base helper object is targeted for classes with no node manipulation.
+ * 
+ * For inheritance see {@link g3.hybrid}.
+ * 
+ * @param {String} myClass The name of the new class that is to be built
+ * @return {Function} A new class constructor
+ * @version 0.1
+ * @author {@link https:/github.com/centurianii}
+ * @copyright MIT licence
+ */
 g3.headless = function(myClass){
-   /**
-    * @summary
-    * The return of `g3.headless` is a supplementary object which forms a root 
-    * **parent** defining class with the help of the class factory {@link g3.Class}.
-    * @desc
-    * It provides the constructor and the default and prototype members under the 
-    * context of the class that {@link g3.Class} will try to build, i.e. 
-    * **`g3[myClass]`** or **`g3.myClass`** and for that reason the passed argument 
-    * should be a string of the name of that class: 
-    * ```
-    * g3.myClass = 
-    *      g3.Class(
-    *         g3.headless(myClass), 
-    *         g3.headlessStatic(myClass),
-    *         {
-    *            STATIC: {...}, 
-    *            constructor: function (...){...},
-    *            ...
-    *         }
-    *      );
-    * ```
-    * 
-    * In the above example, `g3.myClass` is the first child of `g3.headless(myClass)`.
-    * 
-    * This base helper object is targeted for classes with no node manipulation.
-    * 
-    * For inheritance see {@link g3.hybrid}.
-    * 
-    * @class g3.headless
-    * @version 0.1
-    * @author {@link https:/github.com/centurianii}
-    * @copyright MIT licence
-    */
    return {
       /*
        * The static members of an object built on g3.headless + g3.Class: g3[myClass]

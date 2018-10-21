@@ -1,5 +1,5 @@
 #an example of command:
 
-jsdoc -c conf-docdash.json -R docs/README.md -u tutorials -d docs -r ./client/*
+jsdoc -c conf-docdash.json -R site/README.md -u tutorials -d site -r ./client/*
 
 

@@ -1,149 +1,151 @@
 (function(g3, $, window, document){
+/**
+ * @constructs g3.hybrid
+ * @summary
+ * The return of `g3.hybrid` is a supplementary object which forms a **root 
+ * parent** defining class with the help of the class factory {@link g3.Class}.
+ * @desc
+ * It provides a constructor and static and prototype members that with the 
+ * help of {@link g3.Class} will form a new constructor class, i.e. 
+ * **`g3[myClass]`**, or **`g3.myClass`** and for that reason the passed 
+ * argument should be a string of the name of that class: 
+ * 
+ * ``` javascript
+ * g3.myClass = 
+ *      g3.Class(
+ *         g3.hybrid(myClass), 
+ *         g3.hybridStatic(myClass),
+ *         {
+ *            STATIC: {...}, 
+ *            constructor: function (...){...},
+ *            ...
+ *         }
+ *      );
+ * ```
+ * 
+ * The above class is the first child of `g3.hybrid(myClass)` and we usually 
+ * name it as a 1st level class even though the return of `g3.hybrid` is the 
+ * root class.
+ * 
+ * See an explanation at {@link g3.Class} of what this notation means, in short:
+ * 
+ * 1) 1st argument is the parent,
+ * 
+ * 2) 2nd argument up to second from the end is the mixins,
+ * 
+ * 3) last argument is the function/object definition of the new class,
+ * 
+ * 4) properties under key `STATIC` become static properties,
+ * 
+ * 5) properties under key `prototype` become class methods,
+ * 
+ * 6) the key `constructor` becomes the class constructor and
+ * 
+ * 7) all the rest properties/methods become instance (inner) ones.
+ * 
+ * As static members are not copied between classes in the inheritance tree nor
+ * from mixins to the defining class if they overlap, we only merge 
+ * `{STATIC: {defaults: {...}}` with user options to form an instance property 
+ * `this.defaults` of class **`g3[myClass]`**, see next & {@link g3.HybridTemplate}.
+ * 
+ * Inheritance in hybrid classes: 
+ * ------------------------------
+ * 1) We define the new class as
+ * ``` javascript
+ * g3.myClass = 
+ *      g3.Class(
+ *         g3.ParentClass, 
+ *         g3.hybridStatic(myClass),
+ *         mixin1,
+ *         mixin2,
+ *         ...
+ *         {
+ *            STATIC: {
+ *               defaults: {
+ *                  ...
+ *               },
+ *               
+ *            }, 
+ *            constructor: function(options){
+ *               var myClass = 'myClass';
+ *               // if inheritance level > 1 and you want object storage:
+ *               //g3[myClass].add(this.defaults.name, this);
+ *               // n = depth of class
+ *               this.initn(options);
+ *               this.instance.newBuild[myClass] = false;
+ *            },
+ *            prototype: {
+ *               // n = depth of class
+ *               initn: function(options){
+ *                  // 1. If NOT called from constructor
+ *                  if(this.instance.newBuild['myClass'] === false)
+ *                     g3.myClass.Super.prototype.init.call(this, options);
+ * 
+ *                  var debug = {};
+ *                  // 2. call functions
+ *                  debug['switch'] = this.switch(options, 'myClass');
+ *                  debug['getNodes'] = this.getNodes(options);
+ *                  debug['buildn'] = this.buildn();
+ * 
+ *                  // 3. update 'options.debug'
+ *                  (options && (g3.utils.type(options.debug) == 'object')) && 
+ *                  $.extend(true, options.debug, debug);
+ * 
+ *                  // 4. store last working set of 'this.defaults'
+ *                  this.instance.lastDefaults = this.defaults;
+ *                  return this;
+ *               },
+ *               build2: function(){
+ *                  // ...
+ *               },
+ *               toString: function(){
+ *                  return '[Object g3.myClass]';
+ *               },
+ *               // ...
+ *            }
+ *         }
+ *      );
+ * ```
+ * 
+ * 2) All static members in the hierarchy tree are accessible as 
+ *    `g3[myClass].Super.Super...` 
+ *    A special case applies to the static property `g3[myClass].defaults` where 
+ *    all of them down in the hierarchy tree, starting from this root and ending 
+ *    to `g3[myClass]`, are merged with user options to instance `this.defaults`.
+ * 
+ * 3) The following static properties should exist in every class thus, they are 
+ *    moved to {@link g3.hybridStatic} :
+ * 
+ *    a) `store`, see {@link g3.hybridStatic.store}, {@link g3.headlessStatic.store}
+ * 
+ *    b) `override`, see {@link g3.hybridStatic.override}, {@link g3.headlessStatic.override}
+ * 
+ *    c) `options`, see {@link g3.hybridStatic.options}, {@link g3.headlessStatic.options}
+ * 
+ *    d) `autoFill`, see {@link g3.hybridStatic.autoFill}, {@link g3.headlessStatic.autoFill}
+ * 
+ *    e) `instances`, see {@link g3.hybridStatic.instances}, {@link g3.headlessStatic.instances}
+ * 
+ *    f) `plugins`, see {@link g3.hybridStatic.plugins}, {@link g3.headlessStatic.plugins}.
+ * 
+ * 4) Before a child object creation we call static `g3[myClass].inherits(true)`  
+ *    to block reduntant storage of this object in `g3.Parent.instances` array 
+ *    which may also rise a name conflict! 
+ *    To start storing parent objects again reverse option and call  
+ *    `g3[myClass].inherits(false)`.
+ *    
+ *    Alternatively, before child object creation, simply set static 
+ *    `g3.hybridStatic.store = false;` or, pass in options a key-value like 
+ *    `store: false` and use variables to store your objects built from classes.
+ * 
+ * @param {String} myClass The name of the new class that is to be built
+ * @return {Function} A new class constructor
+ * @version 0.2
+ * @author {@link https:/github.com/centurianii}
+ * @copyright MIT licence
+ */
 g3.hybrid = function(myClass){
-   /**
-    * @summary
-    * The return of `g3.hybrid` is a supplementary object which forms a **root 
-    * parent** defining class with the help of the class factory {@link g3.Class}.
-    * @desc
-    * It provides a constructor and static and prototype members that with the 
-    * help of {@link g3.Class} will form a new constructor class, i.e. 
-    * **`g3[myClass]`**, or **`g3.myClass`** and for that reason the passed 
-    * argument should be a string of the name of that class: 
-    * 
-    * ``` javascript
-    * g3.myClass = 
-    *      g3.Class(
-    *         g3.hybrid(myClass), 
-    *         g3.hybridStatic(myClass),
-    *         {
-    *            STATIC: {...}, 
-    *            constructor: function (...){...},
-    *            ...
-    *         }
-    *      );
-    * ```
-    * 
-    * The above class is the first child of `g3.hybrid(myClass)` and we usually 
-    * name it as a 1st level class even though the return of `g3.hybrid` is the 
-    * root class.
-    * 
-    * See an explanation at {@link g3.Class} of what this notation means, in short:
-    * 
-    * 1) 1st argument is the parent,
-    * 
-    * 2) 2nd argument up to second from the end is the mixins,
-    * 
-    * 3) last argument is the function/object definition of the new class,
-    * 
-    * 4) properties under key `STATIC` become static properties,
-    * 
-    * 5) properties under key `prototype` become class methods,
-    * 
-    * 6) the key `constructor` becomes the class constructor and
-    * 
-    * 7) all the rest properties/methods become instance (inner) ones.
-    * 
-    * As static members are not copied between classes in the inheritance tree nor
-    * from mixins to the defining class if they overlap, we only merge 
-    * `{STATIC: {defaults: {...}}` with user options to form an instance property 
-    * `this.defaults` of class **`g3[myClass]`**, see next & {@link g3.HybridTemplate}.
-    * 
-    * Inheritance in hybrid classes: 
-    * ------------------------------
-    * 1) We define the new class as
-    * ``` javascript
-    * g3.myClass = 
-    *      g3.Class(
-    *         g3.ParentClass, 
-    *         g3.hybridStatic(myClass),
-    *         mixin1,
-    *         mixin2,
-    *         ...
-    *         {
-    *            STATIC: {
-    *               defaults: {
-    *                  ...
-    *               },
-    *               
-    *            }, 
-    *            constructor: function(options){
-    *               var myClass = 'myClass';
-    *               // if inheritance level > 1 and you want object storage:
-    *               //g3[myClass].add(this.defaults.name, this);
-    *               // n = depth of class
-    *               this.initn(options);
-    *               this.instance.newBuild[myClass] = false;
-    *            },
-    *            prototype: {
-    *               // n = depth of class
-    *               initn: function(options){
-    *                  // 1. If NOT called from constructor
-    *                  if(this.instance.newBuild['myClass'] === false)
-    *                     g3.myClass.Super.prototype.init.call(this, options);
-    * 
-    *                  var debug = {};
-    *                  // 2. call functions
-    *                  debug['switch'] = this.switch(options, 'myClass');
-    *                  debug['getNodes'] = this.getNodes(options);
-    *                  debug['buildn'] = this.buildn();
-    * 
-    *                  // 3. update 'options.debug'
-    *                  (options && (g3.utils.type(options.debug) == 'object')) && 
-    *                  $.extend(true, options.debug, debug);
-    * 
-    *                  // 4. store last working set of 'this.defaults'
-    *                  this.instance.lastDefaults = this.defaults;
-    *                  return this;
-    *               },
-    *               build2: function(){
-    *                  // ...
-    *               },
-    *               toString: function(){
-    *                  return '[Object g3.myClass]';
-    *               },
-    *               // ...
-    *            }
-    *         }
-    *      );
-    * ```
-    * 
-    * 2) All static members in the hierarchy tree are accessible as 
-    *    `g3[myClass].Super.Super...` 
-    *    A special case applies to the static property `g3[myClass].defaults` where 
-    *    all of them down in the hierarchy tree, starting from this root and ending 
-    *    to `g3[myClass]`, are merged with user options to instance `this.defaults`.
-    * 
-    * 3) The following static properties should exist in every class thus, they are 
-    *    moved to {@link g3.hybridStatic} :
-    * 
-    *    a) `store`
-    * 
-    *    b) `override`
-    * 
-    *    c) `options`
-    * 
-    *    d) `autoFill`
-    * 
-    *    e) `instances`
-    * 
-    *    f) `plugins`.
-    * 
-    * 4) Before a child object creation we call static `g3[myClass].inherits(true)`  
-    *    to block reduntant storage of this object in `g3.Parent.instances` array 
-    *    which may also rise a name conflict! 
-    *    To start storing parent objects again reverse option and call  
-    *    `g3[myClass].inherits(false)`.
-    *    
-    *    Alternatively, before child object creation, simply set static 
-    *    `g3.hybridStatic.store = false;` or, pass in options a key-value like 
-    *    `store: false` and use variables to store your objects built from classes.
-    * 
-    * @class g3.hybrid
-    * @version 0.2
-    * @author {@link https:/github.com/centurianii}
-    * @copyright MIT licence
-    */
-    return {
+   return {
       /*
        * Partly the static members of an object built with g3.hybrid + g3.Class: g3[myClass]
        * ===================================================================================
