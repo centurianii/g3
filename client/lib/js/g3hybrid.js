@@ -141,7 +141,7 @@
  * @param {String} myClass The name of the new class that is to be built
  * @return {Function} A new class constructor
  * @version 0.2
- * @author {@link https:/github.com/centurianii}
+ * @author https:/github.com/centurianii
  * @copyright MIT licence
  */
 g3.hybrid = function(myClass){
@@ -241,7 +241,7 @@ g3.hybrid = function(myClass){
           * @summary g3.hybrid.author
           * -------------------------
           * @desc
-          * {@link https:/github.com/centurianii}
+          * [centurianii](https:/github.com/centurianii)
           * 
           * It shows the author of this root class that is produced by {@link g3.Class}.
           * Derived classes have their own.
@@ -253,7 +253,7 @@ g3.hybrid = function(myClass){
           * @summary g3.hybrid.copyright
           * ----------------------------
           * @desc
-          * MIT licence, copyright {@link https:/github.com/centurianii}.
+          * MIT licence, copyright [centurianii](https:/github.com/centurianii).
           * 
           * It shows the copyright of this root class that is produced by {@link g3.Class}.
           * Derived classes have their own.

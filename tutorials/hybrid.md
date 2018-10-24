@@ -38,9 +38,12 @@ some interesting characteristics:
    when user desires having all the methods and properties of the class storing 
    the libraries nodes to `this.instance.nodes` if user desires and
 
-9) there is an plugin integrated system that user can activate globaly at the 
-   constructor defining new prototype methods from plugin ones and filter these
-   methods per object during their construction. 
+9) there is a plugin integrated system that user can:
+
+9.1) activate globaly at the constructor defining new prototype methods from 
+     plugin ones or
+
+9.2) activate plugin methods per object during their construction. 
 
 The above, form a design in which the user alters options instead of calling methods, 
 an approach that simulates a switchboard that controls the behavior of an object.

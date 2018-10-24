@@ -121,7 +121,7 @@
     * that last one replaces all previous.
     * @class g3.Class
     * @version 0.6
-    * @author {@link https:/github.com/centurianii}
+    * @author https:/github.com/centurianii
     * @copyright MIT licence
     */
    g3.Class = function () {
@@ -401,7 +401,7 @@
     * @summary g3.Class.copyright
     * ---------------------------
     * @desc
-    * MIT licence, copyright {@link https:/github.com/centurianii}.
+    * MIT licence, copyright [centurianii](https:/github.com/centurianii).
     * @var {string} copyright
     * @memberof g3.Class
     */

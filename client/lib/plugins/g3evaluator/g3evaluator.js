@@ -674,7 +674,7 @@ g3.evaluator = (function(){
                removeClass('g3Highlight').
                attr('data-lang', lang).
                text(g3.utils.printHTML($(event.target).siblings('textarea').val())).
-               g3('Highlight', {destroy: 'ht', name: 'ht', url: '../../view/g3Highlight/'});
+               g3('Highlight', {destroy: 'ht', name: 'ht', url: '/lib/plugins/g3Highlight/'});
             }
          }else if(panelState.$tabbedData && ($(this).val() === 'Save to a new tab')){
             //find tab info at closest parent
@@ -799,6 +799,7 @@ g3.evaluator = (function(){
        * defines private 'panelState.$tabbedData' variable
        */
       $('#tabbedDataWrapper').on('click', '.tabbedData .titleBar .title', function(event){
+         var $newTabbedData;
          //repeated clicks on panel title
          if(panelState.$tabbedData && (panelState.$tabbedData.find('.titleBar .title').is($(this))))
             return false;

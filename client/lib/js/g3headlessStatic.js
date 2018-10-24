@@ -27,7 +27,7 @@ g3.headlessStatic = function(myClass){
     * For inheritance see {@link g3.hybrid}.
     * @mixin g3.headlessStatic
     * @version 0.1
-    * @author {@link https:/github.com/centurianii}
+    * @author https:/github.com/centurianii
     * @copyright MIT licence
     */
    return {

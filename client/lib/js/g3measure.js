@@ -62,7 +62,7 @@
  * @return {Boolean|null|Object} Depending on passed `el` argument the return 
  *    contains different values
  * @version 0.1
- * @author {@link https:/github.com/centurianii}
+ * @author https:/github.com/centurianii
  * @copyright MIT licence
  */
 g3.measure = function(el, win){

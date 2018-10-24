@@ -4,7 +4,7 @@
  * A custom error class.
  * @version 0.1
  * @id nOtmfvNjCXhPQr0gLqSyMXYq
- * @author A js library by {@link https:/github.com/centurianii}
+ * @author https:/github.com/centurianii
  * @copyright MIT licence
  * @class
  */

@@ -26,7 +26,7 @@ g3.hybridStatic = function(myClass){
     * For inheritance see {@link g3.hybrid}.
     * @mixin g3.hybridStatic
     * @version 0.2
-    * @author {@link https:/github.com/centurianii}
+    * @author https:/github.com/centurianii
     * @copyright MIT licence
     */
    return {
@@ -129,7 +129,7 @@ g3.hybridStatic = function(myClass){
           * This property will become static property of `g3[myClass]`, 
           * **`g3[myClass].plugins`**.
           * 
-          * It conatins plugin definitions that extend prototypal class methods
+          * It contains plugin definitions that extend prototypal class methods
           * in the form of:
           * 
           * ``` javascript
@@ -140,7 +140,7 @@ g3.hybridStatic = function(myClass){
           * }
           * ```
           * 
-          * see {@link g3.hybridStatic.plugin}.
+          * Method {@link g3.hybridStatic.plugin} updates this object.
           * @var g3.hybridStatic.plugins
           * @memberof g3.hybridStatic
           * @return {undefined}
@@ -270,39 +270,47 @@ g3.hybridStatic = function(myClass){
           * This property will become static method of `g3[myClass]`, 
           * **`g3[myClass].plugin()`**.
           * 
-          * It updates static property `g3[myClass].plugins` with a new object.
+          * It updates static property {@link g3.hybridStatic.plugins} with a new 
+          * function-member that will become a prototypal one under conditions (see 
+          * below).
           * 
           * Object should be passed as:
           * ``` javascript
           * {
-          *    name: '[function-name]', 
-          *    [function-name]: function(){
-          *                        ...
-          *                     }
+          *    name: '<function-name>', 
+          *    <function-name>: function(){
+          *       ...
+          *    }
           * }
           * ```
           * 
-          * and is stored as:
+          * You can forget this method and update directly {@link g3.hybridStatic.plugins}:
+          * 
           * ``` javascript
-          * { 
-          *    '[function-name]': function(){
-          *                          ...
-          *                       }
+          * g3.myClass.plugins['<function-name>'] = function(){
+          *    ...
           * }
           * ```
           * 
-          * The object's function will become prototype member 
-          * `g3[myClass].prototype.function-name` resulting in an object mixin.
+          * This method throws an error if plugin names are not unique.
           * 
-          * Plugin names should be unique or, an error is thrown.
+          * On top of calling this method, you should add the plugin names with 
+          * either one of the following ways:
           * 
-          * Add plugin names before instance construction to have them activated
-          * by the constructor automatically. 
+          * - at `STATIC.defaults.plugins` during class definition to have them 
+          *   activated by the constructor automatically or,
           * 
-          * Also, don't forget to define a static property 
-          * `g3[myClass].defaults.plugins` that is a space delimited string of 
-          * all plugin names that you want to be activated on construction, see 
-          * {@link g3.hybrid.defaults}.
+          * - after class definition and before construction like 
+          *   `g3.myClass.defaults.plugins += ' <function-name>';` with the same 
+          *   result as previous or,
+          * 
+          * - during construction with user argument `plugins`.
+          * 
+          * In the first and third options `plugins` is a space delimited string 
+          * of all plugin names that you want to activate (in the second one a 
+          * space prepends the name).
+          * 
+          * See {@link g3.hybridStatic.plugins} and {@link g3.hybrid.defaults}.
           * @function g3.hybridStatic.plugin
           * @memberof g3.hybridStatic
           * @param {Object} obj A custom object

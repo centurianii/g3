@@ -74,7 +74,7 @@
  * @param {Boolean|null|String} noFollow Manipulates analysis on types 
  * @return {Object} A debugging object
  * @version 0.2
- * @author {@link https:/github.com/centurianii}
+ * @author https:/github.com/centurianii
  * @copyright MIT licence
  */
 g3.debug = function(obj, maxDepth, noFollow){ //construct with argument
@@ -540,7 +540,7 @@ g3.debug.version = '0.2';
  * @summary g3.debug.author
  * ------------------------
  * @desc
- * {@link https:/github.com/centurianii}
+ * [centurianii](https:/github.com/centurianii)
  * @var {String} author
  * @memberof g3.debug
  */
@@ -549,7 +549,7 @@ g3.debug.author = 'https:/github.com/centurianii';
  * @summary g3.debug.copyright
  * ---------------------------
  * @desc
- * MIT licence, copyright {@link https:/github.com/centurianii}.
+ * MIT licence, copyright [centurianii](https:/github.com/centurianii).
  * @var {String} copyright
  * @memberof g3.debug
  */

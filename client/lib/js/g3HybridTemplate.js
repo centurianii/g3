@@ -66,7 +66,7 @@
  * 
  * INSTANCE FUNCTIONS
  * ------------------
- *      -
+ * -
  * 
  * PROTOTYPE METHODS
  * -----------------
@@ -100,7 +100,7 @@
  * 
  * @class g3.HybridTemplate
  * @version 0.1
- * @author {@link https:/github.com/centurianii}
+ * @author https:/github.com/centurianii
  * @copyright MIT licence
  */
 g3.HybridTemplate = g3.Class(g3.hybrid('HybridTemplate'), g3.hybridStatic('HybridTemplate'), {
@@ -181,7 +181,7 @@ g3.HybridTemplate = g3.Class(g3.hybrid('HybridTemplate'), g3.hybridStatic('Hybri
        * @var {string} author
        * @memberof g3.HybridTemplate
        */
-      author: 'g3 is a js library by https:/github.com/centurianii',
+      author: 'https:/github.com/centurianii',
       
       /**
        * @summary g3.HybridTemplate.copyright
@@ -239,7 +239,7 @@ g3.HybridTemplate = g3.Class(g3.hybrid('HybridTemplate'), g3.hybridStatic('Hybri
          
          // 1. If NOT called from constructor
          if(this.instance.newBuild['HybridTemplate'] === false)
-            g3.HybridTemplate.Super.prototype.init.call(this, options);
+            g3.HybridTemplate.Super.prototype['initn-1'].call(this, options);
             
          // 2. call functions
          /* To initiate debug: pass in 'options' a key 'debug' with value 
@@ -303,6 +303,8 @@ g3.HybridTemplate = g3.Class(g3.hybrid('HybridTemplate'), g3.hybridStatic('Hybri
        * @return {Object} An object of this class
        */
       destroy: function(){
+         var self = this;
+         
          // 1. call parent
          g3.HybridTemplate.Super.prototype.destroy.call(self);
          

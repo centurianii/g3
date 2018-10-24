@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>HybridTemplate - g3 MIT</title>
+    <title>isMobile - g3 MIT</title>
     
     <meta name="description" content="A server-client library" />
     
@@ -45,7 +45,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">HybridTemplate</h1>
+    <h1 class="page-title">isMobile</h1>
     
 
     
@@ -58,9 +58,9 @@
 <header>
     
         <h2>
-            <span class="ancestors"><a href="g3.html">g3</a>.</span>
+            <span class="ancestors"><a href="g3.html">g3</a><a href="g3.utils.html">.utils</a>.</span>
         
-        HybridTemplate
+        isMobile
         </h2>
         
     
@@ -74,11 +74,11 @@
 
     
 
-    <h4 class="name" id="HybridTemplate"><span class="type-signature"></span>new HybridTemplate<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="isMobile"><span class="type-signature"></span>new isMobile<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
-    <p class="summary"><p>Public class 'g3.HybridTemplate'.
-Replace <code>HybridTemplate</code> with your classname.</p></p>
+    <p class="summary"><p>Creates an object with member functions that test if the client's browser 
+belongs to a specific family of devices.</p></p>
     
 
 
@@ -89,14 +89,11 @@ Replace <code>HybridTemplate</code> with your classname.</p></p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_g3HybridTemplate.js.html">js/g3HybridTemplate.js</a>, <a href="js_g3HybridTemplate.js.html#line2">line 2</a>
+        <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html">js/iuGXtklwZorkyG6kJ2zYlKHf.js</a>, <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html#line331">line 331</a>
     </li></ul></dd>
     
 
     
-    <dt class="tag-version">Version:</dt>
-    <dd class="tag-version"><ul class="dummy"><li>0.1</li></ul></dd>
-    
 
     
 
@@ -113,25 +110,23 @@ Replace <code>HybridTemplate</code> with your classname.</p></p>
     
 
     
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
         <ul>
-            <li>https:/github.com/centurianii</li>
+            <li><a href="https://stackoverflow.com/questions/32570067/how-to-detect-whether-browser-is-ios-android-or-desktop-using-jquery">https://stackoverflow.com/questions/32570067/how-to-detect-whether-browser-is-ios-android-or-desktop-using-jquery</a>, 
+<a href="https://bitsrc.io/tomlandau/simple-js/global/is-mobile/code#src/global/isMobile.js">https://bitsrc.io/tomlandau/simple-js/global/is-mobile/code#src/global/isMobile.js</a></li>
         </ul>
     </dd>
-    
-
-    
-    <dt class="tag-copyright">Copyright:</dt>
-    <dd class="tag-copyright"><ul class="dummy"><li>MIT licence</li></ul></dd>
-    
-
-    
-
-    
-
-    
-
     
 
     
@@ -140,95 +135,6 @@ Replace <code>HybridTemplate</code> with your classname.</p></p>
 
 
 
-
-<div class="description">
-    <p>This class implements a proposal/paradigm of the use of the <a href="g3.Class.html">g3.Class</a>
-factory as descibed at <a href="g3.hybrid.html">g3.hybrid</a>:</p>
-<pre class="prettyprint source lang-javascript"><code>g3.myClass = 
-     g3.Class(
-        g3.ParentClass, 
-        g3.hybridStatic(myClass),
-        mixin1,
-        mixin2,
-        ...
-        {
-           STATIC: {
-              defaults: {
-                 ...
-              },
-
-           }, 
-           constructor: function(options){
-              var myClass = 'myClass';
-              // if inheritance level > 1 and you want object storage:
-              //g3[myClass].add(this.defaults.name, this);
-              // n = depth of class
-              this.initn(options);
-              this.instance.newBuild[myClass] = false;
-           },
-           prototype: {
-              // n = depth of class
-              initn: function(options){
-                 // 1. If NOT called from constructor
-                 if(this.instance.newBuild['myClass'] === false)
-                    g3.myClass.Super.prototype.init.call(this, options);
-
-                 var debug = {};
-                 // 2. call functions
-                 debug['switch'] = this.switch(options, 'myClass');
-                 debug['getNodes'] = this.getNodes(options);
-                 debug['buildn'] = this.buildn();
-
-                 // 3. update 'options.debug'
-                 (options && (g3.utils.type(options.debug) == 'object')) && 
-                 $.extend(true, options.debug, debug);
-
-                 // 4. store last working set of 'this.defaults'
-                 this.instance.lastDefaults = this.defaults;
-                 return this;
-              },
-              build2: function(){
-                 // ...
-              },
-              toString: function(){
-                 return '[Object g3.myClass]';
-              },
-              // ...
-           }
-        }
-     );
-// connect g3.myClass to jquery:
-g3.myClass.library('jquery');</code></pre><h2>INSTANCE FUNCTIONS</h2><pre class="prettyprint source"><code> -</code></pre><h2>PROTOTYPE METHODS</h2><ul>
-<li><p><code>g3.HybridTemplate.addLibrary</code>, see <a href="g3.hybrid.html#addLibrary">g3.hybrid#addLibrary</a>,</p>
-</li>
-<li><p><code>g3.HybridTemplate.to</code>, see <a href="g3.hybrid.html#to">g3.hybrid#to</a>,</p>
-</li>
-<li><p><code>g3.HybridTemplate.end</code>, see <a href="g3.hybrid.html#end">g3.hybrid#end</a>,</p>
-</li>
-<li><p><code>g3.HybridTemplate.switch</code>, see <a href="g3.hybrid.html#switch">g3.hybrid#switch</a>,</p>
-</li>
-<li><p><code>g3.HybridTemplate.getNodes</code>, see <a href="g3.hybrid.html#getNodes">g3.hybrid#getNodes</a>,</p>
-</li>
-<li><p><code>g3.HybridTemplate.toString</code>, see <a href="g3.hybrid.html#toString">g3.hybrid#toString</a>.</p>
-</li>
-</ul>
-<h2>STATIC FUNCTIONS</h2><ul>
-<li><p><code>g3.HybridTemplate.library</code>, see <a href="g3.hybridStatic.html#.library">g3.hybridStatic.library</a>,</p>
-</li>
-<li><p><code>g3.HybridTemplate.plugin</code>, see <a href="g3.hybridStatic.html#.plugin">g3.hybridStatic.plugin</a>,</p>
-</li>
-<li><p><code>g3.HybridTemplate.destroy</code>, see <a href="g3.hybridStatic.html#.destroy">g3.hybridStatic.destroy</a>,</p>
-</li>
-<li><p><code>g3.HybridTemplate.get</code>, see '<a href="g3.hybridStatic.html#.get">g3.hybridStatic.get</a>,</p>
-</li>
-<li><p><code>g3.HybridTemplate.add</code>, see <a href="g3.hybridStatic.html#.add">g3.hybridStatic.add</a>,</p>
-</li>
-<li><p><code>g3.HybridTemplate.Singleton</code>, see <a href="g3.hybridStatic.html#.Singleton">g3.hybridStatic.Singleton</a>,</p>
-</li>
-<li><p><code>g3.HybridTemplate.inherits</code>, see <a href="g3.hybridStatic.html#.inherits">g3.hybridStatic.inherits</a>.</p>
-</li>
-</ul>
-</div>
 
 
 
@@ -269,615 +175,6 @@ g3.myClass.library('jquery');</code></pre><h2>INSTANCE FUNCTIONS</h2><pre class=
     
 
     
-        <h3 class="subsection-title">Members</h3>
-
-        
-            
-<h4 class="name" id=".author"><span class="type-signature">(static) </span>author<span class="type-signature"> :string</span></h4>
-
-
-<p class="summary"><h2>g3.HybridTemplate.author</h2></p>
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_g3HybridTemplate.js.html">js/g3HybridTemplate.js</a>, <a href="js_g3HybridTemplate.js.html#line175">line 175</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>Static property <strong><code>g3.HybridTemplate.author</code></strong>.
-Replace <code>HybridTemplate</code> with your classname.</p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id=".copyright"><span class="type-signature">(static) </span>copyright<span class="type-signature"> :string</span></h4>
-
-
-<p class="summary"><h2>g3.HybridTemplate.copyright</h2></p>
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_g3HybridTemplate.js.html">js/g3HybridTemplate.js</a>, <a href="js_g3HybridTemplate.js.html#line186">line 186</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>Static property <strong><code>g3.HybridTemplate.copyright</code></strong>.
-Replace <code>HybridTemplate</code> with your classname.</p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id=".defaults"><span class="type-signature">(static) </span>defaults<span class="type-signature"> :Object</span></h4>
-
-
-<p class="summary"><h2>g3.HybridTemplate.defaults</h2></p>
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_g3HybridTemplate.js.html">js/g3HybridTemplate.js</a>, <a href="js_g3HybridTemplate.js.html#line108">line 108</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Name of stored object, should provide your own names</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>parent</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Parent node whose children will be searched for</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>nodes</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;Object></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A static temporary node collection that is 
-   filled during instance re-initialization by an external library 
-   like jquery (see <a href="g3.hybridStatic.html#.library">g3.hybridStatic.library</a>)</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>plugins</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A space delimited string of all plugin names
-   that will become prototypal methods with the names listed inside</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>on</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;String></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An array of events handled by this class</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<div class="description">
-    <p>Static property <strong><code>g3.HybridTemplate.defaults</code></strong>.
-Replace <code>HybridTemplate</code> with your classname.</p>
-<p>This object will become instance property <code>this.defaults</code>, see 
-<a href="g3.hybrid.html#.defaults">g3.hybrid.defaults</a>.</p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id=".id"><span class="type-signature">(static) </span>id<span class="type-signature"> :string</span></h4>
-
-
-<p class="summary"><h2>g3.HybridTemplate.id</h2></p>
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_g3HybridTemplate.js.html">js/g3HybridTemplate.js</a>, <a href="js_g3HybridTemplate.js.html#line142">line 142</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>Static property <strong><code>g3.HybridTemplate.id</code></strong>.
-Replace <code>HybridTemplate</code> with your classname.</p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id=".name"><span class="type-signature">(static) </span>name<span class="type-signature"> :string</span></h4>
-
-
-<p class="summary"><h2>g3.HybridTemplate.name</h2></p>
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_g3HybridTemplate.js.html">js/g3HybridTemplate.js</a>, <a href="js_g3HybridTemplate.js.html#line153">line 153</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>Static property <strong><code>g3.HybridTemplate.name</code></strong>.
-Replace <code>HybridTemplate</code> with your classname.</p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id=".version"><span class="type-signature">(static) </span>version<span class="type-signature"> :string</span></h4>
-
-
-<p class="summary"><h2>g3.HybridTemplate.version</h2></p>
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_g3HybridTemplate.js.html">js/g3HybridTemplate.js</a>, <a href="js_g3HybridTemplate.js.html#line164">line 164</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>Static property <strong><code>g3.HybridTemplate.version</code></strong>.
-Replace <code>HybridTemplate</code> with your classname.</p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-        
-    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -887,10 +184,8 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
     
 
-    <h4 class="name" id=".constructor"><span class="type-signature">(static) </span>constructor<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id=".Android"><span class="type-signature">(static) </span>Android<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
 
-    
-    <p class="summary"><h2>g3.HybridTemplate.constructor</h2></p>
     
 
 
@@ -901,7 +196,7 @@ Replace <code>HybridTemplate</code> with your classname.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_g3HybridTemplate.js.html">js/g3HybridTemplate.js</a>, <a href="js_g3HybridTemplate.js.html#line198">line 198</a>
+        <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html">js/iuGXtklwZorkyG6kJ2zYlKHf.js</a>, <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html#line339">line 339</a>
     </li></ul></dd>
     
 
@@ -940,17 +235,6 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
 
 
-<div class="description">
-    <p>This property will become class's construction method, 
-<strong><code>g3.HybridTemplate.constructor()</code></strong>.
-Replace <code>HybridTemplate</code> with your classname.</p>
-<p>If you use inheritance, a.k.a. this is a 2nd or greater level class, you 
-need to explicitly call <code>g3.myClass.inherits(true);</code> as a first command 
-before construction and <code>g3.myClass.inherits(false);</code> immediately after to 
-avoid object storage in all parent classes or, disable storage by adding in 
-argument-object a key <code>store: false</code>.</p>
-</div>
-
 
 
 
@@ -977,7 +261,7 @@ argument-object a key <code>store: false</code>.</p>
 
         
 <div class="param-desc">
-    <p>An object of this class</p>
+    <p>True if the device uses Android OS</p>
 </div>
 
 
@@ -988,7 +272,7 @@ argument-object a key <code>store: false</code>.</p>
     </dt>
     <dd>
         
-<span class="param-type">Object</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -1002,10 +286,8 @@ argument-object a key <code>store: false</code>.</p>
 
     
 
-    <h4 class="name" id="addBack"><span class="type-signature"></span>addBack<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id=".any"><span class="type-signature">(static) </span>any<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
 
-    
-    <p class="summary"><h2>g3.HybridTemplate.prototype.addBack</h2></p>
     
 
 
@@ -1016,7 +298,7 @@ argument-object a key <code>store: false</code>.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_g3HybridTemplate.js.html">js/g3HybridTemplate.js</a>, <a href="js_g3HybridTemplate.js.html#line400">line 400</a>
+        <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html">js/iuGXtklwZorkyG6kJ2zYlKHf.js</a>, <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html#line402">line 402</a>
     </li></ul></dd>
     
 
@@ -1055,13 +337,6 @@ argument-object a key <code>store: false</code>.</p>
 
 
 
-<div class="description">
-    <p>This property will become class's prototype method, 
-<strong><code>g3.HybridTemplate.prototype.addBack()</code></strong>.
-Replace <code>HybridTemplate</code> with your classname.</p>
-<p>Adds <code>this.instance.allNodes</code> to <code>this.instance.nodes</code>.</p>
-</div>
-
 
 
 
@@ -1088,7 +363,7 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
         
 <div class="param-desc">
-    <p>An object of this class</p>
+    <p>True if the device uses any mobile OS</p>
 </div>
 
 
@@ -1099,7 +374,7 @@ Replace <code>HybridTemplate</code> with your classname.</p>
     </dt>
     <dd>
         
-<span class="param-type">Object</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -1113,10 +388,8 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
     
 
-    <h4 class="name" id="applyEvents"><span class="type-signature"></span>applyEvents<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    <h4 class="name" id=".BlackBerry"><span class="type-signature">(static) </span>BlackBerry<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
 
-    
-    <p class="summary"><h2>g3.HybridTemplate.prototype.applyEvents</h2></p>
     
 
 
@@ -1127,7 +400,7 @@ Replace <code>HybridTemplate</code> with your classname.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_g3HybridTemplate.js.html">js/g3HybridTemplate.js</a>, <a href="js_g3HybridTemplate.js.html#line331">line 331</a>
+        <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html">js/iuGXtklwZorkyG6kJ2zYlKHf.js</a>, <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html#line346">line 346</a>
     </li></ul></dd>
     
 
@@ -1166,14 +439,6 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
 
 
-<div class="description">
-    <p>This property will become class's prototype method, 
-<strong><code>g3.HybridTemplate.prototype.applyEvents()</code></strong>.
-Replace <code>HybridTemplate</code> with your classname.</p>
-<p>Handles events in <code>this.instance.nodes</code>.</p>
-<p>It should be called by g3.HybridTemplate#init.</p>
-</div>
-
 
 
 
@@ -1200,7 +465,7 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
         
 <div class="param-desc">
-    <p>True, if it re-assigns event handlers</p>
+    <p>True if the device uses BlackBerry OS</p>
 </div>
 
 
@@ -1211,7 +476,7 @@ Replace <code>HybridTemplate</code> with your classname.</p>
     </dt>
     <dd>
         
-<span class="param-type">Boolean</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -1225,10 +490,8 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
     
 
-    <h4 class="name" id="buildn"><span class="type-signature"></span>buildn<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    <h4 class="name" id=".getUserAgent"><span class="type-signature">(static) </span>getUserAgent<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
 
-    
-    <p class="summary"><h2>g3.HybridTemplate.prototype.buildn</h2></p>
     
 
 
@@ -1239,7 +502,7 @@ Replace <code>HybridTemplate</code> with your classname.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_g3HybridTemplate.js.html">js/g3HybridTemplate.js</a>, <a href="js_g3HybridTemplate.js.html#line264">line 264</a>
+        <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html">js/iuGXtklwZorkyG6kJ2zYlKHf.js</a>, <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html#line332">line 332</a>
     </li></ul></dd>
     
 
@@ -1278,14 +541,6 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
 
 
-<div class="description">
-    <p>This property will become class's prototype method, 
-<strong><code>g3.HybridTemplate.prototype.buildn()</code></strong>.
-Replace <code>HybridTemplate</code> with your classname.</p>
-<p>It (re)-initializes an object.</p>
-<p>It should be called by <a href="g3.HybridTemplate.html#initn">g3.HybridTemplate#initn</a>.</p>
-</div>
-
 
 
 
@@ -1312,7 +567,7 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
         
 <div class="param-desc">
-    <p>True, if it alters nodes</p>
+    <p>The navigator user agent info</p>
 </div>
 
 
@@ -1323,7 +578,7 @@ Replace <code>HybridTemplate</code> with your classname.</p>
     </dt>
     <dd>
         
-<span class="param-type">Boolean</span>
+<span class="param-type">string</span>
 
 
     </dd>
@@ -1337,10 +592,8 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
     
 
-    <h4 class="name" id="destroy"><span class="type-signature"></span>destroy<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id=".iOS"><span class="type-signature">(static) </span>iOS<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
 
-    
-    <p class="summary"><h2>g3.HybridTemplate.prototype.destroy</h2></p>
     
 
 
@@ -1351,7 +604,7 @@ Replace <code>HybridTemplate</code> with your classname.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_g3HybridTemplate.js.html">js/g3HybridTemplate.js</a>, <a href="js_g3HybridTemplate.js.html#line292">line 292</a>
+        <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html">js/iuGXtklwZorkyG6kJ2zYlKHf.js</a>, <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html#line374">line 374</a>
     </li></ul></dd>
     
 
@@ -1390,13 +643,6 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
 
 
-<div class="description">
-    <p>This property will become class's prototype method, 
-<strong><code>g3.HybridTemplate.prototype.destroy()</code></strong>.
-Replace <code>HybridTemplate</code> with your classname.</p>
-<p>Reverts changes in <code>this.instance.nodes</code>.</p>
-</div>
-
 
 
 
@@ -1423,7 +669,7 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
         
 <div class="param-desc">
-    <p>An object of this class</p>
+    <p>True if the device uses iOS OS</p>
 </div>
 
 
@@ -1434,7 +680,7 @@ Replace <code>HybridTemplate</code> with your classname.</p>
     </dt>
     <dd>
         
-<span class="param-type">Object</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -1448,10 +694,8 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
     
 
-    <h4 class="name" id="initn"><span class="type-signature"></span>initn<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id=".iPad"><span class="type-signature">(static) </span>iPad<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
 
-    
-    <p class="summary"><h2>g3.HybridTemplate.prototype.initn</h2></p>
     
 
 
@@ -1462,7 +706,7 @@ Replace <code>HybridTemplate</code> with your classname.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_g3HybridTemplate.js.html">js/g3HybridTemplate.js</a>, <a href="js_g3HybridTemplate.js.html#line224">line 224</a>
+        <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html">js/iuGXtklwZorkyG6kJ2zYlKHf.js</a>, <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html#line367">line 367</a>
     </li></ul></dd>
     
 
@@ -1501,13 +745,6 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
 
 
-<div class="description">
-    <p>This property will become class's prototype method, 
-<strong><code>g3.HybridTemplate.prototype.initn()</code></strong>.
-Replace <code>HybridTemplate</code> with your classname.</p>
-<p>It (re)-initializes an object.</p>
-</div>
-
 
 
 
@@ -1534,7 +771,7 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
         
 <div class="param-desc">
-    <p>An object of this class</p>
+    <p>True if the device uses iPad OS</p>
 </div>
 
 
@@ -1545,7 +782,7 @@ Replace <code>HybridTemplate</code> with your classname.</p>
     </dt>
     <dd>
         
-<span class="param-type">Object</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -1559,10 +796,8 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
     
 
-    <h4 class="name" id="toString"><span class="type-signature"></span>toString<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+    <h4 class="name" id=".iPhone"><span class="type-signature">(static) </span>iPhone<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
 
-    
-    <p class="summary"><h2>g3.HybridTemplate.prototype.toString</h2></p>
     
 
 
@@ -1573,7 +808,7 @@ Replace <code>HybridTemplate</code> with your classname.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_g3HybridTemplate.js.html">js/g3HybridTemplate.js</a>, <a href="js_g3HybridTemplate.js.html#line371">line 371</a>
+        <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html">js/iuGXtklwZorkyG6kJ2zYlKHf.js</a>, <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html#line353">line 353</a>
     </li></ul></dd>
     
 
@@ -1612,11 +847,107 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
 
 
-<div class="description">
-    <p>This property will become class's prototype method, 
-<strong><code>g3.HybridTemplate.prototype.toString()</code></strong>.
- Replace <code>HybridTemplate</code> with your classname.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True if the device uses iPhone OS</p>
 </div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".iPod"><span class="type-signature">(static) </span>iPod<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html">js/iuGXtklwZorkyG6kJ2zYlKHf.js</a>, <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html#line360">line 360</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
 
 
 
@@ -1644,7 +975,7 @@ Replace <code>HybridTemplate</code> with your classname.</p>
 
         
 <div class="param-desc">
-    <p>The name of the class</p>
+    <p>True if the device uses iPod OS</p>
 </div>
 
 
@@ -1655,7 +986,313 @@ Replace <code>HybridTemplate</code> with your classname.</p>
     </dt>
     <dd>
         
-<span class="param-type">String</span>
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".KindleFire"><span class="type-signature">(static) </span>KindleFire<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html">js/iuGXtklwZorkyG6kJ2zYlKHf.js</a>, <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html#line395">line 395</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True if the device uses KindleFire OS</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".Opera"><span class="type-signature">(static) </span>Opera<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html">js/iuGXtklwZorkyG6kJ2zYlKHf.js</a>, <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html#line381">line 381</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True if the device uses Opera OS</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".Windows"><span class="type-signature">(static) </span>Windows<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html">js/iuGXtklwZorkyG6kJ2zYlKHf.js</a>, <a href="js_iuGXtklwZorkyG6kJ2zYlKHf.js.html#line388">line 388</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True if the device uses Windows OS</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
 
 
     </dd>

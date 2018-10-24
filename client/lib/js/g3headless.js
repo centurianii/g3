@@ -127,7 +127,7 @@ g3.headless = function(myClass){
           * @summary g3.headless.STATIC.author
           * ----------------------------------
           * @desc
-          * {@link https:/github.com/centurianii}
+          * [centurianii](https:/github.com/centurianii)
           * 
           * It shows the author of this root class that is produced by {@link g3.Class}.
           * Derived classes have their own.
@@ -139,7 +139,7 @@ g3.headless = function(myClass){
           * @summary g3.headless.STATIC.copyright
           * -------------------------------------
           * @desc
-          * MIT licence, copyright {@link https:/github.com/centurianii}.
+          * MIT licence, copyright [centurianii](https:/github.com/centurianii).
           * 
           * It shows the copyright of this root class that is produced by {@link g3.Class}.
           * Derived classes have their own.
