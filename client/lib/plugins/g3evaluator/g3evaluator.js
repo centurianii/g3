@@ -1,102 +1,21 @@
-/*********************************Object evaluator******************************
- * A graphical client testing tool for batch processing javascript commands.
- * It uses eval() and emulates console.log() in all clients even in IE browsers.
- * @module {g3.evaluator}
- *
- * @version 1.1
- * @author Scripto JS Editor by Centurian Comet.
- * @copyright MIT licence, https:/github.com/centurianii.
-*******************************************************************************/
 (function(g3, $, window, document, undefined){
-/*********************************Object evaluator******************************
+/**
+ * @summary
  * A graphical client testing tool for batch processing javascript commands.
  * It uses eval() and emulates console.log() in all clients even in IE browsers.
- * @module {g3.evaluator}
- *
- * @function {g3.evaluator.getInstance}
- * @constructor
- * @return {Object} It builds the node tree and assigns events on nodes.
- *
- * @object {g3.evaluator.getInstance().console}
- * @public
- * @function {g3.evaluator.getInstance().console.log}
- * @public
- * User's batch commands that contain the string 'console.log(value, n, nofollow)' 
- * are sent to this function that a) calls native 'console.log(value)' and 
- * b) sends output of 'g3.debug(value, n, nofollow).toHtml()' to page's console 
- * area.
- * @param {Type} 'value' an identifier of any type that we want to be analysed.
- * @param {Number} 'n' the maximum depth to look for when the passed identifier 
- * is a complex object, zero-based.
- * @param {Boolean} 'nofollow' if it is true, analysis excludes 'string', 
- * 'array' types and object references, if it is 'string', analysis excludes 
- * 'string' types etc., if it is false, null, empty string '' or anything other 
- * than string, analysis happens to every type as follows:
- * a) natives 'boolean', 'undefined', 'null', 'number', 'date' and 'regexp' are 
- * not analysed, b) references are followed (except circular ones) and 
- * c) 'object', 'function' and 'uknown' types are analysed (see g3.debug).
- * @return {Object} The console object.
- *
- * @function {g3.evaluator.getInstance().$load}
- * @public
- * Load a file with JQuery's '$.load()' method and add all it's contents in a 
- * given node.
- * @param {String|Object} 'selector' is a css selector string or another JQuery 
- * object or a node reference that will hold the file's contents.
- * @param {String} 'url' the file's path.
- * @param {String|Object} 'data' to be sent to the server.
- * @param {Function} 'complete' is a function callback.
- * @return {Object} The evaluator object.
- *
- * @function {g3.evaluator.getInstance().loadFrame}
- * @public
- * Create an iframe inside the given selector node and load the page with the 
- * given url.
- * @param {String|Object} 'selector' is a css selector string or another JQuery 
- * object or a node reference that will hold the iframe.
- * @param {String} 'src' the file's path.
- * @return {Object} The evaluator object.
- *
- * @function {g3.evaluator.getInstance().deleteFrame}
- * @public
- * Delete the iframe loaded with g3.evaluator.getInstance().loadFrame().
- * @param {String|Object} 'selector' is a css selector string or another JQuery 
- * object or a node reference that holds the iframe.
- * @return {Object} The evaluator object.
- *
- * @function {g3.evaluator.getInstance().cloneFrame}
- * @public
- * a) Load an html file to an iframe, b) copy all contents from the frame's body 
- * to the passed selector node, c) copy all contents from the frame's header 
- * to the evaluator's header and d) delete the iframe.
- * @param {String|Object} 'selector' is a css selector string or another JQuery 
- * object or a node reference that will hold the iframe.
- * @param {String} 'src' the file's path.
- * @return {Object} The evaluator object.
- *
- * @function {g3.evaluator.getInstance().removeCloned}
- * @public
- * a) Deletes all of the cloned frame's body contents inside the selector node 
- * and b) deletes all of the cloned frame's header contents from the evaluator's 
- * header.
- * @param {String|Object} 'selector' is a css selector string or another JQuery 
- * object or a node reference that holds the cloned frame's body contents.
- * @return {Object} The evaluator object.
- *
- * @function {g3.evaluator.getInstance().calledFromFrame}
- * @public
- * It is called from a page that will be cloned having been loaded to an iframe.
- * @param {String|Object} 'selector' is a css selector string or another JQuery 
- * object or a node reference that holds the cloned frame's body contents.
- * @return {undefined}.
- *
- * @version 1.0
- * @author Scripto JS Editor by Centurian Comet.
- * @copyright proprietary, not transferable, not disclosed, 
- * copyright https:/github.com/centurianii.
-*******************************************************************************/
+ * @var {object} g3.evaluator
+ * @version 1.1
+ * @author https:/github.com/centurianii
+ * @copyright MIT licence
+ */
 g3.evaluator = (function(){
-   var evaluator;
+   var evaluator,
+       highlightName = 'evaluator_highlight',
+       highlightLib = 'prettify',
+       highlightPlugins = 'line-numbers',
+       loaderName = 'evaluator_loader',
+       warning = 'g3.evaluator: Failed to build g3.Highlight object with name: "' + highlightName + '" for library "' + highlightLib + '". You have to load g3.Loader also.';
+   
    /*
     * initialization function:
     * contains event handlers and tree manipulation
@@ -177,7 +96,8 @@ g3.evaluator = (function(){
          }else if($(this).val() === 'Clone frame to stub (JQuery)'){
             evaluator.$load(nodes.frameParent, nodes.$frameSrc.val(), {});
          }else if($(this).val() === 'Clone frame to stub-HEAD'){
-            evaluator.cloneFrame(nodes.frameParent, nodes.$frameSrc.val());
+            //evaluator.cloneFrame(nodes.frameParent, nodes.$frameSrc.val());
+            evaluator.cloneFrame(nodes.frameParent);
          }else if($(this).val() === 'Remove cloned'){
             evaluator.removeCloned(nodes.frameParent);
          }
@@ -194,6 +114,9 @@ g3.evaluator = (function(){
             var txt = h_txt = b_txt = '',
                 ids = nodes.$idNodes.val().replace(/^\s+|\s+$/g, ''),
                 $b_nodes, $h_nodes;
+            
+            $("form#html fieldset > div").css('display', 'none');
+            $("form#blackboard textarea").css({width: '100%', height: 'auto'});
             
             // 1. nodes included/excluded
             if(ids == '')
@@ -658,11 +581,29 @@ g3.evaluator = (function(){
          buttonState.init().apply();
       }
       
+      
+      /*
+       * auto-expand blackboard textarea
+       */
+      function debouncedTextarea(e){
+        //this.scrollHeight - this.scrollTop === this.clientHeight
+        e.target.style.height = e.target.scrollHeight + 'px';
+      }
+      $("form#blackboard textarea").on('input', 
+         g3.debounce(function(e){
+            debouncedTextarea(e);
+            }, 
+            {delay: 100, fireLast: true}
+         )
+      );
+      
       /*
        * blackboard button actions
        */
       $("form#blackboard button, form#blackboard input[type='button']").click(function(event){
-         var lang = $('#lang option:selected').val();
+         var lang = $('#lang option:selected').val(),
+             pre;
+         
          if($(this).val() === 'Execute!'){
             evaluator.console.pile = false;
             evalExpr($(event.target).siblings('textarea').val());
@@ -670,11 +611,14 @@ g3.evaluator = (function(){
             if(!nodes.$title.val() || (nodes.$title.val() !== panelState.$title.text())){
                nodes.$title.after('<span id = "message"><span style="color: red; padding: 0 2px;">Error on title!</span><span id="suggestedTitle" style="cursor: pointer"> Suggested: \''+panelState.$title.text()+'\' (click to load)</span></span>');
             }else{
-               panelState.$data.find('pre').
-               removeClass('g3Highlight').
-               attr('data-lang', lang).
-               text(g3.utils.printHTML($(event.target).siblings('textarea').val())).
-               g3('Highlight', {destroy: 'ht', name: 'ht', url: '/lib/plugins/g3Highlight/'});
+               pre = panelState.$data.find('pre').
+                     attr('data-lang', lang).
+                     text(g3.utils.printHTML($(event.target).siblings('textarea').val()));
+               try{
+                  pre.g3('Highlight', highlightName).init({language: lang});
+               }catch(e){
+                  g3.utils.warning(warning);
+               }
             }
          }else if(panelState.$tabbedData && ($(this).val() === 'Save to a new tab')){
             //find tab info at closest parent
@@ -697,16 +641,48 @@ g3.evaluator = (function(){
                   $newData = $('<div class="data"><pre data-lang="' + lang + '"></pre></div>').appendTo(panelState.$data.closest('.tabs'));
                else
                   $newData = $('<div class="data"><pre data-lang="' + lang + '"></pre></div>').appendTo($('.tabs', panelState.$tabbedData).eq(1));
-               $('pre', $newData).
-                  html(g3.utils.printHTML($(event.target).siblings('textarea').val())).
-                  g3('Highlight', {destroy: 'ht', name: 'ht', url: '/lib/plugins/g3Highlight/'});
+               pre = $('pre', $newData);
+               pre.html(g3.utils.printHTML($(event.target).siblings('textarea').val()));
+               try{
+                  pre.g3('Highlight', highlightName).init({language: lang});
+               }catch(e){
+                  g3.utils.warning(warning);
+               }
                if(panelState.$title)
-                  $('pre', $newData).closest('.data').addClass('hide');
+                  pre.closest('.data').addClass('hide');
             }
          }else if($(this).val() === 'Clear'){
             $(event.target).siblings('textarea').val('').end().siblings('[id=title]').val('');
          }
       });
+      
+      /*
+       * language select boxes
+       */
+      var languages = [];
+      $('#lang, #lang-global').html('<option value="unformatted" selected="">unformatted</option>').on('click', function(){
+         var tmp = '', sel, i;
+         
+         if(languages.length)
+            return false;
+         
+         try{
+            languages = g3.Highlight.getLanguages(highlightLib);
+            languages.sort();
+         }catch(e){
+            tmp = '<option value="unformatted" selected>unformatted</option>';
+            g3.utils.warning(warning);
+         }
+         for(i = 0; i < languages.length; i++){
+            if(languages[i] == 'unformatted')
+               sel = 'selected';
+            else
+               sel = '';
+            tmp += '<option value="' + languages[i] + '" ' + sel + '>' + languages[i] + '</option>';
+         }
+         $('#lang, #lang-global').html(tmp);
+      });
+      
       
       /*
        * console button actions
@@ -794,6 +770,30 @@ g3.evaluator = (function(){
       }).change();
       
       /*
+       * un-highlight button behaviour
+       */
+      $("#b3N3K").on('click', function(event){
+         try{
+            $('.tabbedData .data pre').g3('Highlight', highlightName).init({language: 'unformatted'});
+         }catch(e){
+            g3.utils.warning(warning);
+         }
+         return false;
+      });
+      
+      /*
+       * highlight button behaviour
+       */
+      $("#R7pQK").on('click', function(event){
+         try{
+            $('.tabbedData .data pre').g3('Highlight', highlightName).init({language: $('#lang-global option:selected').val()});
+         }catch(e){
+            g3.utils.warning(warning);
+         }
+         return false;
+      });
+      
+      /*
        * panel title behaviour: '.tabbedData .titleBar .title'
        * delegator on '.tabbedDataWrapper'
        * defines private 'panelState.$tabbedData' variable
@@ -837,10 +837,19 @@ g3.evaluator = (function(){
        */
       $('#tabbedDataWrapper').on('click', '.tabbedData .titleBar .load', function(){
          if(panelState.$tabbedData){
-            var tmp = '';
+            var tmp = '', pre, lang;
             panelState.$tabbedData.find('.tabs .data').each(function(){
-               if(!$(this).hasClass('hide'))
-                  tmp += g3.utils.revertPrintHTML($(this).find('pre').text());
+               if(!$(this).hasClass('hide')){
+                  $("form#blackboard textarea").css({width: '100%', height: 'auto'});
+                  pre = $(this).find('pre');
+                  tmp = g3.utils.revertPrintHTML(pre.text());
+                  lang = pre.attr('data-lang');
+                  try{
+                     tmp = g3.utils.revertPrintHTML(g3.Highlight.get(highlightName).getText(pre));
+                  }catch(e){
+                     g3.utils.warning(warning);
+                  }
+               }
             });
             nodes.$blackboard.val(tmp);
             if(panelState.$title)
@@ -1012,11 +1021,35 @@ g3.evaluator = (function(){
       }
       
       evaluator = {
-         /*
-          * generic console object with log function
+         /**
+          * @summary
+          * A in browser `console` object of functions located at `g3.evaluator`.
+          * @var {object} g3.evaluator#console
           */
          console: {
+            /**
+             * 
+             */
             pile: false, //pile writing
+            
+            /**
+             * @summary
+             * A in browser `console.log` function.
+             * @desc
+             * User's batch commands that contain the string `console.log(value, n, nofollow)`
+             * are sent to this function that:
+             * - a) calls native 'console.log(value)' and immediately after 
+             * 
+             * - b) calls {@link g3.debug} with the above arguments and sends 
+             *      result to page's console area.
+             * @function log
+             * @memberof g3.evaluator#console
+             * @param {*} value An identifier of any type that we want to be analysed
+             * @param {number} n The maximum depth to look for when the identifier
+             *    is serached; zero-based
+             * @param {boolean} nofollow see {@link g3.debug} for a discussion
+             * @return {Object} The console object {@link g3.evaluator#console}
+             */
             log: function(value, n, nofollow){
                //IE8 returns form with id="console"!
                if(console && console.log)
@@ -1028,11 +1061,26 @@ g3.evaluator = (function(){
                return this;
             }
          },
+         
+         // deprecated: no actual button exists
          $load: function(selector, url, data, complete){
             $(selector).load(url, data, complete).removeClass('hide');
             return this;
          },
-         loadFrame: function(selector, src){
+         
+         /**
+          * @summary
+          * Create an `iframe` and add it at the passed node or selector.
+          * @desc
+          * You can't re-load before removing the existed one with {@link g3.evaluator#deleteFrame}.
+          * @function loadFrame
+          * @memberof g3.evaluator
+          * @param {string|object} selector A selector string or another JQuery 
+          *    object or a node reference that will hold the `iframe`
+          * @param {string} url The loaded file's url
+          * @return {object} The evaluator object
+          */
+         loadFrame: function(selector, url){
             var node = $(selector).get(0);
             if(!node){
                alert('Error in evaluator.loadFrame() failed to find a node for passed selector: ' + selector);
@@ -1046,15 +1094,24 @@ g3.evaluator = (function(){
                alert('Attention: clone in stub-HEAD or remove frame before re-loading!');
                return this;
             }
-            $('<iframe>').addClass('TbeFgQ7NMLTOVYjdRDjVMaoN frame').prop('src', src).appendTo(node);
+            $('<iframe>').addClass('TbeFgQ7NMLTOVYjdRDjVMaoN frame').prop('src', url).appendTo(node);
             $(node).removeClass('hide');
             loadOnce = true;
             return this;
          },
-         //deletes only iframes
+         
+         /**
+          * @summary
+          * Deletes an `iframe` contained in the passed node or selector.
+          * @function deleteFrame
+          * @memberof g3.evaluator
+          * @param {string|object} selector A selector string or another JQuery 
+          *    object or a node reference that contains the `iframe`
+          * @return {object} The evaluator object
+          */
          deleteFrame: function(selector){
-            var node = $(selector).get(0);
-            if(!node){
+            var $n = $(selector);
+            if(!$n.length){
                alert('Error in evaluator.deleteFrame() failed to find a node for passed selector: ' + selector);
                return this;
             }
@@ -1062,14 +1119,25 @@ g3.evaluator = (function(){
                alert('Attention: load a frame before removing!');
                return this;
             }
-            $(node).children('iframe').remove();
+            $n.children('iframe').remove();
             loadOnce = false;
             return this;
          },
-         //deletes cloned nodes from iframes
+         
+         /**
+          * @summary
+          * Deletes all the cloned nodes of `iframe` at the evaluator's page.
+          * @desc
+          * The deleted cloned nodes also include those at the header.
+          * @function removeCloned
+          * @memberof g3.evaluator
+          * @param {string|object} selector A selector string or another JQuery 
+          *    object or a node reference that contains the `iframe`
+          * @return {object} The evaluator object
+          */
          removeCloned: function(selector){
-            var node = $(selector).get(0);
-            if(!node){
+            var $n = $(selector).get(0);
+            if(!$n.length){
                alert('Error in evaluator.removeCloned() failed to find a node for passed selector: ' + selector);
                return this;
             }
@@ -1080,7 +1148,7 @@ g3.evaluator = (function(){
             for(var i = 0; i < cloned.length; i++)
                $(cloned[i]).remove();
             cloned = [];
-            $(node).contents().filter(function(){
+            $n.contents().filter(function(){
                if(this.nodeName && this.nodeName.toLowerCase() === 'iframe')
                   return false;
                else
@@ -1089,14 +1157,28 @@ g3.evaluator = (function(){
             clonedOnce = false;
             return this;
          },
-         //once we clone, we can't re-clone before removing the cloned ones!
-         cloneFrame: function(selector, src){
+         
+         /**
+          * @summary
+          * Copies all the nodes of an `iframe` to the evaluator's page.
+          * @desc
+          * The cloned nodes also include those at the header. The `iframe` at 
+          * the end is deleted.
+          * 
+          * You can't re-clone before removing the existed ones with {@link g3.evaluator#removeCloned}.
+          * @function cloneFrame
+          * @memberof g3.evaluator
+          * @param {string|object} selector A selector string or another JQuery 
+          *    object or a node reference that contains the `iframe`
+          * @return {object} The evaluator object
+          */
+         cloneFrame: function(selector){
             if(clonedOnce){
                alert('Attention: delete cloned in stub-HEAD before re-cloning!');
                return this;
             }
-            var node = $(selector).get(0);
-            if(!node){
+            var $n = $(selector);
+            if(!$n.length){
                alert('Error in evaluator.cloneFrame() failed to find a node for passed selector: ' + selector);
                return this;
             }
@@ -1105,22 +1187,99 @@ g3.evaluator = (function(){
                return this;
             }
             //Attention: nodes.frameParent instead of node is used by clone() method
-            nodes.frameParent = node;
+            nodes.frameParent = $n.get(0);
             clone();
             loadOnce = false;
             clonedOnce = true;
             return this;
          },
          
-         key: 'TbeFgQ7NMLTOVYjdRDjVMaoN',
-         objectName: 'g3.evaluator',
-         version: '1.0',
+         /**
+          * @summary
+          * Returns the name of the {@link g3.Highlight} object used from the 
+          * evaluator.
+          * @function highlight
+          * @memberof g3.evaluator
+          * @return {string} The name of a {@link g3.Highlight} object
+          */
+         highlight: function(){
+            return highlightName;
+         },
+         
+         /**
+          * @summary
+          * Returns the name of the library used by {@link g3.Highlight} object 
+          * of the evaluator.
+          * @function highlightLibrary
+          * @memberof g3.evaluator
+          * @return {string} The name of a {@link g3.Highlight} object
+          */
+         highlightLibrary: function(){
+            return highlightLib;
+         },
+         
+         /**
+          * @summary
+          * Returns the name of the {@link g3.Loader} object used from 
+          * {@link g3.Highlight} of the evaluator.
+          * @function loader
+          * @memberof g3.evaluator
+          * @return {string} The name of a {@link g3.Loader} object
+          */
+         loader: function(){
+            return loaderName;
+         },
+         
+         /**
+          * @var {String} g3.evaluator#id
+          */
+         id: 'TbeFgQ7NMLTOVYjdRDjVMaoN',
+         
+         /**
+          * @var {String} g3.evaluator#name
+          */
+         name: 'g3.evaluator',
+         
+         /**
+          * @var {String} g3.evaluator#version
+          */
+         version: '1.2',
+         
+         /**
+          * @summary
+          * [centurianii](https:/github.com/centurianii)
+          * @var {string} g3.evaluator#author
+          */
+         author: 'https:/github.com/centurianii',
+         
+         /**
+          * @var {String} g3.evaluator#copyright
+          */
          copyright: 'MIT, https:/github.com/centurianii'
       };
       return evaluator;
    }
    return {
+      /**
+       * @summary
+       * Returns a singleton.
+       * @desc
+       * It initializes the evaluator objects by settings properties and assigning
+       * events on nodes.
+       * 
+       * This method after it's first run, it returns the same object on next 
+       * calls.
+       * @function g3.evaluator#getInstance
+       * @constructs g3.evaluator
+       * @return {object} The evaluator object
+       */
       getInstance: function(){
+         try{
+            if(typeof(g3.Highlight.get(highlightName)) == 'function')
+               g3.Highlight({name: highlightName, library: highlightLib, loader: loaderName, plugins: highlightPlugins});
+         }catch(e){
+            g3.utils.warning(warning);
+         }
          if(evaluator)
             return evaluator;
          else

@@ -27,5 +27,9 @@ User supplies just an object where it defines the class members using some speci
 
 ![class ex.](imgs/class-1.jpg)
 
+##Test
+A [test](https://centurianii.github.io/g3/test-g3Class-1.html) page is built: 
+an evaluator page filled with code tabs that apply tests on `Class` generator.
+
 ### License
 part of g3 library under MIT license

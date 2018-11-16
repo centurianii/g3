@@ -1,0 +1,184 @@
+.g3Highlight {
+   background-color: inherit;
+   color: inherit;
+   /* font-family: "Trebuchet MS", Helvetica, sans-serif; */
+   font-family: "Courier New", Courier, monospace;
+   font-style: normal;
+   font-weight: normal;
+   margin: 0;
+   border: 0;
+   padding: 0;
+   white-space: pre-wrap;
+}
+.g3Highlight li {
+   border-left: 2px solid CornflowerBlue;
+   padding-left: 5px;
+}
+/* comments */
+.ht-comment {
+   color: brown;
+   font-style: italic;
+}
+/* keywords */
+.ht-keyword { 
+   color: blue;
+   font-weight: bold;
+}
+/* basic types */
+.ht-type { 
+   color: darkgreen;
+}
+/* user defined types */
+.ht-usertype { 
+   color: teal;
+}
+/* strings and chars */
+.ht-string { 
+   color: red; 
+   font-family: monospace;
+}
+/* regular expressions */
+.ht-regexp { 
+   color: orange; 
+   font-family: monospace;
+}
+/* e.g., \n, \t, \\ */
+.ht-specialchar { 
+   color: pink; 
+   font-family: monospace;
+}
+/* literal numbers */
+.ht-number {
+   color: purple;
+}
+/* e.g., #include, import */
+.ht-preproc {
+   color: darkblue;
+   font-weight: bold;
+}
+/* e.g., <, >, + */
+.ht-symbol {
+   color: darkred;
+}
+/* function calls and declarations */
+.ht-function {
+   color: black;
+   font-weight: bold;
+}
+/* block brackets (e.g., {, }) */
+.ht-cbracket {
+   color: red;
+}
+/* TODO and FIXME */
+.ht-todo {
+   color: cyan;
+   font-weight: bold;
+}
+/* version, copyright, author */
+.ht-legal {
+   color: darkblue;
+   font-weight: bold;
+}
+/* Predefined variables and functions (for instance Math) */
+.ht-predef_var {
+   color: darkblue;
+}
+.ht-predef_func {
+   color: darkblue;
+   font-weight: bold;
+}
+/* OOP */
+.ht-classname { 
+   color: teal;
+}
+.ht-access { 
+   color: tomato;
+}
+/* line numbers */
+.ht-linenum { 
+   color: black;
+   font-family: monospace;
+}
+/* urls */
+.ht-url {
+   color: blue;
+   text-decoration: underline;
+   font-family: monospace;
+}
+/* for ChangeLog and Log files */
+.ht-date {
+   color: blue;
+   font-weight: bold;
+}
+.ht-time, .ht-file {
+   color: darkblue;
+   font-weight: bold;
+}
+.ht-ip, .ht-name {
+   color: darkgreen;
+}
+/* for Prolog, Perl... */
+.ht-variable {
+   color: darkgreen;
+}
+/* for LaTeX */
+.ht-italics {
+   color: darkgreen;
+   font-style: italic;
+}
+.ht-bold {
+   color: darkgreen;
+   font-weight: bold;
+}
+.ht-underline {
+   color: darkgreen;
+   text-decoration: underline;
+}
+.ht-fixed {
+   color: green;
+   font-family: monospace;
+}
+.ht-argument {
+   color: darkgreen;
+}
+.ht-optionalargument {
+   color: purple;
+}
+.ht-math {
+   color: orange;
+}
+.ht-bibtex {
+   color: blue;
+}
+/* for diffs */
+.ht-oldfile {
+   color: orange;
+}
+.ht-newfile {
+   color: darkgreen;
+}
+.ht-difflines {
+   color: blue;
+}
+/* for css */
+.ht-selector {
+   color: purple;
+}
+.ht-property {
+   color: blue;
+}
+.ht-value {
+   color: darkgreen;
+   font-style: italic;
+}
+/* other */
+.ht-section {
+   color: black;
+   font-weight: bold;
+}
+.ht-paren {
+   color: red;
+}
+.ht-attribute {
+   color: darkgreen;
+}

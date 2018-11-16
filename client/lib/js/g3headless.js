@@ -5,7 +5,7 @@
  * The return of `g3.headless` is a supplementary object which forms a root 
  * **parent** defining class with the help of the class factory {@link g3.Class}.
  * @desc
- * It provides the constructor and the default and prototype members under the 
+ * It provides the constructor and the static and prototype members under the 
  * context of the class that {@link g3.Class} will try to build, i.e. 
  * **`g3[myClass]`** or **`g3.myClass`** and for that reason the passed argument 
  * should be a string of the name of that class: 

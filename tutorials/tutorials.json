@@ -4,5 +4,11 @@
    },
    "hybrid": {
       "title": "Hybrid class system"
+   },
+   "highlight": {
+      "title": "Highlight example class"
+   },
+   "evaluator": {
+      "title": "Evaluator testing tool"
    }
 }

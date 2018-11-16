@@ -5,8 +5,8 @@
  * The return of `g3.hybrid` is a supplementary object which forms a **root 
  * parent** defining class with the help of the class factory {@link g3.Class}.
  * @desc
- * It provides a constructor and static and prototype members that with the 
- * help of {@link g3.Class} will form a new constructor class, i.e. 
+ * It provides the constructor and the static and prototype members under the 
+ * context of the class that {@link g3.Class} will try to build, i.e. 
  * **`g3[myClass]`**, or **`g3.myClass`** and for that reason the passed 
  * argument should be a string of the name of that class: 
  * 
@@ -23,9 +23,11 @@
  *      );
  * ```
  * 
- * The above class is the first child of `g3.hybrid(myClass)` and we usually 
- * name it as a 1st level class even though the return of `g3.hybrid` is the 
- * root class.
+ * In the above example, `g3.myClass` is the first child of `g3.hybrid(myClass)`.
+ * 
+ * Hybrid classes are integrated with `jQuery`, see {@link g3.hybridStatic.library}
+ * and support jump-in, jump-out between object and `jQuery` collection, see 
+ * {@link g3.hybrid#to}.
  * 
  * See an explanation at {@link g3.Class} of what this notation means, in short:
  * 

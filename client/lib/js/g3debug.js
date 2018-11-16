@@ -64,8 +64,8 @@
  * The 3rd argument, `noFollow`, controls the way searches are executed:
  * 1. `false` or empty string makes every passed argument searchable,
  * 
- * 2. no argument defaults to static `g3.debug.noFollow` values of what not to 
- *    search for, see {@link g3.debug.noFollow}, 
+ * 2. no argument defaults to static values {@link g3.debug.noFollow} of what 
+ *    not to search for,
  * 
  * 3. a space delimited string of types makes them not searchable, e.g. if it is 
  *    the value `string` analysis excludes `string` types etc.
@@ -93,7 +93,7 @@ g3.debug = function(obj, maxDepth, noFollow){ //construct with argument
       if(g3.utils.type(noFollow) !== 'string')
          noFollow = g3.debug.noFollow;
       noFollow = noFollow.toLowerCase();
-      //search prototype chain if it's not excluded from argument 'noFollow'
+      //search prototype chain if it's not mentioned in argument 'noFollow'
       if(noFollow.indexOf('prototype') === -1)
          proto = 'prototype';
    }

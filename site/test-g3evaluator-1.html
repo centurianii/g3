@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Test &lt;library&gt;</title>
+   
+<link rel="stylesheet" type="text/css" href="/lib/plugins/g3evaluator/g3evaluator.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+</head>
+<body>
+<div class="TbeFgQ7NMLTOVYjdRDjVMaoN">
+<div id="header">
+   <div>
+   <h1 contenteditable="false">Test &lt;library&gt;<br></h1><span class="">[edit]</span>
+   </div>
+</div>
+</div>
+<div id="stub" class=""></div>
+<div class="TbeFgQ7NMLTOVYjdRDjVMaoN">
+<form id="loadFrame">
+   <fieldset>
+      <legend class="hover"><b>Manage stub/frame</b></legend>
+      <div style="display: none;">
+         <label class="label" for="frameSrc">Frame source:</label><input id="frameSrc" type="text"><br>
+         <input value="Load file in frame" type="button"><input value="Remove frame" type="button"><br>
+         <input value="Clone frame to stub-HEAD" type="button"><input value="Remove cloned" type="button">
+      </div>
+   </fieldset>
+</form>
+<form id="html">
+   <fieldset>
+      <legend class="hover"><b>Load html</b></legend>
+      <div style="display: none;">
+         <textarea rows="5" wrap="virtual"></textarea><br>
+         <input value="Load" type="button"><input value="Clear" type="button"><br>
+         <select id="whichHtml"><option value="Include" selected="">Include classes/ids (any depth):</option><option value="Exclude">Exclude classes/ids (1st level childs):</option></select><input id="idHtml" type="text"> seperate by space or comma or semicolon or vertical bar: [ ,;|]
+      </div>
+   </fieldset>
+</form>
+<div id="libraryWrapper">
+<form id="header-addRemoveLib">
+   <fieldset>
+      <legend class="hover">Add/Remove .css library</legend>
+      <div style="display: none;">
+         <label class="label" for="libName">Name on list:</label><input id="libName" type="text"><br>
+         <label class="label" for="libPath">Path:</label><input id="libPath" type="text"><br>
+         <input value="Add" type="button"><input value="Remove" type="button">
+         <p>
+            <span><label class="label" for="header-loadAll">Load all (top-bottom):</label><input id="header-loadAll" type="checkbox"></span>
+         </p>
+         <p>Click order -&gt; list order and file source order, on loading errors check url prefix and repeat.</p>
+      </div>
+   </fieldset>
+</form>
+<form id="footer-addRemoveLib">
+   <fieldset>
+      <legend class="hover">Add/Remove .js library</legend>
+      <div style="display: none;">
+         <label class="label" for="footer-libName">Name on list:</label><input id="footer-libName" type="text"><br><label class="label" for="footer-libPath">Path:</label><input id="footer-libPath" type="text"><br><input value="Add" type="button"><input value="Remove" type="button">
+         <p>
+            <span><label class="label" for="footer-loadAll">Load all (top-bottom):</label><input id="footer-loadAll" type="checkbox"></span>
+         </p>
+         <p>Click order -&gt; list order and file source order, on loading errors check url prefix and repeat.</p>
+      </div>
+   </fieldset>
+</form>
+<div class="clearWrapper"></div>
+<form id="header-libraries">
+   <fieldset>
+      <legend class="hover">Load .css library</legend>
+      <div style="display: none;">
+         <label class="label" for="memorize-header">Keep list frozen:</label><input id="memorize-header" type="checkbox"><br>
+         <ol>
+            <li><label class="label" for="UiWo0">Bootstrap.3.3.7</label><input id="UiWo0" data-id="hZ8g2" value="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type="checkbox"></li><li><label class="label" for="rj9fs">Bootstrap.3.3.7 default theme</label><input id="rj9fs" data-id="EEfMH" value="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css" type="checkbox"></li>
+            <li><label class="label" for="h6HnG">Bootstrap.3.3.7 cerulean</label><input id="h6HnG" data-id="zf6EV" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="5EK1T">Bootstrap.3.3.7 cosmo</label><input id="5EK1T" data-id="hbNxK" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="PDENa">Bootstrap.3.3.7 cyborg</label><input id="PDENa" data-id="vXCX6" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="LBjZ3">Bootstrap.3.3.7 darkly</label><input id="LBjZ3" data-id="oCiBw" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/darkly/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="NFZY8">Bootstrap.3.3.7 flatly</label><input id="NFZY8" data-id="xwFq6" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="ZKq79">Bootstrap.3.3.7 journal</label><input id="ZKq79" data-id="tO2OF" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="HZxwD">Bootstrap.3.3.7 lumen</label><input id="HZxwD" data-id="wKPGf" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/lumen/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="khW8v">Bootstrap.3.3.7 paper</label><input id="khW8v" data-id="q81Kq" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="nXeG8">Bootstrap.3.3.7 readable</label><input id="nXeG8" data-id="VW5FG" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="E3trm">Bootstrap.3.3.7 sandstone</label><input id="E3trm" data-id="lpTNH" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/sandstone/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="bO1At">Bootstrap.3.3.7 simplex</label><input id="bO1At" data-id="8bZkZ" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="dXNbx">Bootstrap.3.3.7 slate</label><input id="dXNbx" data-id="1inMh" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="5PcBq">Bootstrap.3.3.7 spacelab</label><input id="5PcBq" data-id="rWdnx" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="ypc42">Bootstrap.3.3.7 superhero</label><input id="ypc42" data-id="uDyJ2" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/superhero/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="zndIZ">Bootstrap.3.3.7 united</label><input id="zndIZ" data-id="pyUIh" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="L5uRE">Bootstrap.3.3.7 yeti</label><input id="L5uRE" data-id="flfY3" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css" type="checkbox"></li><li><label class="label" for="nE3lU">Fontawesome</label><input id="nE3lU" data-id="RrXcg" value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="checkbox"></li><li><label class="label" for="oZbkU">Glyphicons eot</label><input id="oZbkU" data-id="kJScC" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.eot" type="checkbox"></li><li><label class="label" for="x8cbe">Glyphicons svg</label><input id="x8cbe" data-id="eqRpL" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.svg" type="checkbox"></li><li><label class="label" for="pbvm0">Glyphicons ttf</label><input id="pbvm0" data-id="1lRtB" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.ttf" type="checkbox"></li><li><label class="label" for="h0VIc">Glyphicons woff</label><input id="h0VIc" data-id="u8DwY" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.woff" type="checkbox"></li><li><label class="label" for="S8b7C">Glyphicons woff2</label><input id="S8b7C" data-id="uDlVM" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.woff2" type="checkbox"></li></ol>
+      </div>
+   </fieldset>
+</form>
+<form id="footer-libraries">
+   <fieldset>
+      <legend class="hover">Load .js library</legend>
+      <div style="display: none;">
+         <label class="label" for="memorize-footer">Keep list frozen:</label><input id="memorize-footer" type="checkbox"><br>
+         <ol>
+            <li><label class="label" for="HzGqk">Bootstrap 3.3.7</label><input id="HzGqk" data-id="5uVLE" value="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" type="checkbox"></li>
+            
+            
+            
+            
+            
+            
+         </ol>
+      </div>
+   </fieldset>
+</form>
+</div>
+<div class="clearWrapper"></div>
+<p>
+   <span><label class="label" for="boardHeights">Equal board heights:</label><input id="boardHeights" type="checkbox"></span><span><label class="label" for="boardWidthSingle">Single column boards:</label><input id="boardWidthSingle" type="checkbox"></span>
+</p>
+<div id="boardWrapper">
+   <form class="" id="blackboard">
+      <fieldset>
+         <legend><b>Blackboard</b></legend>
+         <label class="label" for="title">Tab title:</label><input id="title" type="text"><br>
+         <textarea style="width: 100%;" rows="15" wrap="virtual"></textarea><br>
+         <input value="Execute!" type="button"><input value="Save" type="button"><input value="Save to a new tab" type="button"><input value="Clear" type="button">Format language: <select id="lang"><option value="javascript" selected="">Javascript</option><option value="unformatted">Unformatted</option></select><br>
+      </fieldset>
+   </form>
+   <form class="" id="console">
+      <fieldset>
+         <legend><b>Console</b></legend>
+         <div class="data"><pre></pre></div>
+         <input value="Clear" type="button">
+      </fieldset>
+   </form>
+</div>
+<div class="clearWrapper"></div>
+<form id="addRemovePanel">
+   <fieldset>
+      <legend class="hover">Add/Remove panel</legend>
+      <div style="display: none;">
+         <label class="label" for="panelTitle">Panel title:</label><input id="panelTitle" type="text"><br>
+         <input value="Add" type="button"><input value="Remove" type="button">
+      </div>
+   </fieldset>
+</form>
+<hr>
+<p>
+   <span style="padding: 0.4em 0.8em; color: #003380; background-color: #66a3ff;">Load any tab to blackboard</span><span><label class="label" for="panelHeights">Equal panel heights:</label><input id="panelHeights" type="checkbox"></span><span><label class="label" for="panelWidthSingle">Single column panels:</label><input id="panelWidthSingle" type="checkbox"><button id="b3N3K" class="load">Un-Highlight all</button></span>
+</p>
+
+<div id="tabbedDataWrapper">
+<div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title enabled">How to work</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title enabled">Files included</div><div class="close">X</div></div><div class="tabBar"><div class="title">Work order</div><div class="close">X</div></div><div class="tabBar"><div class="title">Organization</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="javascript" class=" language-javascript"><code class=" language-javascript"><span class="token comment">/*
+ * A) CSS
+ * ------
+ * 1) /lib/plugins/g3evaluator/g3evaluator.css
+ * 2) https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css
+ *
+ * B) JS
+ * -----
+ * 1) https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
+ * 2) /lib/js/iuGXtklwZorkyG6kJ2zYlKHf.js
+ * 3) /lib/js/g3debug.js
+ * 4) /lib/plugins/g3evaluator/g3evaluator.js
+ * 5) /lib/js/g3Class.js
+ * 6) /lib/js/g3hybrid.js
+ * 7) /lib/js/g3hybridStatic.js
+ * 8) /lib/plugins/g3Highlight/g3Highlight.js
+ * 9) https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js
+ * 10) https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-javascript.min.js
+ */</span></code></pre></div><div class="data hide"><pre data-lang="javascript" class=" language-javascript"><code class=" language-javascript"><span class="token comment">/*
+ * 1) Open drop down panel "Add/Remove .css/.js library" and 
+ *    add resources
+ *
+ * 2) Open drop down panel "Load .css/.js library" and click 
+ *    to load resources or,uncheck to remove resources.
+ *    If you uncheck "Keep list frozen" then your visual 
+ *    list order is re-arranged to the library source order 
+ *    as you check or uncheck libraries from the list,
+ *    i.e. the 3rd check from the 6th library is moved 3rd 
+ *    on the list, the 4th becomes 4th on the list etc.
+ *    Our goal is to have an exact view of the actual source
+ *    order.
+ *
+ * 3) Open drop down panel "Add/Remove panel" and type the 
+ *    title of the panel you want to add
+ *
+ * 4) Go to "Blackboard" write a title and some code to
+ *    execute; when you are satisfied click on the panel
+ *    you want this code to be saved and return at 
+ *    "Blackboard" and pres save with button
+ *    "Save to a new tab". Repeat as many times you want
+ *
+ * 5) To load a tab from your panels click the tab title
+ *    and press button "Load tab" at the right side of
+ *    the panel's title; go to "Blackboard" to see your
+ *    code loaded and ready to be executed
+ *
+ * 6) To modify an existed tab of a panel, load it as
+ *    explained in step (5), modify it and press button
+ *    "Save" of the "Blackboard" to save the modified 
+ *    version; if you highlight another tab while 
+ *    you have still on "Blackboard" the previous one
+ *    you'll see a clickable error message; the system
+ *    tries to find a unique title among the existed
+ *    ones at the panel; just click on the message,
+ *    correct the title to be the same as the tab 
+ *    you are interested, highlight that tab and then
+ *    press "Save" at the "Blackboard"; always the 
+ *    title of the "Blackboard" should be the same as
+ *    that of the highlighted tab to activate "Save"
+ *
+ * 7) Panels form 2 columns but if you check the label
+ *    "Single column panels" just below "Add/Remove
+ *    panel" you'll have single column panels that
+ *    stretch the entire screen
+ *
+ * 8) When you want to save the entire page first
+ *    - check the tabs you want to be activated on 
+ *      page reload, 
+ *    - then close other opened drop down panels 
+ *      like "Add/Remove .js library" etc. and
+ *    - finally, open drop down "Load html", press
+ *      button "Load" and you can copy the actual
+ *      page contents from the textarea above
+ */</span></code></pre></div><div class="data hide"><pre data-lang="javascript" class=" language-javascript"><code class=" language-javascript"><span class="token comment">/*
+ * 1) Code is organized in snippets; every
+ *    snippet becomes one tab
+ *
+ * 2) Many snippets of code related somehow
+ *    form a panel
+ *
+ * 3) Many panels form a test of a file or
+ *    library
+ */</span></code></pre></div></div></div></div></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/lib/js/iuGXtklwZorkyG6kJ2zYlKHf.js"></script>
+<script src="/lib/js/g3debug.js"></script>
+<script src="/lib/plugins/g3evaluator/g3evaluator.js"></script>
+<script src="/lib/js/g3Class.js"></script>
+<script src="/lib/js/g3Error.js"></script>
+<script src="/lib/js/g3hybrid.js"></script>
+<script src="/lib/js/g3hybridStatic.js"></script>
+<script src="/lib/plugins/g3Highlight/g3Highlight.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js" data-manual=""></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-javascript.min.js"></script>
+<script>
+$(function(){
+   g3.Highlight({name: 'ht', library: 'prism', language: 'unformatted'});
+   g3.evaluator.getInstance();
+});
+</script>
+
+</body>
+</html>

@@ -510,7 +510,10 @@ g3.utils.getWindow = function(node){
             node = node.parentNode;
          return node.defaultView || node.parentWindow;
       }
-   }
+   }else if(g3.utils.type(node) == 'htmldocument')
+      return node.parentWindow || node.defaultView;
+   else if((node === node.self) && (node === node.window))
+      return node;
    return window;
 };
 
@@ -534,7 +537,8 @@ g3.utils.getWindow = function(node){
  *    the created style node
  */
 g3.utils.createStyleNode = function(cssText, tag, media, type, id, win){
-   var obj = cssText;
+   var obj = cssText,
+       style;
    //overwrite arguments in case of a first argument object
    if(typeof obj === 'object'){
       tag = obj.tag;
@@ -559,7 +563,7 @@ g3.utils.createStyleNode = function(cssText, tag, media, type, id, win){
    if(!tag.nodeType || (typeof cssText !== 'string'))
       return false;
    try{
-      var style = win.document.createElement('style');
+      style = win.document.createElement('style');
       style.setAttribute('type', type);
       style.setAttribute('media', media);
       style.setAttribute('id', id);
@@ -612,7 +616,8 @@ g3.utils.createStyleNode = function(cssText, tag, media, type, id, win){
  */
 g3.utils.createScriptNode = function(text, tag, src, type, id, win, data, callback){
    var obj = text,
-       prop;
+       prop,
+       script;
    //overwrite arguments in case of a first argument object
    if(g3.utils.type(obj) === 'object'){
       tag = obj.tag;
@@ -638,7 +643,7 @@ g3.utils.createScriptNode = function(text, tag, src, type, id, win, data, callba
          tag = win.document.getElementsByTagName(tag)[0];
    }
    try{
-      var script = win.document.createElement('script');
+      script = win.document.createElement('script');
       if(type) script.setAttribute('type', type);
       if(id) script.setAttribute('id', id);
       if(g3.utils.type(data) === 'object'){

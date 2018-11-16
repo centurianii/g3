@@ -36,22 +36,29 @@ body {
    margin: 0;
    border: 0;
    padding: 0;
-   white-space: pre-wrap;
-   word-break: break-all;
+   white-space: pre-wrap !important;
+   word-break: break-all !important;
 }
 .TbeFgQ7NMLTOVYjdRDjVMaoN #header {
-   display: table;
-   background-image: url("/lib/plugins/g3evaluator/ev-logo-2.png");
-   background-position: left top;
-   background-size: contain;
-   background-repeat: no-repeat;
+   position: relative;
+   /*display: table;*/
+   /*background-image: url("/lib/plugins/g3evaluator/ev-logo-2.png");*/
+   /*background-position: left top;*/
+   /*background-size: contain;*/
+   /*background-repeat: no-repeat;*/
    height: 200px;
    padding-left: 150px;
    word-break: break-all;
 }
 .TbeFgQ7NMLTOVYjdRDjVMaoN #header > div {
-   display: table-cell;
-   vertical-align: middle;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   /*display: table-cell;*/
+   /*vertical-align: middle;*/
+}
+.TbeFgQ7NMLTOVYjdRDjVMaoN #header > div > a {
+   margin-left: -150px;
 }
 .TbeFgQ7NMLTOVYjdRDjVMaoN #header > div > * {
    display: inline-block;
@@ -146,11 +153,14 @@ overflow: auto;
 /* 
  * '.gridTabbedData': Float wrapper of panels
  */
+.TbeFgQ7NMLTOVYjdRDjVMaoN .gridTabbedData:nth-of-type(2n+1) {
+   clear: left;
+}
 .TbeFgQ7NMLTOVYjdRDjVMaoN .gridTabbedData {
    box-sizing: border-box;
    display: inline-block;
-   /*position: relative;
-   float: left;*/
+   /*position: relative;*/
+   float: left;
    vertical-align: top;
    width: 50%;
    margin: 0;

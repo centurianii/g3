@@ -32,8 +32,8 @@
  *    top: ...,               // from document top
  *    viewLeft:...,           // from viewport left
  *    viewTop: ...,           // from viewport top
- *    viewRight: ...,         // from viewport left
- *    viewBottom: ...,        // from viewport top 
+ *    viewRight: ...,         // from viewport right
+ *    viewBottom: ...,        // from viewport bottom
  *    visible: ...
  *    intersect: <function>,
  *    adjucent: <function>

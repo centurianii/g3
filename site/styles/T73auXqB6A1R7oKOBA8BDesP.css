@@ -1,0 +1,1106 @@
+/**
+ * T73auXqB6A1R7oKOBA8BDesP
+ * ========================
+ * Responsive horizontal accordion for Bootstrap v.3.3.
+ * 
+ * Free variables:
+ * ---------------
+ * - `slides`: the number of `<li>` used,
+ * 
+ * - `height`: for the accordion,
+ * 
+ * - `tab-width`: for the not opened slides,
+ * 
+ * - `accordion-gutter`: for the space between tabs,
+ * 
+ * - `border`: for the border around tabs/slides,
+ * 
+ * - `radius`: for the radius of tabs/slides,
+ * 
+ * - `accordion-back-color`: for a general background color,
+ * 
+ * - `tab-back-color`: for tab background color,
+ * 
+ * - `tab-hover-back-color`: for tab background color on hover (not to be used 
+ *   with `hover` control class),
+ * 
+ * - `img-position`: for image positioning on tabs,
+ * 
+ * - `title-open-back-color`: for opened `.accordion-title` background color,
+ * 
+ * - `tab-title-font-color`: for the tab title font,
+ * 
+ * - `title-font-color`: for the opened title font,
+ *
+ * - `body-font-color`: for the body font,
+ * 
+ * - `body-back-color`: for `.accordion-body` background color,
+ * 
+ * - `nav-back-color`: for `.accordion-nav a` background color,
+ * 
+ * - `nav-hover-back-color`: for `.accordion-nav a` background color on hover,
+ * 
+ * - `slide-back-color`: for opened slide background color.
+ * 
+ * Control classes: (behavior)
+ * ----------------
+ * - `.open` or `justify`: at the root class `.T73auXqB6A1R7oKOBA8BDesP` expands `<ul>` to the 
+ *   whole available horizontal space making slides take equal amount of space 
+ *   (justified) when nothing is selected. If not used, the `<ul>` uses only 
+ *   `slides`*`tab-width` space so that the slides when nothing is selected are 
+ *   stacked to the left taking each equal width of `tab-width` (`justify` is used
+ *   by js),
+ * 
+ * - `.open`: at the `<li>` uses all the available space minus the width of the 
+ *   other slides; should be combined with `open` at the root class,
+ * 
+ * - `.scroll`: at the root class `.T73auXqB6A1R7oKOBA8BDesP` makes selected slide 
+ *   to be scrollable and applies also to `.accordion-text` making it scrollable 
+ *   even if it's `position: absolute;` when slide is opened but with nasty 
+ *   animation scrollbars (use js during animation and hide property `overflow`),
+ * 
+ * - `.h-*`: at the root class `.T73auXqB6A1R7oKOBA8BDesP` for different accordion 
+ *   heights measured on `%` values of screen height, steps of `10%`,
+ * 
+ * - `.no-open-text`: at the root class `.T73auXqB6A1R7oKOBA8BDesP` or at `<li>` 
+ *   to hide all text under class `.accordion-text` in opened slides,
+ * 
+ * - `.img-cover`: at the root class `.T73auXqB6A1R7oKOBA8BDesP` or at `<li>` to 
+ *   scale and clip `.accordion-img` images so that they fill the entire visible 
+ *   slide,
+ * 
+ * - `.accordion-nav`: at node `.T73auXqB6A1R7oKOBA8BDesP > ul > li > div > .accordion-nav` 
+ *   prints a centered navigation bar,
+ * 
+ * - `.fix-nav-scroll-overlap`: at the root class `.T73auXqB6A1R7oKOBA8BDesP` 
+ *   prints the right navigation arrow with a right space to avoid possible 
+ *   vertical scrollbar overlap (avoid it in mobile devices or use js!),
+ * 
+ * - `.nav-circle`: at the root class `.T73auXqB6A1R7oKOBA8BDesP` prints a 
+ *   centered navigation bar with a round background,
+ * 
+ * - `.nav-square`: at the root class `.T73auXqB6A1R7oKOBA8BDesP` prints a 
+ *   centered navigation bar with a square background,
+ * 
+ * - `.nav-top`: at the root class `.T73auXqB6A1R7oKOBA8BDesP` in combination 
+ *   with a `nav*` class puts the navigation bar at the top of the slide,
+ * 
+ * - `.nav-bottom`: at the root class `.T73auXqB6A1R7oKOBA8BDesP` in combination 
+ *   with a `nav*` class puts the navigation bar at the bottom of the slide.
+ * 
+ * Help classes: (presentation)
+ * -------------
+ * - `.accordion-text`: contains the tab and slide title and the slide main text
+ *   with the help classes `accordion-title` and `accordion-body`,
+ * 
+ * - `.accordion-title`: inside `accordion-text`,
+ * 
+ * - `.accordion-body`: inside `accordion-text`,
+ * 
+ * - `.accordion-nav`: navigation arrows,
+ * 
+ * - `.accordion-nav a.disabled`: disabled navigation arrows,
+ * 
+ * - `.accordion-img`: responsive images for the accordion.
+ * 
+ * Example: 
+ * --------
+ * 2nd slide is opened with no `.accordion-text` shown, accordion has 
+ * screen height, opened with mouse hover, all slides have at bottom a navigation 
+ * bar with circular arrows, slides are scrollable if content does not fit, a fix
+ * exists for right arrow-scrollbar overlap and image in 1st slide covers the 
+ * entire visible slide also notice that 1st slide contains all help classes
+ * ```
+ * <div class="T73auXqB6A1R7oKOBA8BDesP h-100 hover nav-circle nav-bottom scroll fix-nav-scroll-overlap open">
+ *    <ul>
+ *       <!-- 1st slide -->
+ *       <li class="img-cover">
+ *          <div>
+ *             <div class="accordion-text pYLEi1aS9dFRUWLSptPEh7ov">
+ *                <div class="centered">
+ *                   <h2 class="accordion-title">...</h2>
+ *                   <div class="accordion-body">...</div>
+ *                </div>
+ *             </div>
+ *             <div class="accordion-nav">
+ *                <a class="disabled" href="#" onclick="return false;">
+ *                   <i class="fa fa-angle-left" aria-hidden="true"></i>
+ *                </a>
+ *                <a href="#" onclick="return false;">
+ *                   <i class="fa fa-angle-right" aria-hidden="true"></i>
+ *                </a>
+ *             </div>
+ *             <img class="accordion-img" src="..."></img>
+ *          </div>
+ *       </li>
+ *       <!-- 2nd slide -->
+ *       <li class="open no-open-text">
+ *          <div>...</div>
+ *       </li>
+ *    </ul>
+ * </div>
+ * ```
+ */
+/* 
+ * Basic code
+ * ----------
+ */
+.T73auXqB6A1R7oKOBA8BDesP {
+  width: 100%;
+  height: 50vh;                        /* = free var 'height', need this to clip empty space at the bottom! */
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 5px 3px 3px rgba(0,0,0,0.3),5px -3px 3px rgba(0,0,0,0.3);
+                                       /* '5px' comes from free var 'accordion-gutter' */
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-100 {
+   height: 100vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-90 {
+   height: 90vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-80 {
+   height: 80vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-70 {
+   height: 70vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-60 {
+   height: 60vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-50 {
+   height: 50vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-40 {
+   height: 40vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-30 {
+   height: 30vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-20 {
+   height: 20vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-10 {
+   height: 10vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-0 {
+   height: 0;
+}
+.T73auXqB6A1R7oKOBA8BDesP > ul {
+   list-style: none;
+   width: 32%;                            /* = 'slides' * 'tab-width' or, leave it fixed! ('.T73auXqB6A1R7oKOBA8BDesP.open' resets it to 100%) */
+   display: table;
+   table-layout: fixed;
+   margin: 0;
+   padding: 0;
+   transition: all 500ms ease;            /* need this when we are entering vertically! */
+}
+.T73auXqB6A1R7oKOBA8BDesP > ul > li {
+   display: table-cell;
+   vertical-align: top;
+   position: relative;
+   /* need this to stop rapid opening of all subsequent slides when entering vertically! */
+   overflow: hidden;                      
+   -ms-transform: translate(0,0);         /* need this to apply 'position: fixed;' of navigation buttons! */
+   -webkit-transform: translate(0,0);
+   transform: translate(0,0);
+   transition: all 500ms ease;            /* need this when we jump from slide to slide! */
+   background-color: #bfbfbf;             /* free var 'accordion-back-color' */
+   padding: 0 0 0 5px;                    /* free var 'accordion-gutter' */
+}
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div {
+   display: inline-block;                 /* might need this if '.accordion-text' is absolute! */
+   width: 100%;                           /* goes with previous! */
+   height: 50vh;                          /* = free var 'height' */
+   overflow: hidden;
+   border: 2px solid #808080;             /* = free var 'border' */
+   border-radius: 10px;                   /* = free var 'radius' */
+   background-color: #666;                /* free var 'tab-back-color' */
+   /* need this if you have absolute positioned child nodes; also need it to 
+      activate scrolling on those nodes! Side-effect: animation scrollbars in 
+      relation with the 'scroll' class! Do NOT replace with 'translate(0,0)' as 
+      the side effect is in navigation buttons that become un-fixed! */
+   position: relative;
+   background-position: left top;         /* free var 'img-position' for background images */
+   background-size: cover;                /* might need this for background images */
+   background-repeat: no-repeat;          /* might need this for background images */
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-100 > ul > li > div {
+   height: 100vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-90 > ul > li > div {
+   height: 90vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-80 > ul > li > div {
+   height: 80vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-70 > ul > li > div {
+   height: 70vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-60 > ul > li > div {
+   height: 60vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-50 > ul > li > div {
+   height: 50vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-40 > ul > li > div {
+   height: 40vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-30 > ul > li > div {
+   height: 30vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-20 > ul > li > div {
+   height: 20vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-10 > ul > li > div {
+   height: 10vh;
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-0 > ul > li > div {
+   height: 0;
+}
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div > :not([class*="accordion-text"]) {
+  display: none;
+}
+.T73auXqB6A1R7oKOBA8BDesP:not([class*="hover"]) > ul > li:hover > div {
+   background-color: #868686;             /* free var 'tab-hover-back-color' */
+}
+
+/* 
+ * Hover control class
+ * -------------------
+ */
+.T73auXqB6A1R7oKOBA8BDesP.hover > ul:hover {
+  width: 100%;
+}
+.T73auXqB6A1R7oKOBA8BDesP.hover > ul:hover > li {
+  width: 8%;                              /* = free var 'tab-width' */
+}
+.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li:hover {
+   width: 80%;                            /* = 100 - ('slides' - 1) * 'tab-width' or, leave it fixed! */
+}
+.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li:hover > div {
+   background-color: #e9e9e9;             /* free var 'slide-back-color' */
+   background-position: center;
+}
+.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li:hover > div > :not([class*="accordion-text"]) {
+  display: block;
+}
+
+/* 
+ * Open/justify control classes
+ * ----------------------------
+ */
+.T73auXqB6A1R7oKOBA8BDesP.open > ul, 
+.T73auXqB6A1R7oKOBA8BDesP.justify > ul {
+  width: 100%;
+}
+.T73auXqB6A1R7oKOBA8BDesP.open > ul > li {
+  width: 8%;                              /* = free var 'tab-width' */
+}
+.T73auXqB6A1R7oKOBA8BDesP.open > ul > li.open {
+   width: 80%;                            /* = 100 - ('slides' - 1) * 'tab-width' or, leave it fixed! */
+}
+.T73auXqB6A1R7oKOBA8BDesP.open > ul > li.open > div {
+   background-color: #e9e9e9;             /* free var 'slide-back-color' */
+   background-position: center;
+}
+.T73auXqB6A1R7oKOBA8BDesP.open > ul > li.open > div > :not([class*="accordion-text"]) {
+  display: block;
+}
+
+/* 
+ * Scroll control class
+ * --------------------
+ * Side-effect: animation scrollbars.
+ * Solution: use js to apply inline style on animation start 'overflow: hidden;' 
+ * and on animation end remove that style!
+ */
+.T73auXqB6A1R7oKOBA8BDesP.hover.scroll > ul > li:hover > div, 
+.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li.scroll:hover > div, 
+.T73auXqB6A1R7oKOBA8BDesP.open.scroll > ul > li.open > div, 
+.T73auXqB6A1R7oKOBA8BDesP.open > ul > li.open.scroll > div {
+   overflow: auto;
+}
+
+/* 
+ * Accordion text
+ * --------------
+ * It contains title used in tabs and body used when slide is displayed.
+ * Uses 'pYLEi1aS9dFRUWLSptPEh7ov' for centering.
+ */
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div .accordion-text {
+   cursor: pointer;
+   position: absolute;                    /* might need this */
+   z-index: 100;
+   padding: 0;
+   height: 50vh;                          /* = free var 'height', this is critical! */
+   width: 50vh;                           /* = free var 'height', this is critical! */
+   margin: 0 0 0 calc(-25vh + 50%);       /* = calc(-'height'/2px + 50%), this is critical! */
+   transition: all 500ms ease;            /* might need this for 'accordion-text' animation on slide opening */
+   -webkit-transform: rotate(-90deg);
+   -moz-transform: rotate(-90deg);
+   -ms-transform: rotate(-90deg);
+   -o-transform: rotate(-90deg);
+   transform: rotate(-90deg);
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-100 > ul > li > div .accordion-text {
+   height: 100vh;
+   width: 100vh;
+   margin: 0 0 0 calc(-50vh + 50%);
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-90 > ul > li > div .accordion-text {
+   height: 90vh;
+   width: 90vh;
+   margin: 0 0 0 calc(-45vh + 50%);
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-80 > ul > li > div .accordion-text {
+   height: 80vh;
+   width: 80vh;
+   margin: 0 0 0 calc(-40vh + 50%);
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-70 > ul > li > div .accordion-text {
+   height: 70vh;
+   width: 70vh;
+   margin: 0 0 0 calc(-35vh + 50%);
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-60 > ul > li > div .accordion-text {
+   height: 60vh;
+   width: 60vh;
+   margin: 0 0 0 calc(-30vh + 50%);
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-50 > ul > li > div .accordion-text {
+   height: 50vh;
+   width: 50vh;
+   margin: 0 0 0 calc(-25vh + 50%);
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-40 > ul > li > div .accordion-text {
+   height: 40vh;
+   width: 40vh;
+   margin: 0 0 0 calc(-20vh + 50%);
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-40 > ul > li > div .accordion-text {
+   height: 40vh;
+   width: 40vh;
+   margin: 0 0 0 calc(-20vh + 50%);
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-30 > ul > li > div .accordion-text {
+   height: 30vh;
+   width: 30vh;
+   margin: 0 0 0 calc(-15vh + 50%);
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-20 > ul > li > div .accordion-text {
+   height: 20vh;
+   width: 20vh;
+   margin: 0 0 0 calc(-10vh + 50%);
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-10 > ul > li > div .accordion-text {
+   height: 10vh;
+   width: 10vh;
+   margin: 0 0 0 calc(-5vh + 50%);
+}
+.T73auXqB6A1R7oKOBA8BDesP.h-0 > ul > li > div .accordion-text {
+   height: 0;
+   width: 0;
+   margin: 0;
+}
+.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li:hover > div .accordion-text, 
+.T73auXqB6A1R7oKOBA8BDesP > ul > li.open > div .accordion-text {
+   cursor: inherit;
+   /*position: static;*/
+   width: 100% !important;                /* need important to overwrite inline style of height in px */
+   height: 100% !important;               /* need important to overwrite inline style of height in px */
+   margin: 0 !important;                  /* need important to overwrite inline style of height in px */
+   -webkit-transform: rotate(0deg);
+   -moz-transform: rotate(0deg);
+   -ms-transform: rotate(0deg);
+   -o-transform: rotate(0deg);
+   transform: rotate(0deg);
+}
+.T73auXqB6A1R7oKOBA8BDesP.hover.no-open-text > ul > li:hover > div > .accordion-text, 
+.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li.no-open-text:hover > div > .accordion-text,
+.T73auXqB6A1R7oKOBA8BDesP.no-open-text > ul > li.open > div > .accordion-text,
+.T73auXqB6A1R7oKOBA8BDesP > ul > li.open.no-open-text > div > .accordion-text {
+   display: none;
+}
+
+/*
+ * Correct bootstrap themes
+ * ------------------------
+ */
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div .accordion-text a {
+   cursor: pointer;
+   color: white;
+   text-decoration: underline;
+}
+
+/* 
+ * Accordion title
+ * ---------------
+ * It is used as tab and slide title.
+ * Uses 'pYLEi1aS9dFRUWLSptPEh7ov' for centering.
+ */
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div .accordion-text .accordion-title {
+   font-size: 2.5rem;
+   color: black;                          /* free var 'tab-title-font-color' */
+   text-shadow: 2px 2px rgba(255, 255, 255, .5);
+   margin: 0;
+   padding: 0 10px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li:hover > div .accordion-text .accordion-title, 
+.T73auXqB6A1R7oKOBA8BDesP > ul > li.open > div .accordion-text .accordion-title {
+   display: inline-block;                 /* might need this to contract background color around title */
+   font-size: 3rem;
+   line-height: 3rem;
+   white-space: normal;
+   overflow: unset;
+   color: white;                          /* free var 'title-font-color' */
+   text-shadow: 2px 2px rgba(0, 0, 0, .5);
+   padding: 5px 10px;
+   background-color: rgba(0, 0, 0, 0.4);  /* free var 'title-open-back-color' */
+}
+ 
+/* 
+ * Accordion body
+ * --------------
+ * It is used as text in slides.
+ * Uses 'pYLEi1aS9dFRUWLSptPEh7ov' for centering.
+ */
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div .accordion-text .accordion-body {
+   display: none;
+   color: white;                          /* free var 'body-font-color */
+   text-align: justify;
+   padding: 0 10px;
+   margin: 10px;
+   border-radius: 5px;
+   background-color: rgba(0, 0, 0, 0.4);  /* free var 'body-back-color' */
+}
+.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li:hover > div .accordion-text .accordion-body, 
+.T73auXqB6A1R7oKOBA8BDesP > ul > li.open > div .accordion-text .accordion-body {
+   display: block;
+}
+
+/* 
+ * Accordion images
+ * ----------------
+ * It is used in slides below accordion text and navigation arrows.
+ */
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div > .accordion-img {
+   position: absolute;
+   z-index: 1;
+   top: 0;
+   left: 0;
+   display: block;                        /* need this to always show images */
+   width: auto;
+   height: 100%;                          /* need this to fill tab vertically dictated by free var 'img-position' */
+}
+.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li:hover > div > .accordion-img, 
+.T73auXqB6A1R7oKOBA8BDesP > ul > li.open > div > .accordion-img {
+   width: 100%;
+   height: auto;
+}
+.T73auXqB6A1R7oKOBA8BDesP.hover.img-cover > ul > li:hover > div > .accordion-img, 
+.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li.img-cover:hover > div > .accordion-img, 
+.T73auXqB6A1R7oKOBA8BDesP.img-cover > ul > li.open > div > .accordion-img,
+.T73auXqB6A1R7oKOBA8BDesP > ul > li.open.img-cover > div > .accordion-img {
+   height: 100%;
+   object-fit: cover;
+}
+
+/* 
+ * Background images
+ * -----------------
+ * Adjust it for your project.
+ */
+/*.T73auXqB6A1R7oKOBA8BDesP > ul > li:nth-child(1) > div { 
+   background-image: url("https://source.unsplash.com/user/alexagorn/JIUjvqe2ZHg/450x200");
+}*/
+
+/* 
+ * Accordion navigation
+ * --------------------
+ * It is used in slides for navigation.
+ */
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div > .accordion-nav {
+   position: fixed;
+   z-index: 200;
+   width: 100%;                           /* need this to expand fully inside the parent! */
+   top: 50%;                              /* need this to center the container! */
+}
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div > .accordion-nav a {
+   /* you can't use one big navigation area as it blocks scrolling when mouse is
+      over it! So, we break them to 2 small anchor areas! */
+   position: absolute;
+   font-size: 50px;
+   line-height: 50px;
+   width: 50px;
+   text-align: center;
+   color: #ddd;
+   cursor: pointer;
+   transition: all 250ms ease;
+   transform: translateY(-50%);           /* need this to center this child in the container! */
+}
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div > .accordion-nav a.disabled {
+   cursor: not-allowed;
+   opacity: 0.5;
+}
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div > .accordion-nav a:nth-child(1) {
+   left: 0px;
+}
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div > .accordion-nav a:nth-child(2) {
+   right: 9px;                           /* = 'accordion-gutter' + 'border' + 2px */
+}
+/* hover */
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div > .accordion-nav a:not([class*="disabled"]):hover {
+   color: white;
+}
+/* 'fix-nav-scroll-overlap' */
+.T73auXqB6A1R7oKOBA8BDesP.fix-nav-scroll-overlap > ul > li > div > .accordion-nav a:nth-child(2) {
+   right: 22px;                          /* = 'accordion-gutter' + 'border' + 2px + 13px  for scrollbars */
+}
+/* 'nav-circle', 'nav-square' */
+.T73auXqB6A1R7oKOBA8BDesP.nav-circle > ul > li > div > .accordion-nav a {
+   border-radius: 50px;
+}
+.T73auXqB6A1R7oKOBA8BDesP.nav-circle > ul > li > div > .accordion-nav a, 
+.T73auXqB6A1R7oKOBA8BDesP.nav-square > ul > li > div > .accordion-nav a {
+   background-color: rgba(0, 0, 0, 0.2);  /* free var 'nav-back-color' */
+}
+.T73auXqB6A1R7oKOBA8BDesP.nav-circle > ul > li > div > .accordion-nav a:not([class*="disabled"]):hover, 
+.T73auXqB6A1R7oKOBA8BDesP.nav-square > ul > li > div > .accordion-nav a:not([class*="disabled"]):hover {
+   background-color: rgba(0, 0, 0, 0.4);  /* free var 'nav-hover-back-color' */
+}
+/* 'nav-top' */
+.T73auXqB6A1R7oKOBA8BDesP.nav-top > ul > li > div > .accordion-nav {
+   top: 0%;
+}
+.T73auXqB6A1R7oKOBA8BDesP.nav-top > ul > li > div > .accordion-nav a {
+   transform: translateY(2px);            /* = `border` */
+}
+/* 'nav-bottom' */
+.T73auXqB6A1R7oKOBA8BDesP.nav-bottom > ul > li > div > .accordion-nav {
+   top: auto;
+   bottom: 9px;                           /* = 'accordion-gutter' + 'border' + 2px */
+}
+.T73auXqB6A1R7oKOBA8BDesP.nav-bottom > ul > li > div > .accordion-nav a {
+   transform: translateY(-100%);
+}
+
+/* Reset for low width screens */
+/* max width: 600px */
+@media screen and (max-width: 600px) { 
+   /* Basic code */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 {
+      height: auto !important; 
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul > li > div > :not([class*="accordion-text"]) {
+      display: block;
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul > li {
+      display: block;
+      width: 100%;
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul > li > div, 
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600:not([class*="hover"]) > ul > li:hover > div {
+      background-color: #e9e9e9;             /* free var 'slide-back-color' */
+      background-position: center;
+   }
+   
+   /* Hover, open control classes */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600.hover > ul:hover > li, 
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600.hover > ul > li:hover,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600.open > ul > li,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600.open > ul > li.open {
+      width: 100%;
+   }
+   
+   /* Scroll control class */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600.scroll > ul > li > div, 
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul > li.scroll > div {
+      overflow: auto;
+   }
+   
+   /* Accordion text */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul > li > div .accordion-text {
+      cursor: inherit;
+      /*position: static;*/
+      width: 100% !important;
+      height: 100% !important;
+      margin: 0 !important;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600.no-open-text > ul > li > div > .accordion-text,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul > li.no-open-text > div > .accordion-text {
+      display: none;
+   }
+   
+   /* Accordion title */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul > li > div .accordion-text .accordion-title {
+      display: inline-block;                 /* might need this to contract background color around title */
+      font-size: 2rem;
+      line-height: 2rem;
+      white-space: normal;
+      overflow: unset;
+      color: white;                          /* free var 'title-font-color' */
+      text-shadow: 2px 2px rgba(0, 0, 0, .5);
+      padding: 5px 10px;
+      background-color: rgba(0, 0, 0, 0.4);  /* free var 'title-open-back-color' */
+   }
+   
+   /* Accordion body */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul > li > div .accordion-text .accordion-body {
+      display: block;
+   }
+   
+   /* Accordion images */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul > li > div > .accordion-img {
+      width: 100%;
+      height: auto;
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600.img-cover > ul > li > div > .accordion-img, 
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul > li.img-cover > div > .accordion-img {
+      height: 100%;
+      object-fit: cover;
+   }
+   
+   /* Accordion navigation */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul > li > div > .accordion-nav,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600.hover > ul > li:hover > div > .accordion-nav,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600.open > ul > li.open > div > .accordion-nav {
+      display: none;
+   }
+}
+/* max width: 500px */
+@media screen and (max-width: 500px) { 
+   /* Basic code */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 {
+      height: auto !important; 
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul > li > div > :not([class*="accordion-text"]) {
+      display: block;
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul > li {
+      display: block;
+      width: 100%;
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul > li > div, 
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500:not([class*="hover"]) > ul > li:hover > div {
+      background-color: #e9e9e9;             /* free var 'slide-back-color' */
+      background-position: center;
+   }
+   
+   /* Hover, open control classes */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500.hover > ul:hover > li, 
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500.hover > ul > li:hover,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500.open > ul > li,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500.open > ul > li.open {
+      width: 100%;
+   }
+   
+   /* Scroll control class */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500.scroll > ul > li > div, 
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul > li.scroll > div {
+      overflow: auto;
+   }
+   
+   /* Accordion text */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul > li > div .accordion-text {
+      cursor: inherit;
+      /*position: static;*/
+      width: 100% !important;
+      height: 100% !important;
+      margin: 0 !important;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500.no-open-text > ul > li > div > .accordion-text,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul > li.no-open-text > div > .accordion-text {
+      display: none;
+   }
+   
+   /* Accordion title */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul > li > div .accordion-text .accordion-title {
+      display: inline-block;                 /* might need this to contract background color around title */
+      font-size: 2rem;
+      line-height: 2rem;
+      white-space: normal;
+      overflow: unset;
+      color: white;                          /* free var 'title-font-color' */
+      text-shadow: 2px 2px rgba(0, 0, 0, .5);
+      padding: 5px 10px;
+      background-color: rgba(0, 0, 0, 0.4);  /* free var 'title-open-back-color' */
+   }
+   
+   /* Accordion body */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul > li > div .accordion-text .accordion-body {
+      display: block;
+   }
+   
+   /* Accordion images */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul > li > div > .accordion-img {
+      width: 100%;
+      height: auto;
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500.img-cover > ul > li > div > .accordion-img, 
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul > li.img-cover > div > .accordion-img {
+      height: 100%;
+      object-fit: cover;
+   }
+   
+   /* Accordion navigation */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul > li > div > .accordion-nav,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500.hover > ul > li:hover > div > .accordion-nav,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500.open > ul > li.open > div > .accordion-nav {
+      display: none;
+   }
+}
+/* max width: 400px */
+@media screen and (max-width: 400px) { 
+   /* Basic code */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 {
+      height: auto !important; 
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul > li > div > :not([class*="accordion-text"]) {
+      display: block;
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul > li {
+      display: block;
+      width: 100%;
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul > li > div, 
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400:not([class*="hover"]) > ul > li:hover > div {
+      background-color: #e9e9e9;             /* free var 'slide-back-color' */
+      background-position: center;
+   }
+   
+   /* Hover, open control classes */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400.hover > ul:hover > li, 
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400.hover > ul > li:hover,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400.open > ul > li,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400.open > ul > li.open {
+      width: 100%;
+   }
+   
+   /* Scroll control class */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400.scroll > ul > li > div, 
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul > li.scroll > div {
+      overflow: auto;
+   }
+   
+   /* Accordion text */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul > li > div .accordion-text {
+      cursor: inherit;
+      /*position: static;*/
+      width: 100% !important;
+      height: 100% !important;
+      margin: 0 !important;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400.no-open-text > ul > li > div > .accordion-text,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul > li.no-open-text > div > .accordion-text {
+      display: none;
+   }
+   
+   /* Accordion title */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul > li > div .accordion-text .accordion-title {
+      display: inline-block;                 /* might need this to contract background color around title */
+      font-size: 2rem;
+      line-height: 2rem;
+      white-space: normal;
+      overflow: unset;
+      color: white;                          /* free var 'title-font-color' */
+      text-shadow: 2px 2px rgba(0, 0, 0, .5);
+      padding: 5px 10px;
+      background-color: rgba(0, 0, 0, 0.4);  /* free var 'title-open-back-color' */
+   }
+   
+   /* Accordion body */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul > li > div .accordion-text .accordion-body {
+      display: block;
+   }
+   
+   /* Accordion images */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul > li > div > .accordion-img {
+      width: 100%;
+      height: auto;
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400.img-cover > ul > li > div > .accordion-img, 
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul > li.img-cover > div > .accordion-img {
+      height: 100%;
+      object-fit: cover;
+   }
+   
+   /* Accordion navigation */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul > li > div > .accordion-nav,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400.hover > ul > li:hover > div > .accordion-nav,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400.open > ul > li.open > div > .accordion-nav {
+      display: none;
+   }
+}
+/* max width: 300px */
+@media screen and (max-width: 300px) { 
+   /* Basic code */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 {
+      height: auto !important; 
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul > li > div > :not([class*="accordion-text"]) {
+      display: block;
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul > li {
+      display: block;
+      width: 100%;
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul > li > div, 
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300:not([class*="hover"]) > ul > li:hover > div {
+      background-color: #e9e9e9;             /* free var 'slide-back-color' */
+      background-position: center;
+   }
+   
+   /* Hover, open control classes */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300.hover > ul:hover > li, 
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300.hover > ul > li:hover,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300.open > ul > li,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300.open > ul > li.open {
+      width: 100%;
+   }
+   
+   /* Scroll control class */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300.scroll > ul > li > div, 
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul > li.scroll > div {
+      overflow: auto;
+   }
+   
+   /* Accordion text */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul > li > div .accordion-text {
+      cursor: inherit;
+      /*position: static;*/
+      width: 100% !important;
+      height: 100% !important;
+      margin: 0 !important;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300.no-open-text > ul > li > div > .accordion-text,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul > li.no-open-text > div > .accordion-text {
+      display: none;
+   }
+   
+   /* Accordion title */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul > li > div .accordion-text .accordion-title {
+      display: inline-block;                 /* might need this to contract background color around title */
+      font-size: 2rem;
+      line-height: 2rem;
+      white-space: normal;
+      overflow: unset;
+      color: white;                          /* free var 'title-font-color' */
+      text-shadow: 2px 2px rgba(0, 0, 0, .5);
+      padding: 5px 10px;
+      background-color: rgba(0, 0, 0, 0.4);  /* free var 'title-open-back-color' */
+   }
+   
+   /* Accordion body */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul > li > div .accordion-text .accordion-body {
+      display: block;
+   }
+   
+   /* Accordion images */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul > li > div > .accordion-img {
+      width: 100%;
+      height: auto;
+   }
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300.img-cover > ul > li > div > .accordion-img, 
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul > li.img-cover > div > .accordion-img {
+      height: 100%;
+      object-fit: cover;
+   }
+   
+   /* Accordion navigation */
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul > li > div > .accordion-nav,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300.hover > ul > li:hover > div > .accordion-nav,
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300.open > ul > li.open > div > .accordion-nav {
+      display: none;
+   }
+}
+
+/*
+ * Customizations
+ * --------------
+ */
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div .accordion-text .accordion-title {
+   color: white;                          /* free var 'tab-title-font-color' */
+   font-size: 1.3rem;
+   text-shadow: 2px 2px rgba(0, 0, 0, .5);
+}
+.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li:hover > div .accordion-text .accordion-title, 
+.T73auXqB6A1R7oKOBA8BDesP > ul > li.open > div .accordion-text .accordion-title {
+   font-size: 2rem;
+}
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div {
+   background-size: contain;              /* might need this for background images */
+}
+
+/*
+ * Split-Screen
+ * ------------
+ */
+/* Panels. */
+.GruPRo4wTuRiZad3aSF7qH0z {
+   position: relative;
+   width: 100%;
+   height: 300px;       /* variable "height" */
+   overflow: hidden;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .panel {
+   position: absolute;
+   width: 100vw;
+   height: 300px;       /* variable "height" */
+   overflow: hidden;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .panel .content {
+   position: absolute;
+   width: 100vw;
+   height: 300px;       /* variable "height" */
+   transition: all 500ms ease;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .panel .content * {
+   color: #FFF;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .panel .description {
+   width: 25%;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   text-align: center;
+   line-height: 1.3rem;
+   z-index: 2;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .panel img {
+   box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.15);
+   width: 35%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 1;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .bottom {
+   background-color: rgb(44, 44, 44);
+   z-index: 110;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .bottom .description {
+   right: 5%;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .top {
+   background-color: rgba(77, 69, 173, 0.5);
+   z-index: 120;
+   width: 50vw;          /* just initial value */
+}
+.GruPRo4wTuRiZad3aSF7qH0z .top .description {
+   left: 5%;
+}
+
+/* 
+ * Handle
+ * ------
+ */
+.GruPRo4wTuRiZad3aSF7qH0z .handle {
+   height: 100%;
+   position: absolute;
+   display: block;
+   background-color: rgb(253, 171, 0);
+   width: 5px;
+   top: 0;
+   left: 50%;            /* here is our js!!! = width + horiz. distance from handler, combines with ".top" */
+   z-index: 130;
+}
+
+
+/* 
+ * Skewed
+ * ------
+ */
+.GruPRo4wTuRiZad3aSF7qH0z.skewed .handle {
+   top: 50%;
+   transform: rotate(30deg) translateY(-50%);   /* variable "skew" */
+   height: 200%;
+   -webkit-transform-origin: top;
+   -moz-transform-origin: top;
+   transform-origin: top;
+}
+.GruPRo4wTuRiZad3aSF7qH0z.skewed .top {
+   transform: skew(-30deg);      /* variable "skew" */
+   margin-left: -1000px;         /* works for height up to 3464.1px! */
+   width: calc(50vw + 1000px);   /* here is our js!!! new variable "width" */
+}
+.GruPRo4wTuRiZad3aSF7qH0z.skewed .top .content {
+   transform: skew(30deg);    /* variable "skew" */
+   margin-left: 1000px;       /* works for height up to 3464.1px! */
+}
+
+/* 
+ * Percent
+ * -------
+ */
+.GruPRo4wTuRiZad3aSF7qH0z.percent .panel {
+   width: 100%;
+}
+.GruPRo4wTuRiZad3aSF7qH0z.percent .panel .content {
+   width: 468px;        /* use js!!! variable "width" */
+}
+.GruPRo4wTuRiZad3aSF7qH0z.percent .handle {
+   left: 381.39px;       /* here is our js!!! = width - (height/2)/tan(90 - skew), combines with ".top" */
+}
+.GruPRo4wTuRiZad3aSF7qH0z.percent.skewed .top {
+   margin-left: -86.6px;        /* = (height/2)/tan(90 - skew) */
+   width: inherit;               /* here is our js!!! new variable "width" */
+}
+.GruPRo4wTuRiZad3aSF7qH0z.percent.skewed .top .content {
+   margin-left: 86.6px;       /* = (height/2)/tan(90 - skew) */
+}
+
+/*
+ * Customizations
+ * --------------
+ * Work best for accordion "T73auXqB6A1R7oKOBA8BDesP".
+ */
+.GruPRo4wTuRiZad3aSF7qH0z .bottom {
+   overflow-y: auto;
+   background-color: transparent;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .bottom .description {
+   width: 50%;
+   top: 5%;
+   transform: translateY(0);
+   background-color: rgba(0, 0, 0, 0.4);
+}
+.GruPRo4wTuRiZad3aSF7qH0z .bottom .description > * {
+   margin: 0;
+   padding: 10px;
+   font-size: 1.4rem;
+   line-height: 1.5rem;
+   text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+.GruPRo4wTuRiZad3aSF7qH0z .bottom .description h2 {
+   font-size: 2rem;
+}
+
