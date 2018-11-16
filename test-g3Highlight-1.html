@@ -1,0 +1,1638 @@
+<!doctype html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Test g3.Highlight</title>
+   
+<link rel="stylesheet" type="text/css" href="/lib/plugins/g3evaluator/g3evaluator.css">
+</head>
+<body>
+<div class="TbeFgQ7NMLTOVYjdRDjVMaoN">
+<div id="header">
+   <div><a href="https://centurianii.github.io/g3/test-g3evaluator-1.html" style="margin-left: -150px;"><img src="/lib/plugins/g3evaluator/ev-logo-2.png"></a></div>
+   <div>
+   <h1 contenteditable="false">Test g3.Highlight<br></h1><span class="">[edit]</span>
+   </div>
+</div>
+</div>
+<div id="stub" class=""></div>
+<div class="TbeFgQ7NMLTOVYjdRDjVMaoN">
+<form id="loadFrame">
+   <fieldset>
+      <legend class="hover"><b>Manage stub/frame</b></legend>
+      <div style="display: none;">
+         <label class="label" for="frameSrc">Frame source:</label><input id="frameSrc" type="text"><br>
+         <input value="Load file in frame" type="button"><input value="Remove frame" type="button"><br>
+         <input value="Clone frame to stub-HEAD" type="button"><input value="Remove cloned" type="button">
+      </div>
+   </fieldset>
+</form>
+<form id="html">
+   <fieldset>
+      <legend class="hover"><b>Load html</b></legend>
+      <div style="display: none;">
+         <textarea rows="5" wrap="virtual"></textarea><br>
+         <input value="Load" type="button"><input value="Clear" type="button"><br>
+         <select id="whichHtml"><option value="Include" selected="">Include classes/ids (any depth):</option><option value="Exclude">Exclude classes/ids (1st level childs):</option></select><input id="idHtml" type="text"> seperate by space or comma or semicolon or vertical bar: [ ,;|]
+      </div>
+   </fieldset>
+</form>
+<div id="libraryWrapper">
+<form id="header-addRemoveLib">
+   <fieldset>
+      <legend class="hover">Add/Remove .css library</legend>
+      <div style="display: none;">
+         <label class="label" for="libName">Name on list:</label><input id="libName" type="text"><br>
+         <label class="label" for="libPath">Path:</label><input id="libPath" type="text"><br>
+         <input value="Add" type="button"><input value="Remove" type="button">
+         <p>
+            <span><label class="label" for="header-loadAll">Load all (top-bottom):</label><input id="header-loadAll" type="checkbox"></span>
+         </p>
+         <p>Click order -&gt; list order and file source order, on loading errors check url prefix and repeat.</p>
+      </div>
+   </fieldset>
+</form>
+<form id="footer-addRemoveLib">
+   <fieldset>
+      <legend class="hover">Add/Remove .js library</legend>
+      <div style="display: none;">
+         <label class="label" for="footer-libName">Name on list:</label><input id="footer-libName" type="text"><br><label class="label" for="footer-libPath">Path:</label><input id="footer-libPath" type="text"><br><input value="Add" type="button"><input value="Remove" type="button">
+         <p>
+            <span><label class="label" for="footer-loadAll">Load all (top-bottom):</label><input id="footer-loadAll" type="checkbox"></span>
+         </p>
+         <p>Click order -&gt; list order and file source order, on loading errors check url prefix and repeat.</p>
+      </div>
+   </fieldset>
+</form>
+<div class="clearWrapper"></div>
+<form id="header-libraries">
+   <fieldset>
+      <legend class="hover">Load .css library</legend>
+      <div style="display: none;">
+         <label class="label" for="memorize-header">Keep list frozen:</label><input id="memorize-header" type="checkbox"><br>
+         <ol>
+            <li><label class="label" for="UiWo0">Bootstrap.3.3.7</label><input id="UiWo0" data-id="hZ8g2" value="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type="checkbox"></li><li><label class="label" for="rj9fs">Bootstrap.3.3.7 default theme</label><input id="rj9fs" data-id="EEfMH" value="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css" type="checkbox"></li>
+            <li><label class="label" for="h6HnG">Bootstrap.3.3.7 cerulean</label><input id="h6HnG" data-id="zf6EV" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="5EK1T">Bootstrap.3.3.7 cosmo</label><input id="5EK1T" data-id="hbNxK" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="PDENa">Bootstrap.3.3.7 cyborg</label><input id="PDENa" data-id="vXCX6" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="LBjZ3">Bootstrap.3.3.7 darkly</label><input id="LBjZ3" data-id="oCiBw" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/darkly/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="NFZY8">Bootstrap.3.3.7 flatly</label><input id="NFZY8" data-id="xwFq6" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="ZKq79">Bootstrap.3.3.7 journal</label><input id="ZKq79" data-id="tO2OF" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="HZxwD">Bootstrap.3.3.7 lumen</label><input id="HZxwD" data-id="wKPGf" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/lumen/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="khW8v">Bootstrap.3.3.7 paper</label><input id="khW8v" data-id="q81Kq" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="nXeG8">Bootstrap.3.3.7 readable</label><input id="nXeG8" data-id="VW5FG" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="E3trm">Bootstrap.3.3.7 sandstone</label><input id="E3trm" data-id="lpTNH" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/sandstone/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="bO1At">Bootstrap.3.3.7 simplex</label><input id="bO1At" data-id="8bZkZ" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="dXNbx">Bootstrap.3.3.7 slate</label><input id="dXNbx" data-id="1inMh" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="5PcBq">Bootstrap.3.3.7 spacelab</label><input id="5PcBq" data-id="rWdnx" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="ypc42">Bootstrap.3.3.7 superhero</label><input id="ypc42" data-id="uDyJ2" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/superhero/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="zndIZ">Bootstrap.3.3.7 united</label><input id="zndIZ" data-id="pyUIh" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="L5uRE">Bootstrap.3.3.7 yeti</label><input id="L5uRE" data-id="flfY3" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css" type="checkbox"></li><li><label class="label" for="nE3lU">Fontawesome</label><input id="nE3lU" data-id="RrXcg" value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="checkbox"></li><li><label class="label" for="oZbkU">Glyphicons eot</label><input id="oZbkU" data-id="kJScC" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.eot" type="checkbox"></li><li><label class="label" for="x8cbe">Glyphicons svg</label><input id="x8cbe" data-id="eqRpL" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.svg" type="checkbox"></li><li><label class="label" for="pbvm0">Glyphicons ttf</label><input id="pbvm0" data-id="1lRtB" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.ttf" type="checkbox"></li><li><label class="label" for="h0VIc">Glyphicons woff</label><input id="h0VIc" data-id="u8DwY" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.woff" type="checkbox"></li><li><label class="label" for="S8b7C">Glyphicons woff2</label><input id="S8b7C" data-id="uDlVM" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.woff2" type="checkbox"></li></ol>
+      </div>
+   </fieldset>
+</form>
+<form id="footer-libraries">
+   <fieldset>
+      <legend class="hover">Load .js library</legend>
+      <div style="display: none;">
+         <label class="label" for="memorize-footer">Keep list frozen:</label><input id="memorize-footer" type="checkbox"><br>
+         <ol>
+            <li><label class="label" for="HzGqk">Bootstrap 3.3.7</label><input id="HzGqk" data-id="5uVLE" value="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" type="checkbox"></li>
+         <li><label class="label" for="C0PbK">g3.Loader</label><input type="checkbox" id="C0PbK" data-id="ZiQYA" value="/lib/plugins/g3Loader/g3Loader.js"></li><li><label class="label" for="j15JV">g3.Highlight</label><input type="checkbox" id="j15JV" data-id="BM6H0" value="/lib/plugins/g3Highlight/g3Highlight.js"></li></ol>
+      </div>
+   </fieldset>
+</form>
+</div>
+<div class="clearWrapper"></div>
+<p>
+   <span><label class="label" for="boardHeights">Equal board heights:</label><input id="boardHeights" type="checkbox"></span><span><label class="label" for="boardWidthSingle">Single column boards:</label><input id="boardWidthSingle" type="checkbox"></span>
+</p>
+<div id="boardWrapper">
+   <form class="" id="blackboard">
+      <fieldset>
+         <legend><b>Blackboard</b></legend>
+         <label class="label" for="title">Tab title:</label><input id="title" type="text"><br>
+         <textarea style="width: 100%;" rows="15" wrap="virtual"></textarea><br>
+         <input value="Execute!" type="button"><input value="Save" type="button"><input value="Save to a new tab" type="button"><input value="Clear" type="button">Format language: <select id="lang"><option value="javascript" selected="">Javascript</option><option value="unformatted">Unformatted</option></select><br>
+      </fieldset>
+   </form>
+   <form class="" id="console">
+      <fieldset>
+         <legend><b>Console</b></legend>
+         <div class="data"><pre></pre></div>
+         <input value="Clear" type="button">
+      </fieldset>
+   </form>
+</div>
+<div class="clearWrapper"></div>
+<form id="addRemovePanel">
+   <fieldset>
+      <legend class="hover">Add/Remove panel</legend>
+      <div style="display: none;">
+         <label class="label" for="panelTitle">Panel title:</label><input id="panelTitle" type="text"><br>
+         <input value="Add" type="button"><input value="Remove" type="button"><button id="b3N3K" class="load">Un-Highlight all</button>
+      </div>
+   </fieldset>
+</form>
+<hr>
+<p>
+   <span style="padding: 0.4em 0.8em; color: #003380; background-color: #66a3ff;">Load any tab to blackboard</span><span><label class="label" for="panelHeights">Equal panel heights:</label><input id="panelHeights" type="checkbox"></span><span><label class="label" for="panelWidthSingle">Single column panels:</label><input id="panelWidthSingle" type="checkbox"></span>
+</p>
+
+<div id="tabbedDataWrapper">
+<div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title enabled">"highlight": Constructor-Destructor</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title enabled">Libraries</div><div class="close">X</div></div><div class="tabBar"><div class="title">Constructor without nodes</div><div class="close">X</div></div><div class="tabBar"><div class="title">Dfds</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroctur</div><div class="close">X</div></div><div class="tabBar"><div class="title">Constructor with nodes</div><div class="close">X</div></div><div class="tabBar"><div class="title">Dfds again</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy previous</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted" class="">// libraries
+/*
+1. g3.Class (loaded!)
+2. g3.Error (loaded!)
+3. g3.hybrid (loaded!)
+4. g3.hybridStatic (loaded!)
+5. g3.headless (loaded!)
+6. g3.headlessStatic (loaded!)
+7. g3.Loader
+8. g3.Highlight
+
+Load them and THEN run:
+*/
+
+g3.evaluator.getInstance();</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// create object
+var debug = {};
+g3.Highlight({debug: debug, name: 'ht', library: 'highlight', language: 'javascript'});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loader
+var loader = g3.Highlight.loader(),
+    prop,
+    result;
+
+console.log('g3.Highlight::dfds');
+console.log('------------------');
+for(prop in g3.Highlight.dfds)
+   console.log('Promise: "' + prop + '", status:' + g3.Highlight.dfds[prop].state());
+
+console.log('g3.Highlight.loader()');
+console.log('---------------------');
+console.log(loader);
+
+for(prop in loader.instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = loader.instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   for(i=0; i &lt; loader.instance.dfds[prop].defs.length; i++){
+      result = loader.instance.dfds[prop].defs[i].state();
+      console.log('status of defs['+i+']:' + result);
+   }
+   console.log('Urls');
+   console.log('----');
+   for(i=0; i &lt; loader.instance.dfds[prop].list.length; i++){
+      result = loader.instance.dfds[prop].list[i];
+      console.log('list['+i+']:' + result);
+   }
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// create object
+var debug = {};
+$('.tabbedData .tabs .data &gt; pre').g3('Highlight', {
+   debug: debug, 
+   name: 'ht', 
+   library: 'highlight', 
+   language: 'javascript'
+});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loader
+var loader = g3.Highlight.loader(),
+    prop,
+    result;
+
+console.log('g3.Highlight::dfds');
+console.log('------------------');
+for(prop in g3.Highlight.dfds)
+   console.log('Promise: "' + prop + '", status:' + g3.Highlight.dfds[prop].state());
+
+console.log('g3.Highlight.loader()');
+console.log('---------------------');
+console.log(loader);
+
+for(prop in loader.instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = loader.instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   for(i=0; i &lt; loader.instance.dfds[prop].defs.length; i++){
+      result = loader.instance.dfds[prop].defs[i].state();
+      console.log('status of defs['+i+']:' + result);
+   }
+   console.log('Urls');
+   console.log('----');
+   for(i=0; i &lt; loader.instance.dfds[prop].list.length; i++){
+      result = loader.instance.dfds[prop].list[i];
+      console.log('list['+i+']:' + result);
+   }
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div></div></div></div><div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">"highlight": Change themes</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">Default</div><div class="close">X</div></div><div class="tabBar"><div class="title">List of themes</div><div class="close">X</div></div><div class="tabBar"><div class="title">'rainbow' theme</div><div class="close">X</div></div><div class="tabBar"><div class="title">loaded ids</div><div class="close">X</div></div><div class="tabBar"><div class="title">'tomorrow-night' theme</div><div class="close">X</div></div><div class="tabBar"><div class="title">loaded ids (2)</div><div class="close">X</div></div><div class="tabBar"><div class="title">'rainbow' theme again</div><div class="close">X</div></div><div class="tabBar"><div class="title">loaded ids (3)</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre class="" data-lang="unformatted">// create object
+var debug = {};
+$('.tabbedData .tabs .data &gt; pre').g3('Highlight', {
+   debug: debug, 
+   name: 'ht', 
+   library: 'highlight', 
+   language: 'javascript'
+});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre class="" data-lang="unformatted">// list of themes
+console.log(g3.Highlight.getThemes('highlight'));</pre></div><div class="data hide"><pre class="" data-lang="unformatted">// 'rainbow' theme
+g3.Highlight.get('ht').init({theme: 'rainbow'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loaded ids
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'tomorrow-night' theme
+g3.Highlight.get('ht').init({theme: 'tomorrow-night'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loaded ids
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'rainbow' theme
+g3.Highlight.get('ht').init({theme: 'rainbow'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loaded ids
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div></div></div></div><div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">"highlight": Change languages</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">javascript</div><div class="close">X</div></div><div class="tabBar"><div class="title">List of languages</div><div class="close">X</div></div><div class="tabBar"><div class="title">'css' language</div><div class="close">X</div></div><div class="tabBar"><div class="title">'http' language</div><div class="close">X</div></div><div class="tabBar"><div class="title">'go' language</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy</div><div class="close">X</div></div><div class="tabBar"><div class="title">Succeeds!</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted" class="">// create object
+var debug = {};
+$('.tabbedData .tabs .data &gt; pre').g3('Highlight', {
+   debug: debug, 
+   name: 'ht', 
+   library: 'highlight', 
+   language: 'javascript'
+});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// list of themes
+console.log(g3.Highlight.getLanguages('highlight'));</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'css' language
+g3.Highlight.get('ht').init({language: 'css'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'http' language
+g3.Highlight.get('ht').init({language: 'http'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'go' language
+g3.Highlight.get('ht').init({language: 'go'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">/*
+After wrong language the library
+succeeds as it leaves the contents
+untouched!
+*/</pre></div></div></div></div><div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">"rainbow": Constructor-Destructor</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">Constructor without nodes</div><div class="close">X</div></div><div class="tabBar"><div class="title">Dfds</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroctur</div><div class="close">X</div></div><div class="tabBar"><div class="title">Constructor with nodes</div><div class="close">X</div></div><div class="tabBar"><div class="title">Dfds again</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy previous</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted" class="">// create object
+var debug = {};
+g3.Highlight({debug: debug, name: 'ht', library: 'rainbow', language: 'javascript'});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loader
+var loader = g3.Highlight.loader(),
+    prop,
+    result;
+
+console.log('g3.Highlight::dfds');
+console.log('------------------');
+for(prop in g3.Highlight.dfds)
+   console.log('Promise: "' + prop + '", status:' + g3.Highlight.dfds[prop].state());
+
+console.log('g3.Highlight.loader()');
+console.log('---------------------');
+console.log(loader);
+
+for(prop in loader.instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = loader.instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   for(i=0; i &lt; loader.instance.dfds[prop].defs.length; i++){
+      result = loader.instance.dfds[prop].defs[i].state();
+      console.log('status of defs['+i+']:' + result);
+   }
+   console.log('Urls');
+   console.log('----');
+   for(i=0; i &lt; loader.instance.dfds[prop].list.length; i++){
+      result = loader.instance.dfds[prop].list[i];
+      console.log('list['+i+']:' + result);
+   }
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// create object
+var debug = {};
+$('.tabbedData .tabs .data &gt; pre').g3('Highlight', {
+   debug: debug, 
+   name: 'ht', 
+   library: 'rainbow', 
+   language: 'javascript'
+});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loader
+var loader = g3.Highlight.loader(),
+    prop,
+    result;
+
+console.log('g3.Highlight::dfds');
+console.log('------------------');
+for(prop in g3.Highlight.dfds)
+   console.log('Promise: "' + prop + '", status:' + g3.Highlight.dfds[prop].state());
+
+console.log('g3.Highlight.loader()');
+console.log('---------------------');
+console.log(loader);
+
+for(prop in loader.instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = loader.instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   for(i=0; i &lt; loader.instance.dfds[prop].defs.length; i++){
+      result = loader.instance.dfds[prop].defs[i].state();
+      console.log('status of defs['+i+']:' + result);
+   }
+   console.log('Urls');
+   console.log('----');
+   for(i=0; i &lt; loader.instance.dfds[prop].list.length; i++){
+      result = loader.instance.dfds[prop].list[i];
+      console.log('list['+i+']:' + result);
+   }
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div></div></div></div><div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">"rainbow": Change themes</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">Default</div><div class="close">X</div></div><div class="tabBar"><div class="title">List of themes</div><div class="close">X</div></div><div class="tabBar"><div class="title">'all-hallows-eve' theme</div><div class="close">X</div></div><div class="tabBar"><div class="title">loaded ids</div><div class="close">X</div></div><div class="tabBar"><div class="title">'kimbie-dark' theme</div><div class="close">X</div></div><div class="tabBar"><div class="title">loaded ids (2)</div><div class="close">X</div></div><div class="tabBar"><div class="title">'all-hallows-eve' theme again</div><div class="close">X</div></div><div class="tabBar"><div class="title">loaded ids (3)</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted" class="">// create object
+var debug = {};
+$('.tabbedData .tabs .data &gt; pre').g3('Highlight', {
+   debug: debug, 
+   name: 'ht', 
+   library: 'rainbow', 
+   language: 'javascript'
+});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// list of themes
+console.log(g3.Highlight.getThemes('rainbow'));</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'all-hallows-eve' theme
+g3.Highlight.get('ht').init({theme: 'all-hallows-eve'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loaded ids
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'kimbie-dark' theme
+g3.Highlight.get('ht').init({theme: 'kimbie-dark'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loaded ids
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'all-hallows-eve' theme
+g3.Highlight.get('ht').init({theme: 'all-hallows-eve'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loaded ids
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div></div></div></div><div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">"rainbow": Change languages</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">javascript</div><div class="close">X</div></div><div class="tabBar"><div class="title">List of languages</div><div class="close">X</div></div><div class="tabBar"><div class="title">'css' language</div><div class="close">X</div></div><div class="tabBar"><div class="title">'http' language</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy</div><div class="close">X</div></div><div class="tabBar"><div class="title">Fails!</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted" class="">// create object
+var debug = {};
+$('.tabbedData .tabs .data &gt; pre').g3('Highlight', {
+   debug: debug, 
+   name: 'ht', 
+   library: 'rainbow', 
+   language: 'javascript'
+});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// list of themes
+console.log(g3.Highlight.getLanguages('rainbow'));</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'css' language
+g3.Highlight.get('ht').init({language: 'css'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'http' language
+g3.Highlight.get('ht').init({language: 'http'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// fails!
+/*
+After wrong language the library
+fails as it mangles the contents
+even if we destroy the object!
+*/</pre></div></div></div></div>
+<div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">"prism": Constructor-Destructor</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">Constructor without nodes</div><div class="close">X</div></div><div class="tabBar"><div class="title">Dfds</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroctur</div><div class="close">X</div></div><div class="tabBar"><div class="title">Constructor with nodes</div><div class="close">X</div></div><div class="tabBar"><div class="title">Dfds again</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy previous</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted" class="">// create object
+var debug = {};
+g3.Highlight({debug: debug, name: 'ht', library: 'prism', language: 'javascript'});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loader
+var loader = g3.Highlight.loader(),
+    prop,
+    result;
+
+console.log('g3.Highlight::dfds');
+console.log('------------------');
+for(prop in g3.Highlight.dfds)
+   console.log('Promise: "' + prop + '", status:' + g3.Highlight.dfds[prop].state());
+
+console.log('g3.Highlight.loader()');
+console.log('---------------------');
+console.log(loader);
+
+for(prop in loader.instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = loader.instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   for(i=0; i &lt; loader.instance.dfds[prop].defs.length; i++){
+      result = loader.instance.dfds[prop].defs[i].state();
+      console.log('status of defs['+i+']:' + result);
+   }
+   console.log('Urls');
+   console.log('----');
+   for(i=0; i &lt; loader.instance.dfds[prop].list.length; i++){
+      result = loader.instance.dfds[prop].list[i];
+      console.log('list['+i+']:' + result);
+   }
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// create object
+var debug = {};
+$('.tabbedData .tabs .data &gt; pre').g3('Highlight', {
+   debug: debug, 
+   name: 'ht', 
+   library: 'prism', 
+   language: 'javascript'
+});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loader
+var loader = g3.Highlight.loader(),
+    prop,
+    result;
+
+console.log('g3.Highlight::dfds');
+console.log('------------------');
+for(prop in g3.Highlight.dfds)
+   console.log('Promise: "' + prop + '", status:' + g3.Highlight.dfds[prop].state());
+
+console.log('g3.Highlight.loader()');
+console.log('---------------------');
+console.log(loader);
+
+for(prop in loader.instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = loader.instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   for(i=0; i &lt; loader.instance.dfds[prop].defs.length; i++){
+      result = loader.instance.dfds[prop].defs[i].state();
+      console.log('status of defs['+i+']:' + result);
+   }
+   console.log('Urls');
+   console.log('----');
+   for(i=0; i &lt; loader.instance.dfds[prop].list.length; i++){
+      result = loader.instance.dfds[prop].list[i];
+      console.log('list['+i+']:' + result);
+   }
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div></div></div></div>
+<div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">"prism": Change themes</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">Default</div><div class="close">X</div></div><div class="tabBar"><div class="title">List of themes</div><div class="close">X</div></div><div class="tabBar"><div class="title">'coy' theme</div><div class="close">X</div></div><div class="tabBar"><div class="title">loaded ids</div><div class="close">X</div></div><div class="tabBar"><div class="title">'tomorrow' theme</div><div class="close">X</div></div><div class="tabBar"><div class="title">loaded ids (2)</div><div class="close">X</div></div><div class="tabBar"><div class="title">'coy' theme again</div><div class="close">X</div></div><div class="tabBar"><div class="title">loaded ids (3)</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted" class="">// create object
+var debug = {};
+$('.tabbedData .tabs .data &gt; pre').g3('Highlight', {
+   debug: debug, 
+   name: 'ht', 
+   library: 'prism', 
+   language: 'javascript'
+});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// list of themes
+console.log(g3.Highlight.getThemes('prism'));</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'coy' theme
+g3.Highlight.get('ht').init({theme: 'coy'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loaded ids
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'tomorrow' theme
+g3.Highlight.get('ht').init({theme: 'tomorrow'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loaded ids
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'coy' theme
+g3.Highlight.get('ht').init({theme: 'coy'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loaded ids
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div></div></div></div><div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">"prism": Change languages</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">javascript</div><div class="close">X</div></div><div class="tabBar"><div class="title">List of languages</div><div class="close">X</div></div><div class="tabBar"><div class="title">'css' language</div><div class="close">X</div></div><div class="tabBar"><div class="title">'http' language</div><div class="close">X</div></div><div class="tabBar"><div class="title">'go' language</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy</div><div class="close">X</div></div><div class="tabBar"><div class="title">Succeeds!</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted" class="">// create object
+var debug = {};
+$('.tabbedData .tabs .data &gt; pre').g3('Highlight', {
+   debug: debug, 
+   name: 'ht', 
+   library: 'prism', 
+   language: 'javascript'
+});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// list of themes
+console.log(g3.Highlight.getLanguages('prism'));</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'css' language
+g3.Highlight.get('ht').init({language: 'css'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'http' language
+g3.Highlight.get('ht').init({language: 'http'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'go' language
+g3.Highlight.get('ht').init({language: 'go'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">/*
+After wrong language the library
+succeeds as it leaves the contents
+untouched!
+*/</pre></div></div></div></div>
+<div class="gridTabbedData">
+   <div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">"prism": Plugins</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">javascript</div><div class="close">X</div></div><div class="tabBar"><div class="title">List of plugins</div><div class="close">X</div></div><div class="tabBar"><div class="title">'line-numbers'</div><div class="close">X</div></div><div class="tabBar"><div class="title">Remove 'line-numbers'</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy</div><div class="close">X</div></div><div class="tabBar"><div class="title">javascript with plugins</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy again</div><div class="close">X</div></div><div class="tabBar"><div class="title">Fails!</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted" class="">// create object
+var debug = {};
+$('.tabbedData .tabs .data &gt; pre').g3('Highlight', {
+   debug: debug, 
+   name: 'ht', 
+   library: 'prism', 
+   language: 'javascript'
+});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// list of plugins
+console.log(g3.Highlight.getPlugins('prism'));</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'line-numbers'
+g3.Highlight.get('ht').init({plugins: 'addBack line-numbers'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted">// 'line-numbers'
+g3.Highlight.get('ht').init({plugins: 'addBack'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted">// create object
+var debug = {};
+$('.tabbedData .tabs .data &gt; pre').g3('Highlight', {
+   debug: debug, 
+   name: 'ht', 
+   library: 'prism', 
+   language: 'javascript',
+   plugins: 'addBack line-numbers'
+});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted">// fails!
+/*
+ * Plugin line-numbers fails!
+ */</pre></div></div></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">"prettify": Constructor-Destructor</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">Constructor without nodes</div><div class="close">X</div></div><div class="tabBar"><div class="title">Dfds</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroctur</div><div class="close">X</div></div><div class="tabBar"><div class="title">Constructor with nodes</div><div class="close">X</div></div><div class="tabBar"><div class="title">Dfds again</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy previous</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted" class="">// create object
+var debug = {};
+g3.Highlight({debug: debug, name: 'ht', library: 'prism', language: 'generic'});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loader
+var loader = g3.Highlight.loader(),
+    prop,
+    result;
+
+console.log('g3.Highlight::dfds');
+console.log('------------------');
+for(prop in g3.Highlight.dfds)
+   console.log('Promise: "' + prop + '", status:' + g3.Highlight.dfds[prop].state());
+
+console.log('g3.Highlight.loader()');
+console.log('---------------------');
+console.log(loader);
+
+for(prop in loader.instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = loader.instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   for(i=0; i &lt; loader.instance.dfds[prop].defs.length; i++){
+      result = loader.instance.dfds[prop].defs[i].state();
+      console.log('status of defs['+i+']:' + result);
+   }
+   console.log('Urls');
+   console.log('----');
+   for(i=0; i &lt; loader.instance.dfds[prop].list.length; i++){
+      result = loader.instance.dfds[prop].list[i];
+      console.log('list['+i+']:' + result);
+   }
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// create object
+var debug = {};
+$('.tabbedData .tabs .data &gt; pre').g3('Highlight', {
+   debug: debug, 
+   name: 'ht', 
+   library: 'prettify', 
+   language: 'generic'
+});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loader
+var loader = g3.Highlight.loader(),
+    prop,
+    result;
+
+console.log('g3.Highlight::dfds');
+console.log('------------------');
+for(prop in g3.Highlight.dfds)
+   console.log('Promise: "' + prop + '", status:' + g3.Highlight.dfds[prop].state());
+
+console.log('g3.Highlight.loader()');
+console.log('---------------------');
+console.log(loader);
+
+for(prop in loader.instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = loader.instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   for(i=0; i &lt; loader.instance.dfds[prop].defs.length; i++){
+      result = loader.instance.dfds[prop].defs[i].state();
+      console.log('status of defs['+i+']:' + result);
+   }
+   console.log('Urls');
+   console.log('----');
+   for(i=0; i &lt; loader.instance.dfds[prop].list.length; i++){
+      result = loader.instance.dfds[prop].list[i];
+      console.log('list['+i+']:' + result);
+   }
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div></div></div></div>
+<div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">"prettify": Change themes</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">Default</div><div class="close">X</div></div><div class="tabBar"><div class="title">List of themes</div><div class="close">X</div></div><div class="tabBar"><div class="title">'coy' theme</div><div class="close">X</div></div><div class="tabBar"><div class="title">loaded ids</div><div class="close">X</div></div><div class="tabBar"><div class="title">'tomorrow' theme</div><div class="close">X</div></div><div class="tabBar"><div class="title">loaded ids (2)</div><div class="close">X</div></div><div class="tabBar"><div class="title">'coy' theme again</div><div class="close">X</div></div><div class="tabBar"><div class="title">loaded ids (3)</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted" class="">// create object
+var debug = {};
+$('.tabbedData .tabs .data &gt; pre').g3('Highlight', {
+   debug: debug, 
+   name: 'ht', 
+   library: 'prettify', 
+   language: 'generic'
+});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// list of themes
+console.log(g3.Highlight.getThemes('prettify'));</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'coy' theme
+g3.Highlight.get('ht').init({theme: 'coy'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loaded ids
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'tomorrow' theme
+g3.Highlight.get('ht').init({theme: 'tomorrow'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loaded ids
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'coy' theme
+g3.Highlight.get('ht').init({theme: 'coy'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// loaded ids
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div></div></div></div><div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">"prettify": Change languages</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">javascript</div><div class="close">X</div></div><div class="tabBar"><div class="title">List of languages</div><div class="close">X</div></div><div class="tabBar"><div class="title">'css' language</div><div class="close">X</div></div><div class="tabBar"><div class="title">'http' language</div><div class="close">X</div></div><div class="tabBar"><div class="title">'go' language</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy</div><div class="close">X</div></div><div class="tabBar"><div class="title">Succeeds!</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted" class="">// create object
+var debug = {};
+$('.tabbedData .tabs .data &gt; pre').g3('Highlight', {
+   debug: debug, 
+   name: 'ht', 
+   library: 'prettify', 
+   language: 'generic'
+});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// list of themes
+console.log(g3.Highlight.getLanguages('prettify'));</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'css' language
+g3.Highlight.get('ht').init({language: 'css'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'http' language
+g3.Highlight.get('ht').init({language: 'http'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'go' language
+g3.Highlight.get('ht').init({language: 'go'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">/*
+After wrong language the library
+succeeds as it leaves the contents
+untouched!
+*/</pre></div></div></div></div><div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">"prettify": Plugins</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">javascript</div><div class="close">X</div></div><div class="tabBar"><div class="title">List of plugins</div><div class="close">X</div></div><div class="tabBar"><div class="title">'line-numbers'</div><div class="close">X</div></div><div class="tabBar"><div class="title">Remove 'line-numbers'</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy</div><div class="close">X</div></div><div class="tabBar"><div class="title">javascript with plugins</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy again</div><div class="close">X</div></div><div class="tabBar"><div class="title">Fails!</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted" class="">// create object
+var debug = {};
+$('.tabbedData .tabs .data &gt; pre').g3('Highlight', {
+   debug: debug, 
+   name: 'ht', 
+   library: 'prettify', 
+   language: 'generic'
+});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// list of plugins
+console.log(g3.Highlight.getPlugins('prettify'));</pre></div><div class="data hide"><pre data-lang="unformatted" class="">// 'line-numbers'
+g3.Highlight.get('ht').init({plugins: 'addBack line-numbers'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted">// 'line-numbers'
+g3.Highlight.get('ht').init({plugins: 'addBack'});
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted">// create object
+var debug = {};
+$('.tabbedData .tabs .data &gt; pre').g3('Highlight', {
+   debug: debug, 
+   name: 'ht', 
+   library: 'prettify', 
+   language: 'generic',
+   plugins: 'addBack line-numbers'
+});
+console.log(debug);
+console.log('objects constructed = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted">// destroy object
+g3.Highlight.get('ht').destroy();
+console.log('objects = ' + g3.Highlight.instances.length);
+
+var loader = g3.Highlight.loader();
+var ids = loader.instance.loadedIds;
+
+console.log('loaded ids = ' + ids);
+
+for(var i = 0; i &lt; ids.length; i++){
+   if($('#' + ids[i]).attr('href'))
+      console.log('\nlink: id="' + ids[i] + '" href="' + $('#' + ids[i]).attr('href'));
+   else if($('#' + ids[i]).attr('src'))
+      console.log('\nscript: id="' + ids[i] + '" src="' + $('#' + ids[i]).attr('src'));
+}</pre></div><div class="data hide"><pre data-lang="unformatted">// fails!
+/*
+ * Plugin line-numbers fails!
+ */</pre></div></div></div></div>
+ </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/lib/js/iuGXtklwZorkyG6kJ2zYlKHf.js"></script>
+<script src="/lib/js/g3debounce.js"></script>
+<script src="/lib/js/g3debug.js"></script>
+<script src="/lib/plugins/g3evaluator/g3evaluator.js"></script>
+<script src="/lib/js/g3Class.js"></script>
+<script src="/lib/js/g3Error.js"></script>
+<script src="/lib/js/g3hybrid.js"></script>
+<script src="/lib/js/g3hybridStatic.js"></script>
+<script src="/lib/js/g3headless.js"></script>
+<script src="/lib/js/g3headlessStatic.js"></script>
+<script>
+$(function(){
+   g3.evaluator.getInstance();
+});
+</script>
+
+</body>
+</html>

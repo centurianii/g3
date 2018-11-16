@@ -1,0 +1,34 @@
+/**
+ * pYLEi1aS9dFRUWLSptPEh7ov
+ * ========================
+ * Centers elements horizontally & vertically.
+ * You can push elements vertically on top or bottom if you replace `centered` 
+ * with `north` or `south`.
+ * Ex.: <sth class="pYLEi1aS9dFRUWLSptPEh7ov">
+ *         <x1 class="centered">...</x1>
+ *         <x2 class="centered">...</x2>
+ *      </sth>
+ */
+.pYLEi1aS9dFRUWLSptPEh7ov {
+   display: table;
+   table-layout: fixed;
+   width: 100%;
+}
+.pYLEi1aS9dFRUWLSptPEh7ov > .centered, 
+.pYLEi1aS9dFRUWLSptPEh7ov > .north,
+.pYLEi1aS9dFRUWLSptPEh7ov > .south {
+   display: table-cell;
+}
+.pYLEi1aS9dFRUWLSptPEh7ov > .centered {
+   text-align: center;
+   vertical-align: middle;
+}
+.pYLEi1aS9dFRUWLSptPEh7ov > .north {
+   text-align: center;
+   vertical-align: top;
+}
+.pYLEi1aS9dFRUWLSptPEh7ov > .south {
+   text-align: center;
+   vertical-align: bottom;
+}
+

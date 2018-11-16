@@ -1,0 +1,1366 @@
+<!doctype html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Test g3.Loader</title>
+   
+<link rel="stylesheet" type="text/css" href="/lib/plugins/g3evaluator/g3evaluator.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+</head>
+<body>
+<div class="TbeFgQ7NMLTOVYjdRDjVMaoN">
+<div id="header">
+   <div><a href="https://centurianii.github.io/g3/test-g3evaluator-1.html" style="margin-left: -150px;"><img src="/lib/plugins/g3evaluator/ev-logo-2.png"></a></div>
+   <div>
+   <h1 contenteditable="false">Test g3.Loader<br></h1><span class="">[edit]</span>
+   </div>
+</div>
+</div>
+<div id="stub" class=""></div>
+<div class="TbeFgQ7NMLTOVYjdRDjVMaoN">
+<form id="loadFrame">
+   <fieldset>
+      <legend class="hover"><b>Manage stub/frame</b></legend>
+      <div style="display: none;">
+         <label class="label" for="frameSrc">Frame source:</label><input id="frameSrc" type="text"><br>
+         <input value="Load file in frame" type="button"><input value="Remove frame" type="button"><br>
+         <input value="Clone frame to stub-HEAD" type="button"><input value="Remove cloned" type="button">
+      </div>
+   </fieldset>
+</form>
+<form id="html">
+   <fieldset>
+      <legend class="hover"><b>Load html</b></legend>
+      <div style="display: none;">
+         <textarea rows="5" wrap="virtual"></textarea><br>
+         <input value="Load" type="button"><input value="Clear" type="button"><br>
+         <select id="whichHtml"><option value="Include" selected="">Include classes/ids (any depth):</option><option value="Exclude">Exclude classes/ids (1st level childs):</option></select><input id="idHtml" type="text"> seperate by space or comma or semicolon or vertical bar: [ ,;|]
+      </div>
+   </fieldset>
+</form>
+<div id="libraryWrapper">
+<form id="header-addRemoveLib">
+   <fieldset>
+      <legend class="hover">Add/Remove .css library</legend>
+      <div style="display: none;">
+         <label class="label" for="libName">Name on list:</label><input id="libName" type="text"><br>
+         <label class="label" for="libPath">Path:</label><input id="libPath" type="text"><br>
+         <input value="Add" type="button"><input value="Remove" type="button">
+         <p>
+            <span><label class="label" for="header-loadAll">Load all (top-bottom):</label><input id="header-loadAll" type="checkbox"></span>
+         </p>
+         <p>Click order -&gt; list order and file source order, on loading errors check url prefix and repeat.</p>
+      </div>
+   </fieldset>
+</form>
+<form id="footer-addRemoveLib">
+   <fieldset>
+      <legend class="hover">Add/Remove .js library</legend>
+      <div style="display: none;">
+         <label class="label" for="footer-libName">Name on list:</label><input id="footer-libName" type="text"><br><label class="label" for="footer-libPath">Path:</label><input id="footer-libPath" type="text"><br><input value="Add" type="button"><input value="Remove" type="button">
+         <p>
+            <span><label class="label" for="footer-loadAll">Load all (top-bottom):</label><input id="footer-loadAll" type="checkbox"></span>
+         </p>
+         <p>Click order -&gt; list order and file source order, on loading errors check url prefix and repeat.</p>
+      </div>
+   </fieldset>
+</form>
+<div class="clearWrapper"></div>
+<form id="header-libraries">
+   <fieldset>
+      <legend class="hover">Load .css library</legend>
+      <div style="display: none;">
+         <label class="label" for="memorize-header">Keep list frozen:</label><input id="memorize-header" type="checkbox"><br>
+         <ol>
+            <li><label class="label" for="UiWo0">Bootstrap.3.3.7</label><input id="UiWo0" data-id="hZ8g2" value="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type="checkbox"></li><li><label class="label" for="rj9fs">Bootstrap.3.3.7 default theme</label><input id="rj9fs" data-id="EEfMH" value="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css" type="checkbox"></li>
+            <li><label class="label" for="h6HnG">Bootstrap.3.3.7 cerulean</label><input id="h6HnG" data-id="zf6EV" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="5EK1T">Bootstrap.3.3.7 cosmo</label><input id="5EK1T" data-id="hbNxK" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="PDENa">Bootstrap.3.3.7 cyborg</label><input id="PDENa" data-id="vXCX6" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="LBjZ3">Bootstrap.3.3.7 darkly</label><input id="LBjZ3" data-id="oCiBw" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/darkly/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="NFZY8">Bootstrap.3.3.7 flatly</label><input id="NFZY8" data-id="xwFq6" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="ZKq79">Bootstrap.3.3.7 journal</label><input id="ZKq79" data-id="tO2OF" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="HZxwD">Bootstrap.3.3.7 lumen</label><input id="HZxwD" data-id="wKPGf" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/lumen/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="khW8v">Bootstrap.3.3.7 paper</label><input id="khW8v" data-id="q81Kq" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="nXeG8">Bootstrap.3.3.7 readable</label><input id="nXeG8" data-id="VW5FG" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="E3trm">Bootstrap.3.3.7 sandstone</label><input id="E3trm" data-id="lpTNH" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/sandstone/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="bO1At">Bootstrap.3.3.7 simplex</label><input id="bO1At" data-id="8bZkZ" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="dXNbx">Bootstrap.3.3.7 slate</label><input id="dXNbx" data-id="1inMh" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="5PcBq">Bootstrap.3.3.7 spacelab</label><input id="5PcBq" data-id="rWdnx" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="ypc42">Bootstrap.3.3.7 superhero</label><input id="ypc42" data-id="uDyJ2" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/superhero/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="zndIZ">Bootstrap.3.3.7 united</label><input id="zndIZ" data-id="pyUIh" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" type="checkbox"></li>
+            <li><label class="label" for="L5uRE">Bootstrap.3.3.7 yeti</label><input id="L5uRE" data-id="flfY3" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css" type="checkbox"></li><li><label class="label" for="nE3lU">Fontawesome</label><input id="nE3lU" data-id="RrXcg" value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="checkbox"></li><li><label class="label" for="oZbkU">Glyphicons eot</label><input id="oZbkU" data-id="kJScC" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.eot" type="checkbox"></li><li><label class="label" for="x8cbe">Glyphicons svg</label><input id="x8cbe" data-id="eqRpL" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.svg" type="checkbox"></li><li><label class="label" for="pbvm0">Glyphicons ttf</label><input id="pbvm0" data-id="1lRtB" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.ttf" type="checkbox"></li><li><label class="label" for="h0VIc">Glyphicons woff</label><input id="h0VIc" data-id="u8DwY" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.woff" type="checkbox"></li><li><label class="label" for="S8b7C">Glyphicons woff2</label><input id="S8b7C" data-id="uDlVM" value="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/fonts/glyphicons-halflings-regular.woff2" type="checkbox"></li></ol>
+      </div>
+   </fieldset>
+</form>
+<form id="footer-libraries">
+   <fieldset>
+      <legend class="hover">Load .js library</legend>
+      <div style="display: none;">
+         <label class="label" for="memorize-footer">Keep list frozen:</label><input id="memorize-footer" type="checkbox"><br>
+         <ol>
+            <li><label class="label" for="HzGqk">Bootstrap 3.3.7</label><input id="HzGqk" data-id="5uVLE" value="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" type="checkbox"></li>
+            
+            
+            
+            
+            
+            
+         <li><label class="label" for="M9MR6">g3.Loader</label><input type="checkbox" id="M9MR6" data-id="zfp9R" value="/lib/plugins/g3Loader/g3Loader.js"></li></ol>
+      </div>
+   </fieldset>
+</form>
+</div>
+<div class="clearWrapper"></div>
+<p>
+   <span><label class="label" for="boardHeights">Equal board heights:</label><input id="boardHeights" type="checkbox"></span><span><label class="label" for="boardWidthSingle">Single column boards:</label><input id="boardWidthSingle" type="checkbox"></span>
+</p>
+<div id="boardWrapper">
+   <form class="" id="blackboard">
+      <fieldset>
+         <legend><b>Blackboard</b></legend>
+         <label class="label" for="title">Tab title:</label><input id="title" type="text"><br>
+         <textarea style="width: 100%;" rows="15" wrap="virtual"></textarea><br>
+         <input value="Execute!" type="button"><input value="Save" type="button"><input value="Save to a new tab" type="button"><input value="Clear" type="button">Format language: <select id="lang"><option value="javascript" selected="">Javascript</option><option value="unformatted">Unformatted</option></select><br>
+      </fieldset>
+   </form>
+   <form class="" id="console">
+      <fieldset>
+         <legend><b>Console</b></legend>
+         <div class="data"><pre></pre></div>
+         <input value="Clear" type="button">
+      </fieldset>
+   </form>
+</div>
+<div class="clearWrapper"></div>
+<form id="addRemovePanel">
+   <fieldset>
+      <legend class="hover">Add/Remove panel</legend>
+      <div style="display: none;">
+         <label class="label" for="panelTitle">Panel title:</label><input id="panelTitle" type="text"><br>
+         <input value="Add" type="button"><input value="Remove" type="button"><button id="b3N3K" class="load">Un-Highlight all</button>
+      </div>
+   </fieldset>
+</form>
+<hr>
+<p>
+   <span style="padding: 0.4em 0.8em; color: #003380; background-color: #66a3ff;">Load any tab to blackboard</span><span><label class="label" for="panelHeights">Equal panel heights:</label><input id="panelHeights" type="checkbox"></span><span><label class="label" for="panelWidthSingle">Single column panels:</label><input id="panelWidthSingle" type="checkbox"></span>
+</p>
+
+<div id="tabbedDataWrapper">
+<div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title enabled">Constructor-Destructor</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title enabled">Libraries</div><div class="close">X</div></div><div class="tabBar"><div class="title">No parameters</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy object</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted" class="">/*
+.js
+---
+1. g3.Class
+2. g3.Error
+3. g3.headless
+4. g3.headlessStatic
+5. g3.Loader
+
+Load files
+----------
+1. /test/client/g3Loader/delay-5sec.js
+2. /test/client/g3Loader/delay-1sec.js
+3. /test/client/g3Loader/delay-100ms.js
+*/</pre></div><div class="data hide"><pre data-lang="unformatted">// constructor with empty options: {}
+var debug = {};
+var x = g3.Loader({'debug': debug});
+
+console.log(debug);
+console.log(g3.Loader.get('g3Loader'));</pre></div><div class="data hide"><pre data-lang="unformatted">// destroy object which is under name 'g3Loader'
+
+console.log(g3.Loader.instances);
+var x = g3.Loader.get('g3Loader').destroy();
+console.log(g3.Loader.instances);</pre></div></div></div></div><div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">Register</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">Construct</div><div class="close">X</div></div><div class="tabBar"><div class="title">Register a list</div><div class="close">X</div></div><div class="tabBar"><div class="title">Register the same list</div><div class="close">X</div></div><div class="tabBar"><div class="title">Register the same list with a name</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted">// construct with name
+var debug = {};
+g3.Loader({debug: debug, name: 'load'});
+console.log(debug);
+console.log(g3.Loader.get('load'));</pre></div><div class="data hide"><pre data-lang="unformatted">// register a list
+var list = ["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"],
+    name;
+name = g3.Loader.get('load').register(list);
+console.log('list name = ' + name);
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);
+console.log('some tests');
+console.log('----------');
+console.log(g3.Loader.get('load').instance.dfds[name].list[0] == list[0]);
+console.log(g3.Loader.get('load').instance.dfds[name].defs.length == 0);
+console.log(g3.Loader.get('load').instance.dfds[name].all == null);
+console.log(g3.Loader.get('load').instance.loadedIds.length == 0);
+console.log(g3.Loader.get('load').instance.existedIds.length == 0);
+console.log(g3.Loader.get('load').instance.previous === null);
+console.log(g3.Loader.get('load').instance.current === null);</pre></div><div class="data hide"><pre data-lang="unformatted">// register the same list
+var list = ["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"],
+    name;
+name = g3.Loader.get('load').register(list);
+console.log('list name = ' + name);
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);
+console.log('some tests');
+console.log('----------');
+console.log(g3.Loader.get('load').instance.dfds[name].list[0] == list[0]);
+console.log(g3.Loader.get('load').instance.dfds[name].defs.length == 0);
+console.log(g3.Loader.get('load').instance.dfds[name].all == null);
+console.log(g3.Loader.get('load').instance.loadedIds.length == 0);
+console.log(g3.Loader.get('load').instance.existedIds.length == 0);
+console.log(g3.Loader.get('load').instance.previous === null);
+console.log(g3.Loader.get('load').instance.current === null);</pre></div><div class="data hide"><pre data-lang="unformatted">// register the same list with a name
+var list = ["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"],
+    name = '5sec',
+    obj;
+obj = g3.Loader.get('load').register(list, name);
+console.log(obj);
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);
+console.log('some tests');
+console.log('----------');
+console.log(g3.Loader.get('load').instance.dfds[name].list[0] == list[0]);
+console.log(g3.Loader.get('load').instance.dfds[name].defs.length == 0);
+console.log(g3.Loader.get('load').instance.dfds[name].all == null);
+console.log(g3.Loader.get('load').instance.loadedIds.length == 0);
+console.log(g3.Loader.get('load').instance.existedIds.length == 0);
+console.log(g3.Loader.get('load').instance.previous === null);
+console.log(g3.Loader.get('load').instance.current === null);</pre></div></div></div></div><div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">Load</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">Load list named '5sec'</div><div class="close">X</div></div><div class="tabBar"><div class="title">Load list named '5sec' again</div><div class="close">X</div></div><div class="tabBar"><div class="title">Load list '5sec' as unnamed array</div><div class="close">X</div></div><div class="tabBar"><div class="title">2 successive loads</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted">// load list named '5sec'
+var obj, prop;
+obj = g3.Loader.get('load').load('5sec');
+
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[0] == g3.Loader.get('load').instance.dfds['5sec'].list[0]);
+   if(prop != '5sec')
+      console.log(g3.Loader.get('load').instance.dfds[prop].defs.length == 0);
+   else
+      console.log(g3.Loader.get('load').instance.dfds[prop].defs.length == 1);
+   if(prop != '5sec')
+      console.log(g3.Loader.get('load').instance.dfds[prop].all === null);
+   else
+      console.log(typeof g3.Loader.get('load').instance.dfds[prop].all === 'object');
+}
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+console.log(g3.Loader.get('load').instance.loadedIds.length == 1);
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+console.log(g3.Loader.get('load').instance.existedIds.length == 0);
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+console.log(g3.Loader.get('load').instance.previous === null);
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);
+console.log(g3.Loader.get('load').instance.current === '5sec');</pre></div><div class="data hide"><pre data-lang="unformatted">// load list named '5sec' again
+var obj, prop;
+obj = g3.Loader.get('load').load('5sec');
+
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[0] == g3.Loader.get('load').instance.dfds['5sec'].list[0]);
+   if(prop != '5sec')
+      console.log(g3.Loader.get('load').instance.dfds[prop].defs.length == 0);
+   else
+      console.log(g3.Loader.get('load').instance.dfds[prop].defs.length == 1);
+   if(prop != '5sec')
+      console.log(g3.Loader.get('load').instance.dfds[prop].all === null);
+   else
+      console.log(typeof g3.Loader.get('load').instance.dfds[prop].all === 'object');
+}
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+console.log(g3.Loader.get('load').instance.loadedIds.length == 1);
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+console.log(g3.Loader.get('load').instance.existedIds.length == 0);
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+console.log(g3.Loader.get('load').instance.previous === null);
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);
+console.log(g3.Loader.get('load').instance.current === '5sec');</pre></div><div class="data hide"><pre data-lang="unformatted">// load list '5sec' as unnamed array
+var list = ["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"];
+g3.Loader.get('load').load(list);
+
+console.log('last list deleted as it\'s resources already loaded!');
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[0] == g3.Loader.get('load').instance.dfds['5sec'].list[0]);
+   if(prop != '5sec')
+      console.log(g3.Loader.get('load').instance.dfds[prop].defs.length == 0);
+   else
+      console.log(g3.Loader.get('load').instance.dfds[prop].defs.length == 1);
+   if(prop != '5sec')
+      console.log(g3.Loader.get('load').instance.dfds[prop].all === null);
+   else
+      console.log(typeof g3.Loader.get('load').instance.dfds[prop].all === 'object');
+}
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+console.log(g3.Loader.get('load').instance.loadedIds.length == 1);
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+console.log(g3.Loader.get('load').instance.existedIds.length == 0);
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+console.log(g3.Loader.get('load').instance.previous === null);
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);
+console.log(g3.Loader.get('load').instance.current === '5sec');</pre></div><div class="data hide"><pre data-lang="unformatted">// 2 successive loads
+var list1 = ["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-1sec.js"],
+    list2 = ["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-100ms.js"];
+
+g3.Loader.get('load').load(list1).load(list2);
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+console.log('this.instance.callbacks');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.callbacks);
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);</pre></div><div class="data hide"><pre data-lang="unformatted">// destroy object 'load'
+
+console.log(g3.Loader.instances);
+g3.Loader.get('load').destroy();
+console.log(g3.Loader.instances);</pre></div></div></div></div><div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">Load with callbacks</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">Success callback</div><div class="close">X</div></div><div class="tabBar"><div class="title">Fail callback</div><div class="close">X</div></div><div class="tabBar"><div class="title">Load the last error list again</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted">// success callback
+var success,
+    fail,
+    result;
+
+success = {
+   method: function(){
+      console.log('success fired with arguments:');
+      console.log(g3.utils.type(arguments[0]));
+      console.log(arguments[0]);
+      console.log(g3.utils.type(arguments[1]));
+      console.log(arguments[1]);
+      console.log('this reference:');
+      console.log(g3.utils.type(this));
+      //console.log(this);
+   },
+   context: success,
+   arguments: [1]
+};
+
+fail = {
+   method: function(){
+      console.log('fail fired with arguments:');
+      console.log(g3.utils.type(arguments[0]) + ':');
+      console.log(arguments[0]);
+      console.log(g3.utils.type(arguments[1]) + ':');
+      console.log(arguments[1]);
+      console.log('this reference:');
+      console.log(g3.utils.type(this));
+      //console.log(this);
+   },
+   context: fail,
+   arguments: [1]
+};
+
+g3.Loader({name: 'load'}).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"], success, fail);
+
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   result = g3.Loader.get('load').instance.dfds[prop].all.state();
+   console.log('at ' + prop + ' status of all:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[0].state();
+   console.log('at ' + prop + ' status of 0:' + result);
+}
+
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);</pre></div><div class="data hide"><pre data-lang="unformatted">// success callback
+var success,
+    fail,
+    result;
+
+success = {
+   method: function(){
+      console.log('success fired with arguments:');
+      console.log(g3.utils.type(arguments[0]));
+      console.log(arguments[0]);
+      console.log(g3.utils.type(arguments[1]));
+      console.log(arguments[1]);
+      console.log('this reference:');
+      console.log(g3.utils.type(this));
+      //console.log(this);
+   },
+   context: success,
+   arguments: [1]
+};
+
+fail = {
+   method: function(){
+      console.log('fail fired with arguments:');
+      console.log(g3.utils.type(arguments[0]) + ':');
+      console.log(arguments[0]);
+      console.log(g3.utils.type(arguments[1]) + ':');
+      console.log(arguments[1]);
+      console.log('this reference:');
+      console.log(g3.utils.type(this));
+      //console.log(this);
+   },
+   context: fail,
+   arguments: [1]
+};
+
+g3.Loader.get('load').
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5s.js"], success, fail);
+
+console.log('g3.Loader.errorIds');
+console.log('------------------');
+console.log(g3.Loader.errorIds);
+
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   result = g3.Loader.get('load').instance.dfds[prop].all.state();
+   console.log('at ' + prop + ' status of all:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[0].state();
+   console.log('at ' + prop + ' status of 0:' + result);
+}
+
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);</pre></div><div class="data hide"><pre data-lang="unformatted">// success callback
+var success,
+    fail,
+    result;
+
+success = {
+   method: function(){
+      console.log('success fired with arguments:');
+      console.log(g3.utils.type(arguments[0]));
+      console.log(arguments[0]);
+      console.log(g3.utils.type(arguments[1]));
+      console.log(arguments[1]);
+      console.log('this reference:');
+      console.log(g3.utils.type(this));
+      //console.log(this);
+   },
+   context: success,
+   arguments: [1]
+};
+
+fail = {
+   method: function(){
+      console.log('fail fired with arguments:');
+      console.log(g3.utils.type(arguments[0]) + ':');
+      console.log(arguments[0]);
+      console.log(g3.utils.type(arguments[1]) + ':');
+      console.log(arguments[1]);
+      console.log('this reference:');
+      console.log(g3.utils.type(this));
+      //console.log(this);
+   },
+   context: fail,
+   arguments: [1]
+};
+
+g3.Loader.get('load').
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5s.js"], success, fail);
+
+console.log('g3.Loader.errorIds');
+console.log('------------------');
+console.log(g3.Loader.errorIds);
+
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   result = g3.Loader.get('load').instance.dfds[prop].all.state();
+   console.log('at ' + prop + ' status of all:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[0].state();
+   console.log('at ' + prop + ' status of 0:' + result);
+}
+
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);</pre></div><div class="data hide"><pre data-lang="unformatted">// destroy object 'load'
+
+console.log(g3.Loader.instances);
+g3.Loader.get('load').destroy();
+console.log(g3.Loader.instances);</pre></div></div></div></div><div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">Triple load-done-fail</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">Load-done-fail: existed resource</div><div class="close">X</div></div><div class="tabBar"><div class="title">Load-done-fail: non-existed resource</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy</div><div class="close">X</div></div><div class="tabBar"><div class="title">Load-done-fail: existed resource many callbacks</div><div class="close">X</div></div><div class="tabBar"><div class="title">Load-done-fail: non-existed resource many callbacks</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy again</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted">// existed resource
+var success,
+    fail,
+    result;
+
+success = {
+   method: function(){
+      console.log('success fired with arguments:');
+      console.log(g3.utils.type(arguments[0]));
+      console.log(arguments[0]);
+      console.log(g3.utils.type(arguments[1]));
+      console.log(arguments[1]);
+      console.log('this reference:');
+      console.log(g3.utils.type(this));
+      //console.log(this);
+   },
+   context: success,
+   arguments: [1]
+};
+
+fail = {
+   method: function(){
+      console.log('fail fired with arguments:');
+      console.log(g3.utils.type(arguments[0]) + ':');
+      console.log(arguments[0]);
+      console.log(g3.utils.type(arguments[1]) + ':');
+      console.log(arguments[1]);
+      console.log('this reference:');
+      console.log(g3.utils.type(this));
+      //console.log(this);
+   },
+   context: fail,
+   arguments: [1]
+};
+
+g3.Loader({name: 'load'}).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"]).done(success).fail(fail);
+
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = g3.Loader.get('load').instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[0].state();
+   console.log('status of 0:' + result);
+   console.log('Urls');
+   console.log('----');
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[0]);
+}
+
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);</pre></div><div class="data hide"><pre data-lang="unformatted">// non-existed resource
+var success,
+    fail,
+    result;
+
+success = {
+   method: function(){
+      console.log('success fired with arguments:');
+      console.log(g3.utils.type(arguments[0]));
+      console.log(arguments[0]);
+      console.log(g3.utils.type(arguments[1]));
+      console.log(arguments[1]);
+      console.log('this reference:');
+      console.log(g3.utils.type(this));
+      //console.log(this);
+   },
+   context: success,
+   arguments: [1]
+};
+
+fail = {
+   method: function(){
+      console.log('fail fired with arguments:');
+      console.log(g3.utils.type(arguments[0]) + ':');
+      console.log(arguments[0]);
+      console.log(g3.utils.type(arguments[1]) + ':');
+      console.log(arguments[1]);
+      console.log('this reference:');
+      console.log(g3.utils.type(this));
+      //console.log(this);
+   },
+   context: fail,
+   arguments: [1]
+};
+
+g3.Loader.get('load').
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5s.js"]).done(success).fail(fail);
+
+console.log('g3.Loader.errorIds');
+console.log('------------------');
+console.log(g3.Loader.errorIds);
+
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = g3.Loader.get('load').instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[0].state();
+   console.log('status of 0:' + result);
+   console.log('Urls');
+   console.log('----');
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[0]);
+}
+
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);</pre></div><div class="data hide"><pre data-lang="unformatted">// destroy object 'load'
+
+console.log(g3.Loader.instances);
+g3.Loader.get('load').destroy();
+console.log(g3.Loader.instances);</pre></div><div class="data hide"><pre data-lang="unformatted">// existed resource many callbacks
+var success,
+    fail,
+    result;
+
+success = {
+   method: function(){
+      console.log('success fired with arguments:');
+      console.log(g3.utils.type(arguments[0]));
+      console.log(arguments[0]);
+      console.log(g3.utils.type(arguments[1]));
+      console.log(arguments[1]);
+      console.log('this reference:');
+      console.log(g3.utils.type(this));
+      //console.log(this);
+   },
+   context: success,
+   arguments: [1]
+};
+
+fail = {
+   method: function(){
+      console.log('fail fired with arguments:');
+      console.log(g3.utils.type(arguments[0]) + ':');
+      console.log(arguments[0]);
+      console.log(g3.utils.type(arguments[1]) + ':');
+      console.log(arguments[1]);
+      console.log('this reference:');
+      console.log(g3.utils.type(this));
+      //console.log(this);
+   },
+   context: fail,
+   arguments: [1]
+};
+
+g3.Loader({name: 'load'}).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"]).done(success, success).fail(fail, fail);
+
+console.log('g3.Loader.errorIds');
+console.log('------------------');
+console.log(g3.Loader.errorIds);
+
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = g3.Loader.get('load').instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[0].state();
+   console.log('status of 0:' + result);
+   console.log('Urls');
+   console.log('----');
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[0]);
+}
+
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);</pre></div><div class="data hide"><pre data-lang="unformatted">// non-existed resource many callbacks
+var success,
+    fail,
+    result;
+
+success = {
+   method: function(){
+      console.log('success fired with arguments:');
+      console.log(g3.utils.type(arguments[0]));
+      console.log(arguments[0]);
+      console.log(g3.utils.type(arguments[1]));
+      console.log(arguments[1]);
+      console.log('this reference:');
+      console.log(g3.utils.type(this));
+      //console.log(this);
+   },
+   context: success,
+   arguments: [1]
+};
+
+fail = {
+   method: function(){
+      console.log('fail fired with arguments:');
+      console.log(g3.utils.type(arguments[0]) + ':');
+      console.log(arguments[0]);
+      console.log(g3.utils.type(arguments[1]) + ':');
+      console.log(arguments[1]);
+      console.log('this reference:');
+      console.log(g3.utils.type(this));
+      //console.log(this);
+   },
+   context: fail,
+   arguments: [1]
+};
+
+g3.Loader.get('load').
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5s.js"]).done(success, success).fail(fail, fail);
+
+console.log('g3.Loader.errorIds');
+console.log('------------------');
+console.log(g3.Loader.errorIds);
+
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = g3.Loader.get('load').instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[0].state();
+   console.log('status of 0:' + result);
+   console.log('Urls');
+   console.log('----');
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[0]);
+}
+
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);</pre></div><div class="data hide"><pre data-lang="unformatted">// destroy object 'load'
+
+console.log(g3.Loader.instances);
+g3.Loader.get('load').destroy();
+console.log(g3.Loader.instances);</pre></div></div></div></div><div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">Chained triples load-done-fail</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">Load-done-fail: 1 resource per triple</div><div class="close">X</div></div><div class="tabBar"><div class="title">Results for 1 resource per triple</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy</div><div class="close">X</div></div><div class="tabBar"><div class="title">Load-done-fail: 3 resources per triple  (2 failed)</div><div class="close">X</div></div><div class="tabBar"><div class="title">Results for 3 resources per triple (2 failed)</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy again</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted">// load-done-fail with 1 resource
+var success,
+    fail,
+    result;
+
+function success(){
+   console.log('success fired with arguments:' + arguments[0] + ', ' + arguments[1]);
+   console.log('this reference:');
+   console.log(g3.utils.type(this));
+   //console.log(this);
+};
+
+function fail(){
+   console.log('fail fired with arguments:' + arguments[0] + ', ' + arguments[1]);
+   console.log('this reference:');
+   console.log(g3.utils.type(this));
+   //console.log(this);
+};
+
+g3.Loader({name: 'load'}).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"]).done({
+   method: success,
+   arguments: [1]
+}).fail({
+   method: fail,
+   arguments: [1]
+}).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-100ms.js"]).done({
+   method: success,
+   arguments: [2]
+}).fail({
+   method: fail,
+   arguments: [2]
+}).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-1sec.js"]).done({
+   method: success,
+   arguments: [3]
+}).fail({
+   method: success,
+   arguments: [3]
+});
+
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = g3.Loader.get('load').instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[0].state();
+   console.log('status of 0:' + result);
+   console.log('Urls');
+   console.log('----');
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[0]);
+}
+
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);</pre></div><div class="data hide"><pre data-lang="unformatted">// results for load-done-fail with 1 resource
+var result;
+
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = g3.Loader.get('load').instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[0].state();
+   console.log('status of 0:' + result);
+   console.log('Urls');
+   console.log('----');
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[0]);
+}
+
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);</pre></div><div class="data hide"><pre data-lang="unformatted">// destroy object 'load'
+
+console.log(g3.Loader.instances);
+g3.Loader.get('load').destroy();
+console.log(g3.Loader.instances);</pre></div><div class="data hide"><pre data-lang="unformatted">// load-done-fail with 3 resources (2 failed)
+var success,
+    fail,
+    result;
+
+function success(){
+   console.log('success fired with arguments (2nd is array with only 2 values!):' + arguments[0] + ', ' + arguments[1]);
+   console.log('this reference:');
+   console.log(g3.utils.type(this));
+   //console.log(this);
+};
+
+function fail(){
+   console.log('fail fired with arguments:' + arguments[0] + ', ' + arguments[1]);
+   console.log('this reference:');
+   console.log(g3.utils.type(this));
+   //console.log(this);
+};
+
+g3.Loader({name: 'load'}).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5s.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5.js"]).
+done({
+   method: success,
+   arguments: [1]
+}).fail({
+   method: fail,
+   arguments: [1]
+}).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-100ms.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-100m.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-100.js"]).
+done({
+   method: success,
+   arguments: [2]
+}).fail({
+   method: fail,
+   arguments: [2]
+}).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-1sec.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-1s.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-1.js"]).
+done({
+   method: success,
+   arguments: [3]
+}).fail({
+   method: fail,
+   arguments: [3]
+});
+
+console.log('g3.Loader.errorIds');
+console.log('------------------');
+console.log(g3.Loader.errorIds);
+
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = g3.Loader.get('load').instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[0].state();
+   console.log('status of 0:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[1].state();
+   console.log('status of 1:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[2].state();
+   console.log('status of 2:' + result);
+   console.log('Urls');
+   console.log('----');
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[0]);
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[1]);
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[2]);
+}
+
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);</pre></div><div class="data hide"><pre data-lang="unformatted">// results for load-done-fail with 3 resources
+var result;
+
+console.log('g3.Loader.errorIds');
+console.log('------------------');
+console.log(g3.Loader.errorIds);
+
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = g3.Loader.get('load').instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[0].state();
+   console.log('status of 0:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[1].state();
+   console.log('status of 1:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[2].state();
+   console.log('status of 2:' + result);
+   console.log('Urls');
+   console.log('----');
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[0]);
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[1]);
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[2]);
+}
+
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);</pre></div><div class="data hide"><pre data-lang="unformatted">// destroy object 'load'
+
+console.log(g3.Loader.instances);
+g3.Loader.get('load').destroy();
+console.log(g3.Loader.instances);</pre></div></div></div></div><div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title">Events on load-done-fail</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title visited">Load-done-fail: existed resource</div><div class="close">X</div></div><div class="tabBar"><div class="title">Load-done-fail: non existed resource</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy</div><div class="close">X</div></div><div class="tabBar"><div class="title">Load-done-fail: 3 resources per triple  (2 failed)</div><div class="close">X</div></div><div class="tabBar"><div class="title">Results for 3 resources per triple (2 failed)</div><div class="close">X</div></div><div class="tabBar"><div class="title">Destroy again</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted">// existed resource
+var success,
+    fail,
+    result;
+
+$(document).on('done.Loader.g3', function(){
+      console.log('success fired on document with arguments:');
+      console.log('type of event: ' + g3.utils.type(arguments[0]) + ', event property "type":' + ((arguments[0] &amp;&amp; arguments[0].type) || 'null'));
+      console.log('type of extra arg: ' + g3.utils.type(arguments[1]) + ', with value: ' + arguments[1]);
+});
+
+$(document).on('fail.Loader.g3', function(){
+      console.log('fail fired on document with arguments:');
+      console.log('type of event: ' + g3.utils.type(arguments[0]) + ', event property "type":' + ((arguments[0] &amp;&amp; arguments[0].type) || 'null'));
+      console.log('type of extra arg: ' + g3.utils.type(arguments[1]) + ', with value: ' + arguments[1]);
+});
+
+g3.Loader({name: 'load', trigger: [document]}).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"]);
+
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = g3.Loader.get('load').instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[0].state();
+   console.log('status of 0:' + result);
+   console.log('Urls');
+   console.log('----');
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[0]);
+}
+
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);</pre></div><div class="data hide"><pre data-lang="unformatted">// existed resource
+var success,
+    fail,
+    result;
+
+g3.Loader.get('load').
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5s.js"]);
+
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = g3.Loader.get('load').instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[0].state();
+   console.log('status of 0:' + result);
+   console.log('Urls');
+   console.log('----');
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[0]);
+}
+
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);</pre></div><div class="data hide"><pre data-lang="unformatted">// destroy object 'load'
+
+console.log(g3.Loader.instances);
+g3.Loader.get('load').destroy();
+console.log(g3.Loader.instances);</pre></div><div class="data hide"><pre data-lang="unformatted">// load-done-fail with 3 resources (2 failed)
+var success,
+    fail,
+    result;
+
+function success(){
+   console.log('success fired with arguments (2nd is array with only 2 values!):' + arguments[0] + ', ' + arguments[1]);
+   console.log('this reference:');
+   console.log(g3.utils.type(this));
+   //console.log(this);
+};
+
+function fail(){
+   console.log('fail fired with arguments:' + arguments[0] + ', ' + arguments[1]);
+   console.log('this reference:');
+   console.log(g3.utils.type(this));
+   //console.log(this);
+};
+
+g3.Loader({name: 'load', trigger: [document]}).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5s.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5.js"]).
+done({
+   method: success,
+   arguments: [1]
+}).fail({
+   method: fail,
+   arguments: [1]
+}).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-100ms.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-100m.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-100.js"]).
+done({
+   method: success,
+   arguments: [2]
+}).fail({
+   method: fail,
+   arguments: [2]
+}).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-1sec.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-1s.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-1.js"]).
+done({
+   method: success,
+   arguments: [3]
+}).fail({
+   method: fail,
+   arguments: [3]
+});
+
+console.log('g3.Loader.errorIds');
+console.log('------------------');
+console.log(g3.Loader.errorIds);
+
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = g3.Loader.get('load').instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[0].state();
+   console.log('status of 0:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[1].state();
+   console.log('status of 1:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[2].state();
+   console.log('status of 2:' + result);
+   console.log('Urls');
+   console.log('----');
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[0]);
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[1]);
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[2]);
+}
+
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);</pre></div><div class="data hide"><pre data-lang="unformatted">// results for load-done-fail with 3 resources
+var result;
+
+console.log('g3.Loader.errorIds');
+console.log('------------------');
+console.log(g3.Loader.errorIds);
+
+console.log('this.instance.dfds');
+console.log('------------------');
+console.log(g3.Loader.get('load').instance.dfds);
+for(prop in g3.Loader.get('load').instance.dfds){
+   console.log('Promise:' + prop);
+   console.log('---------------');
+   result = g3.Loader.get('load').instance.dfds[prop].all.state();
+   console.log('status of all:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[0].state();
+   console.log('status of 0:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[1].state();
+   console.log('status of 1:' + result);
+   result = g3.Loader.get('load').instance.dfds[prop].defs[2].state();
+   console.log('status of 2:' + result);
+   console.log('Urls');
+   console.log('----');
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[0]);
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[1]);
+   console.log(g3.Loader.get('load').instance.dfds[prop].list[2]);
+}
+
+console.log('this.instance.loadedIds');
+console.log('-----------------------');
+console.log(g3.Loader.get('load').instance.loadedIds);
+
+console.log('this.instance.existedIds');
+console.log('------------------------');
+console.log(g3.Loader.get('load').instance.existedIds);
+
+console.log('this.instance.previous');
+console.log('----------------------');
+console.log(g3.Loader.get('load').instance.previous);
+
+console.log('this.instance.current');
+console.log('---------------------');
+console.log(g3.Loader.get('load').instance.current);</pre></div><div class="data hide"><pre data-lang="unformatted">// destroy object 'load'
+
+console.log(g3.Loader.instances);
+g3.Loader.get('load').destroy();
+console.log(g3.Loader.instances);</pre></div></div></div></div></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/lib/js/iuGXtklwZorkyG6kJ2zYlKHf.js"></script>
+<script src="/lib/js/g3debounce.js"></script>
+<script src="/lib/js/g3debug.js"></script>
+<script src="/lib/plugins/g3evaluator/g3evaluator.js"></script>
+<script src="/lib/js/g3Class.js"></script>
+<script src="/lib/js/g3Error.js"></script>
+<script src="/lib/js/g3hybrid.js"></script>
+<script src="/lib/js/g3hybridStatic.js"></script>
+<script src="/lib/js/g3headless.js"></script>
+<script src="/lib/js/g3headlessStatic.js"></script>
+<script src="/lib/plugins/g3Loader/g3Loader.js"></script>
+<script src="/lib/plugins/g3Highlight/g3Highlight.js"></script>
+<script>
+$(function(){
+   g3.evaluator.getInstance();
+});
+</script>
+
+</body>
+</html>
