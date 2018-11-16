@@ -4,13 +4,13 @@
    <meta charset="utf-8">
    <title>Test g3.Loader</title>
    
-<link rel="stylesheet" type="text/css" href="/g3/lib/plugins/g3evaluator/g3evaluator.css">
+<link rel="stylesheet" type="text/css" href="/lib/plugins/g3evaluator/g3evaluator.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
 </head>
 <body>
 <div class="TbeFgQ7NMLTOVYjdRDjVMaoN">
 <div id="header">
-   <div><a href="https://centurianii.github.io/g3/test-g3evaluator-1.html" style="margin-left: -150px;"><img src="/g3/lib/plugins/g3evaluator/ev-logo-2.png"></a></div>
+   <div><a href="https://centurianii.github.io/g3/test-g3evaluator-1.html" style="margin-left: -150px;"><img src="/lib/plugins/g3evaluator/ev-logo-2.png"></a></div>
    <div>
    <h1 contenteditable="false">Test g3.Loader<br></h1><span class="">[edit]</span>
    </div>
@@ -105,7 +105,7 @@
             
             
             
-         <li><label class="label" for="M9MR6">g3.Loader</label><input type="checkbox" id="M9MR6" data-id="zfp9R" value="/g3/lib/plugins/g3Loader/g3Loader.js"></li></ol>
+         <li><label class="label" for="M9MR6">g3.Loader</label><input type="checkbox" id="M9MR6" data-id="zfp9R" value="/lib/plugins/g3Loader/g3Loader.js"></li></ol>
       </div>
    </fieldset>
 </form>
@@ -175,7 +175,7 @@ var debug = {};
 g3.Loader({debug: debug, name: 'load'});
 console.log(debug);
 console.log(g3.Loader.get('load'));</pre></div><div class="data hide"><pre data-lang="unformatted">// register a list
-var list = ["/g3/lib/plugins/g3Loader/delay-5sec.js"],
+var list = ["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"],
     name;
 name = g3.Loader.get('load').register(list);
 console.log('list name = ' + name);
@@ -203,7 +203,7 @@ console.log(g3.Loader.get('load').instance.loadedIds.length == 0);
 console.log(g3.Loader.get('load').instance.existedIds.length == 0);
 console.log(g3.Loader.get('load').instance.previous === null);
 console.log(g3.Loader.get('load').instance.current === null);</pre></div><div class="data hide"><pre data-lang="unformatted">// register the same list
-var list = ["/g3/lib/plugins/g3Loader/delay-5sec.js"],
+var list = ["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"],
     name;
 name = g3.Loader.get('load').register(list);
 console.log('list name = ' + name);
@@ -231,7 +231,7 @@ console.log(g3.Loader.get('load').instance.loadedIds.length == 0);
 console.log(g3.Loader.get('load').instance.existedIds.length == 0);
 console.log(g3.Loader.get('load').instance.previous === null);
 console.log(g3.Loader.get('load').instance.current === null);</pre></div><div class="data hide"><pre data-lang="unformatted">// register the same list with a name
-var list = ["/g3/lib/plugins/g3Loader/delay-5sec.js"],
+var list = ["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"],
     name = '5sec',
     obj;
 obj = g3.Loader.get('load').register(list, name);
@@ -326,7 +326,7 @@ console.log('this.instance.current');
 console.log('---------------------');
 console.log(g3.Loader.get('load').instance.current);
 console.log(g3.Loader.get('load').instance.current === '5sec');</pre></div><div class="data hide"><pre data-lang="unformatted">// load list '5sec' as unnamed array
-var list = ["/g3/lib/plugins/g3Loader/delay-5sec.js"];
+var list = ["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"];
 g3.Loader.get('load').load(list);
 
 console.log('last list deleted as it\'s resources already loaded!');
@@ -360,8 +360,8 @@ console.log('this.instance.current');
 console.log('---------------------');
 console.log(g3.Loader.get('load').instance.current);
 console.log(g3.Loader.get('load').instance.current === '5sec');</pre></div><div class="data hide"><pre data-lang="unformatted">// 2 successive loads
-var list1 = ["/g3/lib/plugins/g3Loader/delay-1sec.js"],
-    list2 = ["/g3/lib/plugins/g3Loader/delay-100ms.js"];
+var list1 = ["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-1sec.js"],
+    list2 = ["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-100ms.js"];
 
 g3.Loader.get('load').load(list1).load(list2);
 console.log('this.instance.dfds');
@@ -421,7 +421,7 @@ fail = {
 };
 
 g3.Loader({name: 'load'}).
-load(["/g3/lib/plugins/g3Loader/delay-5sec.js"], success, fail);
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"], success, fail);
 
 console.log('this.instance.dfds');
 console.log('------------------');
@@ -483,7 +483,7 @@ fail = {
 };
 
 g3.Loader.get('load').
-load(["/g3/lib/plugins/g3Loader/delay-5s.js"], success, fail);
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5s.js"], success, fail);
 
 console.log('g3.Loader.errorIds');
 console.log('------------------');
@@ -549,7 +549,7 @@ fail = {
 };
 
 g3.Loader.get('load').
-load(["/g3/lib/plugins/g3Loader/delay-5s.js"], success, fail);
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5s.js"], success, fail);
 
 console.log('g3.Loader.errorIds');
 console.log('------------------');
@@ -619,7 +619,7 @@ fail = {
 };
 
 g3.Loader({name: 'load'}).
-load(["/g3/lib/plugins/g3Loader/delay-5sec.js"]).done(success).fail(fail);
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"]).done(success).fail(fail);
 
 console.log('this.instance.dfds');
 console.log('------------------');
@@ -686,7 +686,7 @@ fail = {
 };
 
 g3.Loader.get('load').
-load(["/g3/lib/plugins/g3Loader/delay-5s.js"]).done(success).fail(fail);
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5s.js"]).done(success).fail(fail);
 
 console.log('g3.Loader.errorIds');
 console.log('------------------');
@@ -761,7 +761,7 @@ fail = {
 };
 
 g3.Loader({name: 'load'}).
-load(["/g3/lib/plugins/g3Loader/delay-5sec.js"]).done(success, success).fail(fail, fail);
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"]).done(success, success).fail(fail, fail);
 
 console.log('g3.Loader.errorIds');
 console.log('------------------');
@@ -832,7 +832,7 @@ fail = {
 };
 
 g3.Loader.get('load').
-load(["/g3/lib/plugins/g3Loader/delay-5s.js"]).done(success, success).fail(fail, fail);
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5s.js"]).done(success, success).fail(fail, fail);
 
 console.log('g3.Loader.errorIds');
 console.log('------------------');
@@ -891,21 +891,21 @@ function fail(){
 };
 
 g3.Loader({name: 'load'}).
-load(["/g3/lib/plugins/g3Loader/delay-5sec.js"]).done({
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"]).done({
    method: success,
    arguments: [1]
 }).fail({
    method: fail,
    arguments: [1]
 }).
-load(["/g3/lib/plugins/g3Loader/delay-100ms.js"]).done({
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-100ms.js"]).done({
    method: success,
    arguments: [2]
 }).fail({
    method: fail,
    arguments: [2]
 }).
-load(["/g3/lib/plugins/g3Loader/delay-1sec.js"]).done({
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-1sec.js"]).done({
    method: success,
    arguments: [3]
 }).fail({
@@ -998,9 +998,9 @@ function fail(){
 };
 
 g3.Loader({name: 'load'}).
-load(["/g3/lib/plugins/g3Loader/delay-5sec.js",
-      "/g3/lib/plugins/g3Loader/delay-5s.js",
-      "/g3/lib/plugins/g3Loader/delay-5.js"]).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5s.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5.js"]).
 done({
    method: success,
    arguments: [1]
@@ -1008,9 +1008,9 @@ done({
    method: fail,
    arguments: [1]
 }).
-load(["/g3/lib/plugins/g3Loader/delay-100ms.js",
-      "/g3/lib/plugins/g3Loader/delay-100m.js",
-      "/g3/lib/plugins/g3Loader/delay-100.js"]).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-100ms.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-100m.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-100.js"]).
 done({
    method: success,
    arguments: [2]
@@ -1018,9 +1018,9 @@ done({
    method: fail,
    arguments: [2]
 }).
-load(["/g3/lib/plugins/g3Loader/delay-1sec.js",
-      "/g3/lib/plugins/g3Loader/delay-1s.js",
-      "/g3/lib/plugins/g3Loader/delay-1.js"]).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-1sec.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-1s.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-1.js"]).
 done({
    method: success,
    arguments: [3]
@@ -1132,7 +1132,7 @@ $(document).on('fail.Loader.g3', function(){
 });
 
 g3.Loader({name: 'load', trigger: [document]}).
-load(["/g3/lib/plugins/g3Loader/delay-5sec.js"]);
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js"]);
 
 console.log('this.instance.dfds');
 console.log('------------------');
@@ -1169,7 +1169,7 @@ var success,
     result;
 
 g3.Loader.get('load').
-load(["/g3/lib/plugins/g3Loader/delay-5s.js"]);
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5s.js"]);
 
 console.log('this.instance.dfds');
 console.log('------------------');
@@ -1224,9 +1224,9 @@ function fail(){
 };
 
 g3.Loader({name: 'load', trigger: [document]}).
-load(["/g3/lib/plugins/g3Loader/delay-5sec.js",
-      "/g3/lib/plugins/g3Loader/delay-5s.js",
-      "/g3/lib/plugins/g3Loader/delay-5.js"]).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5sec.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5s.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-5.js"]).
 done({
    method: success,
    arguments: [1]
@@ -1234,9 +1234,9 @@ done({
    method: fail,
    arguments: [1]
 }).
-load(["/g3/lib/plugins/g3Loader/delay-100ms.js",
-      "/g3/lib/plugins/g3Loader/delay-100m.js",
-      "/g3/lib/plugins/g3Loader/delay-100.js"]).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-100ms.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-100m.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-100.js"]).
 done({
    method: success,
    arguments: [2]
@@ -1244,9 +1244,9 @@ done({
    method: fail,
    arguments: [2]
 }).
-load(["/g3/lib/plugins/g3Loader/delay-1sec.js",
-      "/g3/lib/plugins/g3Loader/delay-1s.js",
-      "/g3/lib/plugins/g3Loader/delay-1.js"]).
+load(["/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-1sec.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-1s.js",
+      "/wePPwJCwedwWxBhytsMaCnAS/test/client/g3Loader/delay-1.js"]).
 done({
    method: success,
    arguments: [3]
@@ -1344,18 +1344,18 @@ console.log(g3.Loader.instances);</pre></div></div></div></div></div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="/g3/lib/js/iuGXtklwZorkyG6kJ2zYlKHf.js"></script>
-<script src="/g3/lib/js/g3debounce.js"></script>
-<script src="/g3/lib/js/g3debug.js"></script>
-<script src="/g3/lib/plugins/g3evaluator/g3evaluator.js"></script>
-<script src="/g3/lib/js/g3Class.js"></script>
-<script src="/g3/lib/js/g3Error.js"></script>
-<script src="/g3/lib/js/g3hybrid.js"></script>
-<script src="/g3/lib/js/g3hybridStatic.js"></script>
-<script src="/g3/lib/js/g3headless.js"></script>
-<script src="/g3/lib/js/g3headlessStatic.js"></script>
-<script src="/g3/lib/plugins/g3Loader/g3Loader.js"></script>
-<script src="/g3/lib/plugins/g3Highlight/g3Highlight.js"></script>
+<script src="/lib/js/iuGXtklwZorkyG6kJ2zYlKHf.js"></script>
+<script src="/lib/js/g3debounce.js"></script>
+<script src="/lib/js/g3debug.js"></script>
+<script src="/lib/plugins/g3evaluator/g3evaluator.js"></script>
+<script src="/lib/js/g3Class.js"></script>
+<script src="/lib/js/g3Error.js"></script>
+<script src="/lib/js/g3hybrid.js"></script>
+<script src="/lib/js/g3hybridStatic.js"></script>
+<script src="/lib/js/g3headless.js"></script>
+<script src="/lib/js/g3headlessStatic.js"></script>
+<script src="/lib/plugins/g3Loader/g3Loader.js"></script>
+<script src="/lib/plugins/g3Highlight/g3Highlight.js"></script>
 <script>
 $(function(){
    g3.evaluator.getInstance();
