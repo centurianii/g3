@@ -328,7 +328,7 @@
  * It contains title used in tabs and body used when slide is displayed.
  * Uses 'pYLEi1aS9dFRUWLSptPEh7ov' for centering.
  */
-.T73auXqB6A1R7oKOBA8BDesP > ul > li > div > .accordion-text {
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div .accordion-text {
    cursor: pointer;
    position: absolute;                    /* might need this */
    z-index: 100;
@@ -343,68 +343,68 @@
    -o-transform: rotate(-90deg);
    transform: rotate(-90deg);
 }
-.T73auXqB6A1R7oKOBA8BDesP.h-100 > ul > li > div > .accordion-text {
+.T73auXqB6A1R7oKOBA8BDesP.h-100 > ul > li > div .accordion-text {
    height: 100vh;
    width: 100vh;
    margin: 0 0 0 calc(-50vh + 50%);
 }
-.T73auXqB6A1R7oKOBA8BDesP.h-90 > ul > li > div > .accordion-text {
+.T73auXqB6A1R7oKOBA8BDesP.h-90 > ul > li > div .accordion-text {
    height: 90vh;
    width: 90vh;
    margin: 0 0 0 calc(-45vh + 50%);
 }
-.T73auXqB6A1R7oKOBA8BDesP.h-80 > ul > li > div > .accordion-text {
+.T73auXqB6A1R7oKOBA8BDesP.h-80 > ul > li > div .accordion-text {
    height: 80vh;
    width: 80vh;
    margin: 0 0 0 calc(-40vh + 50%);
 }
-.T73auXqB6A1R7oKOBA8BDesP.h-70 > ul > li > div > .accordion-text {
+.T73auXqB6A1R7oKOBA8BDesP.h-70 > ul > li > div .accordion-text {
    height: 70vh;
    width: 70vh;
    margin: 0 0 0 calc(-35vh + 50%);
 }
-.T73auXqB6A1R7oKOBA8BDesP.h-60 > ul > li > div > .accordion-text {
+.T73auXqB6A1R7oKOBA8BDesP.h-60 > ul > li > div .accordion-text {
    height: 60vh;
    width: 60vh;
    margin: 0 0 0 calc(-30vh + 50%);
 }
-.T73auXqB6A1R7oKOBA8BDesP.h-50 > ul > li > div > .accordion-text {
+.T73auXqB6A1R7oKOBA8BDesP.h-50 > ul > li > div .accordion-text {
    height: 50vh;
    width: 50vh;
    margin: 0 0 0 calc(-25vh + 50%);
 }
-.T73auXqB6A1R7oKOBA8BDesP.h-40 > ul > li > div > .accordion-text {
+.T73auXqB6A1R7oKOBA8BDesP.h-40 > ul > li > div .accordion-text {
    height: 40vh;
    width: 40vh;
    margin: 0 0 0 calc(-20vh + 50%);
 }
-.T73auXqB6A1R7oKOBA8BDesP.h-40 > ul > li > div > .accordion-text {
+.T73auXqB6A1R7oKOBA8BDesP.h-40 > ul > li > div .accordion-text {
    height: 40vh;
    width: 40vh;
    margin: 0 0 0 calc(-20vh + 50%);
 }
-.T73auXqB6A1R7oKOBA8BDesP.h-30 > ul > li > div > .accordion-text {
+.T73auXqB6A1R7oKOBA8BDesP.h-30 > ul > li > div .accordion-text {
    height: 30vh;
    width: 30vh;
    margin: 0 0 0 calc(-15vh + 50%);
 }
-.T73auXqB6A1R7oKOBA8BDesP.h-20 > ul > li > div > .accordion-text {
+.T73auXqB6A1R7oKOBA8BDesP.h-20 > ul > li > div .accordion-text {
    height: 20vh;
    width: 20vh;
    margin: 0 0 0 calc(-10vh + 50%);
 }
-.T73auXqB6A1R7oKOBA8BDesP.h-10 > ul > li > div > .accordion-text {
+.T73auXqB6A1R7oKOBA8BDesP.h-10 > ul > li > div .accordion-text {
    height: 10vh;
    width: 10vh;
    margin: 0 0 0 calc(-5vh + 50%);
 }
-.T73auXqB6A1R7oKOBA8BDesP.h-0 > ul > li > div > .accordion-text {
+.T73auXqB6A1R7oKOBA8BDesP.h-0 > ul > li > div .accordion-text {
    height: 0;
    width: 0;
    margin: 0;
 }
-.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li:hover > div > .accordion-text, 
-.T73auXqB6A1R7oKOBA8BDesP > ul > li.open > div > .accordion-text {
+.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li:hover > div .accordion-text, 
+.T73auXqB6A1R7oKOBA8BDesP > ul > li.open > div .accordion-text {
    cursor: inherit;
    /*position: static;*/
    width: 100% !important;                /* need important to overwrite inline style of height in px */
@@ -427,7 +427,7 @@
  * Correct bootstrap themes
  * ------------------------
  */
-.T73auXqB6A1R7oKOBA8BDesP > ul > li > div > .accordion-text a {
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div .accordion-text a {
    cursor: pointer;
    color: white;
    text-decoration: underline;
@@ -439,7 +439,7 @@
  * It is used as tab and slide title.
  * Uses 'pYLEi1aS9dFRUWLSptPEh7ov' for centering.
  */
-.T73auXqB6A1R7oKOBA8BDesP > ul > li > div > .accordion-text .accordion-title {
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div .accordion-text .accordion-title {
    font-size: 2.5rem;
    color: black;                          /* free var 'tab-title-font-color' */
    text-shadow: 2px 2px rgba(255, 255, 255, .5);
@@ -449,8 +449,8 @@
    overflow: hidden;
    text-overflow: ellipsis;
 }
-.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li:hover > div > .accordion-text .accordion-title, 
-.T73auXqB6A1R7oKOBA8BDesP > ul > li.open > div > .accordion-text .accordion-title {
+.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li:hover > div .accordion-text .accordion-title, 
+.T73auXqB6A1R7oKOBA8BDesP > ul > li.open > div .accordion-text .accordion-title {
    display: inline-block;                 /* might need this to contract background color around title */
    font-size: 3rem;
    line-height: 3rem;
@@ -468,7 +468,7 @@
  * It is used as text in slides.
  * Uses 'pYLEi1aS9dFRUWLSptPEh7ov' for centering.
  */
-.T73auXqB6A1R7oKOBA8BDesP > ul > li > div > .accordion-text .accordion-body {
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div .accordion-text .accordion-body {
    display: none;
    color: white;                          /* free var 'body-font-color */
    text-align: justify;
@@ -477,8 +477,8 @@
    border-radius: 5px;
    background-color: rgba(0, 0, 0, 0.4);  /* free var 'body-back-color' */
 }
-.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li:hover > div > .accordion-text .accordion-body, 
-.T73auXqB6A1R7oKOBA8BDesP > ul > li.open > div > .accordion-text .accordion-body {
+.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li:hover > div .accordion-text .accordion-body, 
+.T73auXqB6A1R7oKOBA8BDesP > ul > li.open > div .accordion-text .accordion-body {
    display: block;
 }
 
@@ -624,7 +624,7 @@
    }
    
    /* Accordion text */
-   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul > li > div > .accordion-text {
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul > li > div .accordion-text {
       cursor: inherit;
       /*position: static;*/
       width: 100% !important;
@@ -642,7 +642,7 @@
    }
    
    /* Accordion title */
-   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul > li > div > .accordion-text .accordion-title {
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul > li > div .accordion-text .accordion-title {
       display: inline-block;                 /* might need this to contract background color around title */
       font-size: 2rem;
       line-height: 2rem;
@@ -655,7 +655,7 @@
    }
    
    /* Accordion body */
-   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul > li > div > .accordion-text .accordion-body {
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-600 > ul > li > div .accordion-text .accordion-body {
       display: block;
    }
    
@@ -712,7 +712,7 @@
    }
    
    /* Accordion text */
-   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul > li > div > .accordion-text {
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul > li > div .accordion-text {
       cursor: inherit;
       /*position: static;*/
       width: 100% !important;
@@ -730,7 +730,7 @@
    }
    
    /* Accordion title */
-   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul > li > div > .accordion-text .accordion-title {
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul > li > div .accordion-text .accordion-title {
       display: inline-block;                 /* might need this to contract background color around title */
       font-size: 2rem;
       line-height: 2rem;
@@ -743,7 +743,7 @@
    }
    
    /* Accordion body */
-   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul > li > div > .accordion-text .accordion-body {
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-500 > ul > li > div .accordion-text .accordion-body {
       display: block;
    }
    
@@ -800,7 +800,7 @@
    }
    
    /* Accordion text */
-   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul > li > div > .accordion-text {
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul > li > div .accordion-text {
       cursor: inherit;
       /*position: static;*/
       width: 100% !important;
@@ -818,7 +818,7 @@
    }
    
    /* Accordion title */
-   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul > li > div > .accordion-text .accordion-title {
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul > li > div .accordion-text .accordion-title {
       display: inline-block;                 /* might need this to contract background color around title */
       font-size: 2rem;
       line-height: 2rem;
@@ -831,7 +831,7 @@
    }
    
    /* Accordion body */
-   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul > li > div > .accordion-text .accordion-body {
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-400 > ul > li > div .accordion-text .accordion-body {
       display: block;
    }
    
@@ -888,7 +888,7 @@
    }
    
    /* Accordion text */
-   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul > li > div > .accordion-text {
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul > li > div .accordion-text {
       cursor: inherit;
       /*position: static;*/
       width: 100% !important;
@@ -906,7 +906,7 @@
    }
    
    /* Accordion title */
-   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul > li > div > .accordion-text .accordion-title {
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul > li > div .accordion-text .accordion-title {
       display: inline-block;                 /* might need this to contract background color around title */
       font-size: 2rem;
       line-height: 2rem;
@@ -919,7 +919,7 @@
    }
    
    /* Accordion body */
-   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul > li > div > .accordion-text .accordion-body {
+   .T73auXqB6A1R7oKOBA8BDesP.reset-max-300 > ul > li > div .accordion-text .accordion-body {
       display: block;
    }
    
@@ -946,15 +946,161 @@
  * Customizations
  * --------------
  */
-.T73auXqB6A1R7oKOBA8BDesP > ul > li > div > .accordion-text .accordion-title {
+.T73auXqB6A1R7oKOBA8BDesP > ul > li > div .accordion-text .accordion-title {
    color: white;                          /* free var 'tab-title-font-color' */
    font-size: 1.3rem;
    text-shadow: 2px 2px rgba(0, 0, 0, .5);
 }
-.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li:hover > div > .accordion-text .accordion-title, 
-.T73auXqB6A1R7oKOBA8BDesP > ul > li.open > div > .accordion-text .accordion-title {
+.T73auXqB6A1R7oKOBA8BDesP.hover > ul > li:hover > div .accordion-text .accordion-title, 
+.T73auXqB6A1R7oKOBA8BDesP > ul > li.open > div .accordion-text .accordion-title {
    font-size: 2rem;
 }
 .T73auXqB6A1R7oKOBA8BDesP > ul > li > div {
    background-size: contain;              /* might need this for background images */
 }
+
+/*
+ * Split-Screen
+ * ------------
+ */
+/* Panels. */
+.GruPRo4wTuRiZad3aSF7qH0z {
+   position: relative;
+   width: 100%;
+   height: 300px;       /* variable "height" */
+   overflow: hidden;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .panel {
+   position: absolute;
+   width: 100vw;
+   height: 300px;       /* variable "height" */
+   overflow: hidden;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .panel .content {
+   position: absolute;
+   width: 100vw;
+   height: 300px;       /* variable "height" */
+   transition: all 500ms ease;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .panel .content * {
+   color: #FFF;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .panel .description {
+   width: 25%;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   text-align: center;
+   line-height: 1.3rem;
+   z-index: 2;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .panel img {
+   box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.15);
+   width: 35%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 1;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .bottom {
+   background-color: rgb(44, 44, 44);
+   z-index: 110;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .bottom .description {
+   right: 5%;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .top {
+   background-color: rgba(77, 69, 173, 0.5);
+   z-index: 120;
+   width: 50vw;          /* just initial value */
+}
+.GruPRo4wTuRiZad3aSF7qH0z .top .description {
+   left: 5%;
+}
+
+/* 
+ * Handle
+ * ------
+ */
+.GruPRo4wTuRiZad3aSF7qH0z .handle {
+   height: 100%;
+   position: absolute;
+   display: block;
+   background-color: rgb(253, 171, 0);
+   width: 5px;
+   top: 0;
+   left: 50%;            /* here is our js!!! = width + horiz. distance from handler, combines with ".top" */
+   z-index: 130;
+}
+
+
+/* 
+ * Skewed
+ * ------
+ */
+.GruPRo4wTuRiZad3aSF7qH0z.skewed .handle {
+   top: 50%;
+   transform: rotate(30deg) translateY(-50%);   /* variable "skew" */
+   height: 200%;
+   -webkit-transform-origin: top;
+   -moz-transform-origin: top;
+   transform-origin: top;
+}
+.GruPRo4wTuRiZad3aSF7qH0z.skewed .top {
+   transform: skew(-30deg);      /* variable "skew" */
+   margin-left: -1000px;         /* works for height up to 3464.1px! */
+   width: calc(50vw + 1000px);   /* here is our js!!! new variable "width" */
+}
+.GruPRo4wTuRiZad3aSF7qH0z.skewed .top .content {
+   transform: skew(30deg);    /* variable "skew" */
+   margin-left: 1000px;       /* works for height up to 3464.1px! */
+}
+
+/* 
+ * Percent
+ * -------
+ */
+.GruPRo4wTuRiZad3aSF7qH0z.percent .panel {
+   width: 100%;
+}
+.GruPRo4wTuRiZad3aSF7qH0z.percent .panel .content {
+   width: 468px;        /* use js!!! variable "width" */
+}
+.GruPRo4wTuRiZad3aSF7qH0z.percent .handle {
+   left: 381.39px;       /* here is our js!!! = width - (height/2)/tan(90 - skew), combines with ".top" */
+}
+.GruPRo4wTuRiZad3aSF7qH0z.percent.skewed .top {
+   margin-left: -86.6px;        /* = (height/2)/tan(90 - skew) */
+   width: inherit;               /* here is our js!!! new variable "width" */
+}
+.GruPRo4wTuRiZad3aSF7qH0z.percent.skewed .top .content {
+   margin-left: 86.6px;       /* = (height/2)/tan(90 - skew) */
+}
+
+/*
+ * Customizations
+ * --------------
+ * Work best for accordion "T73auXqB6A1R7oKOBA8BDesP".
+ */
+.GruPRo4wTuRiZad3aSF7qH0z .bottom {
+   overflow-y: auto;
+   background-color: transparent;
+}
+.GruPRo4wTuRiZad3aSF7qH0z .bottom .description {
+   width: 50%;
+   top: 5%;
+   transform: translateY(0);
+   background-color: rgba(0, 0, 0, 0.4);
+}
+.GruPRo4wTuRiZad3aSF7qH0z .bottom .description > * {
+   margin: 0;
+   padding: 10px;
+   font-size: 1.4rem;
+   line-height: 1.5rem;
+   text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+.GruPRo4wTuRiZad3aSF7qH0z .bottom .description h2 {
+   font-size: 2rem;
+}
+

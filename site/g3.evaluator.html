@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>evaluator - g3 MIT</title>
+    
+    <meta name="description" content="A server-client library" />
+    
+        <meta name="keywords" content="g3, theme builder, eshop, site generator, php, javascript, js, DIL" />
+        <meta name="keyword" content="g3, theme builder, eshop, site generator, php, javascript, js, DIL" />
+    
+    
+    
+    <meta property="og:title" content=""/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content=""/>
+    
+    <meta property="og:url" content=""/>
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="g3.Class.html">Class</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.Class.html#.author">author</a></li><li data-type='member' style='display: none;'><a href="g3.Class.html#.copyright">copyright</a></li><li data-type='member' style='display: none;'><a href="g3.Class.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.Class.html#.version">version</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.Class.html#.extend">extend</a></li><li data-type='method' style='display: none;'><a href="g3.Class.html#.toString">toString</a></li><li data-type='method' style='display: none;'><a href="g3.Class.html#~extendClassByObject">extendClassByObject</a></li></ul></li><li><a href="g3.debug.html">debug</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.debug.html#.author">author</a></li><li data-type='member' style='display: none;'><a href="g3.debug.html#.color">color</a></li><li data-type='member' style='display: none;'><a href="g3.debug.html#.copyright">copyright</a></li><li data-type='member' style='display: none;'><a href="g3.debug.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.debug.html#.name">name</a></li><li data-type='member' style='display: none;'><a href="g3.debug.html#.noFollow">noFollow</a></li><li data-type='member' style='display: none;'><a href="g3.debug.html#.version">version</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.debug.html#.setColor">setColor</a></li><li data-type='method' style='display: none;'><a href="g3.debug.html#.setNoFollow">setNoFollow</a></li><li data-type='method' style='display: none;'><a href="g3.debug.html#popup">popup</a></li><li data-type='method' style='display: none;'><a href="g3.debug.html#toHtml">toHtml</a></li><li data-type='method' style='display: none;'><a href="g3.debug.html#toString">toString</a></li></ul></li><li><a href="g3.Error.html">Error</a></li><li><a href="g3.evaluator.html">evaluator</a><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.evaluator.html#.cloneFrame">cloneFrame</a></li><li data-type='method' style='display: none;'><a href="g3.evaluator.html#.deleteFrame">deleteFrame</a></li><li data-type='method' style='display: none;'><a href="g3.evaluator.html#.highlight">highlight</a></li><li data-type='method' style='display: none;'><a href="g3.evaluator.html#.highlightLibrary">highlightLibrary</a></li><li data-type='method' style='display: none;'><a href="g3.evaluator.html#.loader">loader</a></li><li data-type='method' style='display: none;'><a href="g3.evaluator.html#.loadFrame">loadFrame</a></li><li data-type='method' style='display: none;'><a href="g3.evaluator.html#.removeCloned">removeCloned</a></li><li data-type='method' style='display: none;'><a href="g3.evaluator.html#getInstance">getInstance</a></li></ul></li><li><a href="g3.headless.html">headless</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.headless.html#.author">author</a></li><li data-type='member' style='display: none;'><a href="g3.headless.html#.copyright">copyright</a></li><li data-type='member' style='display: none;'><a href="g3.headless.html#.defaults">defaults</a></li><li data-type='member' style='display: none;'><a href="g3.headless.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.headless.html#.name">name</a></li><li data-type='member' style='display: none;'><a href="g3.headless.html#.version">version</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.headless.html#.constructor">constructor</a></li><li data-type='method' style='display: none;'><a href="g3.headless.html#.inherits">inherits</a></li><li data-type='method' style='display: none;'><a href="g3.headless.html#switch">switch</a></li><li data-type='method' style='display: none;'><a href="g3.headless.html#toString">toString</a></li></ul></li><li><a href="g3.Highlight.html">Highlight</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.author">author</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.author">author</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.copyright">copyright</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.copyright">copyright</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.defaults">defaults</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.defaults">defaults</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.defaultThemes">defaultThemes</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.defaultThemes">defaultThemes</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.dfds">dfds</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.getLibraries">getLibraries</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.getLibraries">getLibraries</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.languages">languages</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.libraries">libraries</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.name">name</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.name">name</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.paths">paths</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.paths">paths</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.pluginDfds">pluginDfds</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.plugins">plugins</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.resourceDfds">resourceDfds</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.resourceFilterKeys">resourceFilterKeys</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.resourceFilterKeys">resourceFilterKeys</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.resourceIds">resourceIds</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.resources">resources</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.themes">themes</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.version">version</a></li><li data-type='member' style='display: none;'><a href="g3.Highlight.html#.version">version</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.Highlight.html#.constructor">constructor</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#.constructor">constructor</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#.filterResource">filterResource</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#.getId">getId</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#.getLanguages">getLanguages</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#.getLanguages">getLanguages</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#.getPlugins">getPlugins</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#.getPlugins">getPlugins</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#.getThemes">getThemes</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#.getThemes">getThemes</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#.languageUrl">languageUrl</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#.loader">loader</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#.normalizeUrl">normalizeUrl</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#.pluginUrl">pluginUrl</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#.themeUrl">themeUrl</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#addBack">addBack</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#addBack">addBack</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#build">build</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#build">build</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#getText">getText</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#init">init</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#init">init</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#toString">toString</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#toString">toString</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#unFormat">unFormat</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#unFormat">unFormat</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#validate">validate</a></li><li data-type='method' style='display: none;'><a href="g3.Highlight.html#validate">validate</a></li></ul></li><li><a href="g3.hybrid.html">hybrid</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.hybrid.html#.author">author</a></li><li data-type='member' style='display: none;'><a href="g3.hybrid.html#.copyright">copyright</a></li><li data-type='member' style='display: none;'><a href="g3.hybrid.html#.defaults">defaults</a></li><li data-type='member' style='display: none;'><a href="g3.hybrid.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.hybrid.html#.name">name</a></li><li data-type='member' style='display: none;'><a href="g3.hybrid.html#.version">version</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.hybrid.html#.constructor">constructor</a></li><li data-type='method' style='display: none;'><a href="g3.hybrid.html#.inherits">inherits</a></li><li data-type='method' style='display: none;'><a href="g3.hybrid.html#addLibrary">addLibrary</a></li><li data-type='method' style='display: none;'><a href="g3.hybrid.html#end">end</a></li><li data-type='method' style='display: none;'><a href="g3.hybrid.html#getNodes">getNodes</a></li><li data-type='method' style='display: none;'><a href="g3.hybrid.html#switch">switch</a></li><li data-type='method' style='display: none;'><a href="g3.hybrid.html#to">to</a></li><li data-type='method' style='display: none;'><a href="g3.hybrid.html#toString">toString</a></li></ul></li><li><a href="g3.HybridTemplate.html">HybridTemplate</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.HybridTemplate.html#.author">author</a></li><li data-type='member' style='display: none;'><a href="g3.HybridTemplate.html#.copyright">copyright</a></li><li data-type='member' style='display: none;'><a href="g3.HybridTemplate.html#.defaults">defaults</a></li><li data-type='member' style='display: none;'><a href="g3.HybridTemplate.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.HybridTemplate.html#.name">name</a></li><li data-type='member' style='display: none;'><a href="g3.HybridTemplate.html#.version">version</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.HybridTemplate.html#.constructor">constructor</a></li><li data-type='method' style='display: none;'><a href="g3.HybridTemplate.html#addBack">addBack</a></li><li data-type='method' style='display: none;'><a href="g3.HybridTemplate.html#applyEvents">applyEvents</a></li><li data-type='method' style='display: none;'><a href="g3.HybridTemplate.html#buildn">buildn</a></li><li data-type='method' style='display: none;'><a href="g3.HybridTemplate.html#destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="g3.HybridTemplate.html#initn">initn</a></li><li data-type='method' style='display: none;'><a href="g3.HybridTemplate.html#toString">toString</a></li></ul></li><li><a href="g3.Loader.html">Loader</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.Loader.html#.author">author</a></li><li data-type='member' style='display: none;'><a href="g3.Loader.html#.callbackTemplate">callbackTemplate</a></li><li data-type='member' style='display: none;'><a href="g3.Loader.html#.copyright">copyright</a></li><li data-type='member' style='display: none;'><a href="g3.Loader.html#.defaults">defaults</a></li><li data-type='member' style='display: none;'><a href="g3.Loader.html#.dfdsTemplate">dfdsTemplate</a></li><li data-type='member' style='display: none;'><a href="g3.Loader.html#.errorIds">errorIds</a></li><li data-type='member' style='display: none;'><a href="g3.Loader.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.Loader.html#.name">name</a></li><li data-type='member' style='display: none;'><a href="g3.Loader.html#.options">options</a></li><li data-type='member' style='display: none;'><a href="g3.Loader.html#.version">version</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.Loader.html#.constructor">constructor</a></li><li data-type='method' style='display: none;'><a href="g3.Loader.html#.error">error</a></li><li data-type='method' style='display: none;'><a href="g3.Loader.html#.getId">getId</a></li><li data-type='method' style='display: none;'><a href="g3.Loader.html#destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="g3.Loader.html#fail">fail</a></li><li data-type='method' style='display: none;'><a href="g3.Loader.html#init">init</a></li><li data-type='method' style='display: none;'><a href="g3.Loader.html#load">load</a></li><li data-type='method' style='display: none;'><a href="g3.Loader.html#load">load</a></li><li data-type='method' style='display: none;'><a href="g3.Loader.html#register">register</a></li><li data-type='method' style='display: none;'><a href="g3.Loader.html#toString">toString</a></li></ul></li><li><a href="g3.measure.html">measure</a><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.measure.html#adjucent">adjucent</a></li><li data-type='method' style='display: none;'><a href="g3.measure.html#intersect">intersect</a></li></ul></li></ul><h3>Namespaces</h3><ul><li><a href="g3.html">g3</a></li><li><a href="g3.utils.html">utils</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.utils.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.utils.html#.isMobile">isMobile</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.utils.html#.addDate">addDate</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.clearString">clearString</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.contains">contains</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.createScriptNode">createScriptNode</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.createStyleNode">createStyleNode</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.deleteEventLock">deleteEventLock</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.getEventLock">getEventLock</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.getWindow">getWindow</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.intersect">intersect</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.isEmptyObject">isEmptyObject</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.isVisible">isVisible</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.printHTML">printHTML</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.randomString">randomString</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.revertPrintHTML">revertPrintHTML</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.setEventLock">setEventLock</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.type">type</a></li><li data-type='method' style='display: none;'><a href="g3.utils.html#.warning">warning</a></li></ul></li></ul><h3>Mixins</h3><ul><li><a href="g3.headlessStatic.html">headlessStatic</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.author">author</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.copyright">copyright</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.instances">instances</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.name">name</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.options">options</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.override">override</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.plugins">plugins</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.store">store</a></li><li data-type='member' style='display: none;'><a href="g3.headlessStatic.html#.version">version</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.headlessStatic.html#.add">add</a></li><li data-type='method' style='display: none;'><a href="g3.headlessStatic.html#.destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="g3.headlessStatic.html#.get">get</a></li><li data-type='method' style='display: none;'><a href="g3.headlessStatic.html#.inherits">inherits</a></li><li data-type='method' style='display: none;'><a href="g3.headlessStatic.html#.plugin">plugin</a></li><li data-type='method' style='display: none;'><a href="g3.headlessStatic.html#.Singleton">Singleton</a></li><li data-type='method' style='display: none;'><a href="g3.headlessStatic.html#.toString">toString</a></li></ul></li><li><a href="g3.hybridStatic.html">hybridStatic</a><ul class='members'><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.author">author</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.autoFill">autoFill</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.copyright">copyright</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.id">id</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.instances">instances</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.name">name</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.options">options</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.override">override</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.plugins">plugins</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.store">store</a></li><li data-type='member' style='display: none;'><a href="g3.hybridStatic.html#.version">version</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="g3.hybridStatic.html#.add">add</a></li><li data-type='method' style='display: none;'><a href="g3.hybridStatic.html#.destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="g3.hybridStatic.html#.get">get</a></li><li data-type='method' style='display: none;'><a href="g3.hybridStatic.html#.inherits">inherits</a></li><li data-type='method' style='display: none;'><a href="g3.hybridStatic.html#.library">library</a></li><li data-type='method' style='display: none;'><a href="g3.hybridStatic.html#.plugin">plugin</a></li><li data-type='method' style='display: none;'><a href="g3.hybridStatic.html#.Singleton">Singleton</a></li><li data-type='method' style='display: none;'><a href="g3.hybridStatic.html#.toString">toString</a></li></ul></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-class.html">Class usage</a></li><li><a href="tutorial-evaluator.html">Evaluator testing tool</a></li><li><a href="tutorial-highlight.html">Highlight example class</a></li><li><a href="tutorial-hybrid.html">Hybrid class system</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">evaluator</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="g3.html">g3</a>.</span>
+        
+        evaluator
+        </h2>
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+
+    
+
+    <h4 class="name" id="evaluator"><span class="type-signature"></span>new evaluator<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+    <p class="summary"><p>A graphical client testing tool for batch processing javascript commands.
+It uses eval() and emulates console.log() in all clients even in IE browsers.</p></p>
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="plugins_g3evaluator_g3evaluator.js.html">plugins/g3evaluator/g3evaluator.js</a>, <a href="plugins_g3evaluator_g3evaluator.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>1.1</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>https:/github.com/centurianii</li>
+        </ul>
+    </dd>
+    
+
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>MIT licence</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </div>
+    
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="author"><span class="type-signature"></span>author<span class="type-signature"> :string</span></h4>
+
+
+<p class="summary"><p><a href="https:/github.com/centurianii">centurianii</a></p></p>
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="plugins_g3evaluator_g3evaluator.js.html">plugins/g3evaluator/g3evaluator.js</a>, <a href="plugins_g3evaluator_g3evaluator.js.html#line1248">line 1248</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="console"><span class="type-signature"></span>console<span class="type-signature"> :object</span></h4>
+
+
+<p class="summary"><p>A in browser <code>console</code> object of functions located at <code>g3.evaluator</code>.</p></p>
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="plugins_g3evaluator_g3evaluator.js.html">plugins/g3evaluator/g3evaluator.js</a>, <a href="plugins_g3evaluator_g3evaluator.js.html#line1024">line 1024</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="copyright"><span class="type-signature"></span>copyright<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="plugins_g3evaluator_g3evaluator.js.html">plugins/g3evaluator/g3evaluator.js</a>, <a href="plugins_g3evaluator_g3evaluator.js.html#line1255">line 1255</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="id"><span class="type-signature"></span>id<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="plugins_g3evaluator_g3evaluator.js.html">plugins/g3evaluator/g3evaluator.js</a>, <a href="plugins_g3evaluator_g3evaluator.js.html#line1233">line 1233</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="name"><span class="type-signature"></span>name<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="plugins_g3evaluator_g3evaluator.js.html">plugins/g3evaluator/g3evaluator.js</a>, <a href="plugins_g3evaluator_g3evaluator.js.html#line1238">line 1238</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="version"><span class="type-signature"></span>version<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="plugins_g3evaluator_g3evaluator.js.html">plugins/g3evaluator/g3evaluator.js</a>, <a href="plugins_g3evaluator_g3evaluator.js.html#line1243">line 1243</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".cloneFrame"><span class="type-signature">(static) </span>cloneFrame<span class="signature">(selector)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+    <p class="summary"><p>Copies all the nodes of an <code>iframe</code> to the evaluator's page.</p></p>
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="plugins_g3evaluator_g3evaluator.js.html">plugins/g3evaluator/g3evaluator.js</a>, <a href="plugins_g3evaluator_g3evaluator.js.html#line1161">line 1161</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>The cloned nodes also include those at the header. The <code>iframe</code> at 
+the end is deleted.</p>
+<p>You can't re-clone before removing the existed ones with g3.evaluator#removeCloned.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A selector string or another JQuery 
+   object or a node reference that contains the <code>iframe</code></p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The evaluator object</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".deleteFrame"><span class="type-signature">(static) </span>deleteFrame<span class="signature">(selector)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+    <p class="summary"><p>Deletes an <code>iframe</code> contained in the passed node or selector.</p></p>
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="plugins_g3evaluator_g3evaluator.js.html">plugins/g3evaluator/g3evaluator.js</a>, <a href="plugins_g3evaluator_g3evaluator.js.html#line1103">line 1103</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A selector string or another JQuery 
+   object or a node reference that contains the <code>iframe</code></p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The evaluator object</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".highlight"><span class="type-signature">(static) </span>highlight<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+    <p class="summary"><p>Returns the name of the <a href="g3.Highlight.html">g3.Highlight</a> object used from the 
+evaluator.</p></p>
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="plugins_g3evaluator_g3evaluator.js.html">plugins/g3evaluator/g3evaluator.js</a>, <a href="plugins_g3evaluator_g3evaluator.js.html#line1197">line 1197</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The name of a <a href="g3.Highlight.html">g3.Highlight</a> object</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".highlightLibrary"><span class="type-signature">(static) </span>highlightLibrary<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+    <p class="summary"><p>Returns the name of the library used by <a href="g3.Highlight.html">g3.Highlight</a> object 
+of the evaluator.</p></p>
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="plugins_g3evaluator_g3evaluator.js.html">plugins/g3evaluator/g3evaluator.js</a>, <a href="plugins_g3evaluator_g3evaluator.js.html#line1209">line 1209</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The name of a <a href="g3.Highlight.html">g3.Highlight</a> object</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".loader"><span class="type-signature">(static) </span>loader<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+    <p class="summary"><p>Returns the name of the <a href="g3.Loader.html">g3.Loader</a> object used from 
+<a href="g3.Highlight.html">g3.Highlight</a> of the evaluator.</p></p>
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="plugins_g3evaluator_g3evaluator.js.html">plugins/g3evaluator/g3evaluator.js</a>, <a href="plugins_g3evaluator_g3evaluator.js.html#line1221">line 1221</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The name of a <a href="g3.Loader.html">g3.Loader</a> object</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".loadFrame"><span class="type-signature">(static) </span>loadFrame<span class="signature">(selector, url)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+    <p class="summary"><p>Create an <code>iframe</code> and add it at the passed node or selector.</p></p>
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="plugins_g3evaluator_g3evaluator.js.html">plugins/g3evaluator/g3evaluator.js</a>, <a href="plugins_g3evaluator_g3evaluator.js.html#line1071">line 1071</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>You can't re-load before removing the existed one with g3.evaluator#deleteFrame.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A selector string or another JQuery 
+   object or a node reference that will hold the <code>iframe</code></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The loaded file's url</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The evaluator object</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".removeCloned"><span class="type-signature">(static) </span>removeCloned<span class="signature">(selector)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+    <p class="summary"><p>Deletes all the cloned nodes of <code>iframe</code> at the evaluator's page.</p></p>
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="plugins_g3evaluator_g3evaluator.js.html">plugins/g3evaluator/g3evaluator.js</a>, <a href="plugins_g3evaluator_g3evaluator.js.html#line1127">line 1127</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>The deleted cloned nodes also include those at the header.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A selector string or another JQuery 
+   object or a node reference that contains the <code>iframe</code></p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The evaluator object</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getInstance"><span class="type-signature"></span>getInstance<span class="signature">()</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+    <p class="summary"><p>Returns a singleton.</p></p>
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="plugins_g3evaluator_g3evaluator.js.html">plugins/g3evaluator/g3evaluator.js</a>, <a href="plugins_g3evaluator_g3evaluator.js.html#line1263">line 1263</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>It initializes the evaluator objects by settings properties and assigning
+events on nodes.</p>
+<p>This method after it's first run, it returns the same object on next 
+calls.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The evaluator object</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Nov 17 2018 00:01:34 GMT+0200 (EET) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/jquery-3.1.1.min.js"></script>
+
+<script src="scripts/search.js"></script>
+
+
+<script src="scripts/collapse.js"></script>
+
+
+
+</body>
+</html>

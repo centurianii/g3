@@ -50,7 +50,7 @@
  *                  this.instance.lastDefaults = this.defaults;
  *                  return this;
  *               },
- *               build2: function(){
+ *               buildn: function(){
  *                  // ...
  *               },
  *               toString: function(){
@@ -207,8 +207,8 @@ g3.HybridTemplate = g3.Class(g3.hybrid('HybridTemplate'), g3.hybridStatic('Hybri
     * If you use inheritance, a.k.a. this is a 2nd or greater level class, you 
     * need to explicitly call `g3.myClass.inherits(true);` as a first command 
     * before construction and `g3.myClass.inherits(false);` immediately after to 
-    * avoid object storage in all parent classes or, disable storage by adding in 
-    * argument-object a key `store: false`. 
+    * avoid object storage in all parent classes or, disable storage by passing 
+    * to argument-object a key `store: false`. 
     * @function g3.HybridTemplate.constructor
     * @return {Object} An object of this class
     */
@@ -298,7 +298,7 @@ g3.HybridTemplate = g3.Class(g3.hybrid('HybridTemplate'), g3.hybridStatic('Hybri
        * **`g3.HybridTemplate.prototype.destroy()`**.
        * Replace `HybridTemplate` with your classname.
        * 
-       * Reverts changes in `this.instance.nodes`.
+       * Reverts changes in `this.instance.nodes` and in object's internal state.
        * @function g3.HybridTemplate#destroy
        * @return {Object} An object of this class
        */

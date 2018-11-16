@@ -324,7 +324,7 @@ g3.utils.isEmptyObject = function(obj, proto){
  * @summary
  * Creates an object with member functions that test if the client's browser 
  * belongs to a specific family of devices.
- * @constructs g3.utils.isMobile
+ * @var g3.utils.isMobile
  * @see {@link https://stackoverflow.com/questions/32570067/how-to-detect-whether-browser-is-ios-android-or-desktop-using-jquery}, 
  * {@link https://bitsrc.io/tomlandau/simple-js/global/is-mobile/code#src/global/isMobile.js}
  */

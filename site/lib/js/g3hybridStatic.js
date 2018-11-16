@@ -160,9 +160,9 @@ g3.hybridStatic = function(myClass){
           *    that behaves as the constructor function, e.g. `g3[myClass](options)` 
           * 
           * 2. a new plugin method `$.fn.g3` that accepts as 1st argument 
-          *    `myClass` the name of an existed object or a classname, as 2nd 
-          *    `options` an object or a string and an optional 3rd `update` of 
-          *    type boolean, e.g. `[library].g3(myClass, options, update)`.
+          *    `myClass` a classname, as 2nd `options` an object or a string and 
+          *    an optional 3rd `update` of type boolean, e.g. 
+          *    `[library].g3(myClass, options, update)`.
           *
           * The static method `g3[myClass].library` is called once after the 
           * class definition. It is part of the definition of `g3[myClass]` and
@@ -301,14 +301,14 @@ g3.hybridStatic = function(myClass){
           *   activated by the constructor automatically or,
           * 
           * - after class definition and before construction like 
-          *   `g3.myClass.defaults.plugins += ' <function-name>';` with the same 
+          *   `g3.myClass.defaults.plugins += " <function-name>";` with the same 
           *   result as previous or,
           * 
           * - during construction with user argument `plugins`.
           * 
           * In the first and third options `plugins` is a space delimited string 
-          * of all plugin names that you want to activate (in the second one a 
-          * space prepends the name).
+          * of all plugin names that you want to activate (see the space that 
+          * prepends the name in the second one).
           * 
           * See {@link g3.hybridStatic.plugins} and {@link g3.hybrid.defaults}.
           * @function g3.hybridStatic.plugin

@@ -3,7 +3,7 @@
  * @summary
  * A graphical client testing tool for batch processing javascript commands.
  * It uses eval() and emulates console.log() in all clients even in IE browsers.
- * @var {object} g3.evaluator
+ * @constructs g3.evaluator
  * @version 1.1
  * @author https:/github.com/centurianii
  * @copyright MIT licence
@@ -1270,7 +1270,6 @@ g3.evaluator = (function(){
        * This method after it's first run, it returns the same object on next 
        * calls.
        * @function g3.evaluator#getInstance
-       * @constructs g3.evaluator
        * @return {object} The evaluator object
        */
       getInstance: function(){
