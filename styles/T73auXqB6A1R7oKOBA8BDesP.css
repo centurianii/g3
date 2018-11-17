@@ -954,6 +954,7 @@
 .T73auXqB6A1R7oKOBA8BDesP.hover > ul > li:hover > div .accordion-text .accordion-title, 
 .T73auXqB6A1R7oKOBA8BDesP > ul > li.open > div .accordion-text .accordion-title {
    font-size: 2rem;
+   background-color: #f51aaa;
 }
 .T73auXqB6A1R7oKOBA8BDesP > ul > li > div {
    background-size: contain;              /* might need this for background images */
