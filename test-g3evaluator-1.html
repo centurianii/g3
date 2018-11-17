@@ -4,12 +4,12 @@
    <meta charset="utf-8">
    <title>Test &lt;library&gt;</title>
    
-<link rel="stylesheet" type="text/css" href="/lib/plugins/g3evaluator/g3evaluator.css">
-<link rel="stylesheet" type="text/css" id="jz0VW" href="http://localhost/lib/plugins/g3Highlight/prettify/prettify-default.css"></head>
+<link rel="stylesheet" type="text/css" href="/g3/lib/plugins/g3evaluator/g3evaluator.css">
+<link rel="stylesheet" type="text/css" id="jz0VW" href="/g3/lib/plugins/g3Highlight/prettify/prettify-default.css"></head>
 <body>
 <div class="TbeFgQ7NMLTOVYjdRDjVMaoN">
 <div id="header">
-   <div><a href="https://centurianii.github.io/g3/test-g3evaluator-1.html" style="margin-left: -150px;"><img src="/lib/plugins/g3evaluator/ev-logo-2.png"></a></div>
+   <div><a href="https://centurianii.github.io/g3/test-g3evaluator-1.html" style="margin-left: -150px;"><img src="/g3/lib/plugins/g3evaluator/ev-logo-2.png"></a></div>
    <div>
    <h1 contenteditable="false">Test &lt;library&gt;<br></h1><span class="">[edit]</span>
    </div>
@@ -143,23 +143,24 @@
 <div class="gridTabbedData"><div class="tabbedData"><div class="titleBar"><div class="wrap"><p class="title enabled">How to work</p><button class="load">Load tab</button></div></div><div class="tabs"><div class="tabBar"><div class="title enabled">Files included</div><div class="close">X</div></div><div class="tabBar"><div class="title">Work order</div><div class="close">X</div></div><div class="tabBar"><div class="title">Organization</div><div class="close">X</div></div></div><div class="tabs"><div class="data"><pre data-lang="unformatted" class="" style="">/*
  * A) CSS
  * ------
- * 1) /lib/plugins/g3evaluator/g3evaluator.css
- * 2) /lib/plugins/g3Highlight/prettify/prettify-default.css (or empty for automatic include)
+ * 1) /g3/lib/plugins/g3evaluator/g3evaluator.css
+ * 2) /g3/lib/plugins/g3Highlight/prettify/prettify-default.css (or empty for automatic include)
  *
  * B) JS
  * -----
  * 1) https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
- * 2) /lib/js/iuGXtklwZorkyG6kJ2zYlKHf.js
- * 3) /lib/js/g3debug.js
- * 4) /lib/plugins/g3evaluator/g3evaluator.js
- * 5) /lib/js/g3Class.js
- * 6) /lib/js/g3hybrid.js
- * 7) /lib/js/g3hybridStatic.js
- * 8) /lib/js/g3headless.js
- * 9) /lib/js/g3headlessStatic.js
- * 10)/lib/plugins/g3Loader/g3Loader.js
- * 11)/lib/plugins/g3Highlight/g3Highlight.js
- * 12)https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js (or empty for automatic include)
+ * 2) /g3/lib/js/iuGXtklwZorkyG6kJ2zYlKHf.js
+ * 3) /g3/lib/js/g3debounce.js
+ * 4) /g3/lib/js/g3debug.js
+ * 5) /g3/lib/plugins/g3evaluator/g3evaluator.js
+ * 6) /g3/lib/js/g3Class.js
+ * 7) /g3/lib/js/g3hybrid.js
+ * 8) /g3/lib/js/g3hybridStatic.js
+ * 9) /g3/lib/js/g3headless.js
+ * 10) /g3/lib/js/g3headlessStatic.js
+ * 11)/g3/lib/plugins/g3Loader/g3Loader.js
+ * 12)/g3/lib/plugins/g3Highlight/g3Highlight.js
+ * 13)https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js (or empty for automatic include)
  */
 </pre></div><div class="data hide"><pre data-lang="unformatted" class="" style="">/*
  * 1) Open drop down panel "Add/Remove .css/.js library" and 
@@ -231,18 +232,21 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="/lib/js/iuGXtklwZorkyG6kJ2zYlKHf.js"></script>
-<script src="/lib/js/g3debounce.js"></script>
-<script src="/lib/js/g3debug.js"></script>
-<script src="/lib/plugins/g3evaluator/g3evaluator.js"></script>
-<script src="/lib/js/g3Class.js"></script>
-<script src="/lib/js/g3Error.js"></script>
-<script src="/lib/js/g3hybrid.js"></script>
-<script src="/lib/js/g3hybridStatic.js"></script>
-<script src="/lib/js/g3headless.js"></script>
-<script src="/lib/js/g3headlessStatic.js"></script>
-<script src="/lib/plugins/g3Loader/g3Loader.js"></script>
-<script src="/lib/plugins/g3Highlight/g3Highlight.js"></script>
+<!--
+<script src="/g3/lib/js/iuGXtklwZorkyG6kJ2zYlKHf.js"></script>
+<script src="/g3/lib/js/g3debounce.js"></script>
+<script src="/g3/lib/js/g3debug.js"></script>
+<script src="/g3/lib/plugins/g3evaluator/g3evaluator.js"></script>
+<script src="/g3/lib/js/g3Class.js"></script>
+<script src="/g3/lib/js/g3Error.js"></script>
+<script src="/g3/lib/js/g3hybrid.js"></script>
+<script src="/g3/lib/js/g3hybridStatic.js"></script>
+<script src="/g3/lib/js/g3headless.js"></script>
+<script src="/g3/lib/js/g3headlessStatic.js"></script>
+<script src="/g3/lib/plugins/g3Loader/g3Loader.js"></script>
+<script src="/g3/lib/plugins/g3Highlight/g3Highlight.js"></script>
+-->
+<script src="/scripts/g3.min.js"></script>
 <script>
 $(function(){
    g3.evaluator.getInstance();
