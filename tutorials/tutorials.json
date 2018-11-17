@@ -8,6 +8,9 @@
    "highlight": {
       "title": "Highlight example class"
    },
+   "loader": {
+      "title": "Loader example class"
+   },
    "evaluator": {
       "title": "Evaluator testing tool"
    }

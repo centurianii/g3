@@ -15,17 +15,6 @@
       "allowUnknownTags": true,
       "dictionaries": ["jsdoc","closure"]
    },
-   "templates": {
-      "default": {
-         "staticFiles": {
-            "include": [
-               "./site/styles/pYLEi1aS9dFRUWLSptPEh7ov.css",
-               "./site/styles/T73auXqB6A1R7oKOBA8BDesP.css",
-               "./site/scripts/accordion.js"
-            ]
-         }
-      }
-   },
    "opts": {
       "template": "/home/cent/node/node_modules/docdash"
    },
