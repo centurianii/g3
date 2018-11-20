@@ -1,0 +1,1 @@
+uglifyjs site/scripts/g3.js -c > site/scripts/g3.min.js
