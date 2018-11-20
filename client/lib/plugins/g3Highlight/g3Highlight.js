@@ -924,11 +924,11 @@ g3.Highlight = g3.Class(g3.hybrid('Highlight'), g3.hybridStatic('Highlight'), {
          
          // 5. library load 'success'
          function success(ids){
+            g3.Highlight.dfds[self.defaults.library].resolve();
+            
             // nothing to do!
             if(ids.length === 0)
                return;
-               
-            g3.Highlight.dfds[self.defaults.library].resolve();
             
             switch(self.defaults.library){
                case 'prism':
